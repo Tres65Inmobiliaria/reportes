@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Ficha Pre-Tour</title>
+<meta property="og:title" content="Ficha Pre-Tour">
+<meta property="og:image" content="https://tres65inmobiliaria.github.io/reportes/THUMBNAIL.png">
+<meta property="og:url" content="https://tres65inmobiliaria.github.io/reportes/pretour-tres65-inmobiliaria-1786023376/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  :root {
+    --deep: #1A4F5C; --accent: #2AA898; --mid: #1E7A6E; --ivory: #F5F0E8; --mint: #E8F4F1;
+    --green: #2AA898; --yellow: #C9A84C; --yellow-bg: #f7f0dc; --red: #C97070; --red-bg: #fbeaea;
+    --green-bg: #e0f4f1; --gray: #5c7278; --white: #ffffff; --radius: 12px;
+    --shadow: 0 2px 16px rgba(26,79,92,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--ivory); color: var(--deep); line-height: 1.45; font-size: 15px; padding-bottom: 40px; }
+  h1, h2, h3 { font-family: 'Raleway', sans-serif; }
+  a { color: inherit; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+  .header { background: var(--white); border-bottom: 3px solid var(--accent); padding: 14px 16px; display: flex; align-items: center; gap: 14px; }
+  .header img.logo { height: 46px; width: auto; display: block; flex-shrink: 0; }
+  .header-info h1 { font-size: 1.15rem; font-weight: 800; color: var(--deep); letter-spacing: -0.2px; }
+  .header-meta { font-size: 0.78rem; color: var(--gray); font-weight: 600; margin-top: 2px; }
+  .section-title { font-size: 1.05rem; font-weight: 800; color: var(--deep); padding: 24px 0 12px; letter-spacing: -0.2px; }
+  .map-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 14px; margin-bottom: 4px; }
+  #tourMap { width: 100%; height: 220px; border-radius: 8px; background: var(--mint); z-index: 0; }
+  .leaflet-popup-content { font-family: 'Montserrat', sans-serif; font-size: 0.8rem; }
+  .map-note { font-size: 0.76rem; color: var(--mid); font-weight: 600; margin-top: 10px; display: flex; align-items: center; gap: 6px; background: var(--mint); border-radius: 8px; padding: 8px 12px; }
+  .route-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 46px; margin-top: 10px; background: var(--accent); color: #fff; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.88rem; text-decoration: none; border-radius: 8px; letter-spacing: 0.2px; }
+  .popup-gmaps { display: inline-block; margin-top: 4px; font-size: 0.75rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+  .cards-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 8px; }
+  @media (min-width: 768px) { .cards-grid { grid-template-columns: 1fr 1fr; } }
+  .card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; position: relative; }
+  .card-carousel { position: relative; width: 100%; height: 210px; overflow: hidden; background: var(--mint); }
+  .card-photo, .card-photo-fallback { width: 100%; height: 210px; object-fit: cover; display: block; background: var(--mint); }
+  .card-carousel .card-photo { position: absolute; inset: 0; display: none; }
+  .card-carousel .card-photo.active { display: block; }
+  .card-photo-fallback { display: flex; align-items: center; justify-content: center; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--mid); text-align: center; padding: 8px; }
+  .order-badge { position: absolute; top: 10px; left: 10px; width: 32px; height: 32px; border-radius: 50%; background: var(--deep); color: #fff; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.25); z-index: 2; }
+  .cp-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.88); border: none; color: var(--deep); font-size: 1rem; font-weight: 700; cursor: pointer; z-index: 3; display: flex; align-items: center; justify-content: center; padding: 0; line-height: 1; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+  .cp-btn.prev { left: 8px; } .cp-btn.next { right: 8px; }
+  .cp-dots { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 3; }
+  .cp-dots .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.6); border: none; padding: 0; }
+  .cp-dots .dot.active { background: #fff; transform: scale(1.3); }
+  .rating-widget { position: absolute; top: 10px; right: 10px; z-index: 4; display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.92); border-radius: 20px; padding: 5px 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+  .star-btn { background: none; border: none; padding: 1px; cursor: pointer; color: #c9d0d1; line-height: 0; }
+  .star-btn.on { color: var(--yellow); }
+  .dislike-btn { background: none; border: none; padding: 1px 0 1px 4px; margin-left: 2px; border-left: 1px solid #e2e8e8; cursor: pointer; color: #c9d0d1; line-height: 0; }
+  .dislike-btn.on { color: var(--red); }
+  .card-body { padding: 16px; }
+  .card-name-row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .card-name a { font-family: 'Raleway', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--deep); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; }
+  .card-zone { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+  .price-row { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 14px; }
+  .price-main { font-family: 'Raleway', sans-serif; font-size: 1.35rem; font-weight: 800; color: var(--deep); line-height: 1; }
+  .price-m2 { font-size: 0.7rem; color: var(--gray); font-weight: 600; margin-top: 3px; }
+  .diff-badge { font-size: 0.72rem; font-weight: 700; padding: 6px 12px; border-radius: 20px; white-space: nowrap; align-self: flex-start; }
+  .diff-green { background: var(--green-bg); color: var(--mid); }
+  .diff-yellow { background: var(--yellow-bg); color: #8a6b1a; }
+  .diff-red { background: var(--red-bg); color: #a5423f; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--mint); margin-top: 14px; border-radius: 8px; overflow: hidden; }
+  .stat-cell { background: #fff; padding: 8px 4px; text-align: center; min-width: 0; }
+  .stat-lbl { font-size: 0.52rem; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 0.2px; }
+  .stat-val { font-size: 0.8rem; font-weight: 700; color: var(--deep); margin-top: 2px; }
+  .semaforo { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+  .semaforo-row { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 600; }
+  .dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+  .dot-green { background: var(--green); } .dot-yellow { background: var(--yellow); } .dot-red { background: var(--red); }
+  .semaforo-lbl { color: var(--gray); font-weight: 500; }
+  .semaforo-val { color: var(--deep); font-weight: 700; }
+  .question-box { margin-top: 14px; background: var(--yellow-bg); border-left: 3px solid var(--yellow); border-radius: 8px; padding: 10px 12px; }
+  .question-lbl { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 3px; display: flex; align-items: center; gap: 5px; }
+  .question-text { font-size: 0.82rem; font-weight: 600; color: var(--deep); line-height: 1.4; }
+  .notes-field { margin-top: 14px; width: 100%; min-height: 60px; border: 1.5px solid var(--mint); border-radius: 8px; padding: 10px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; color: var(--deep); background: var(--ivory); resize: vertical; }
+  .checklist-card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 6px; }
+  .checklist { list-style: none; }
+  .checklist li { border-bottom: 1px solid var(--mint); } .checklist li:last-child { border-bottom: none; }
+  .checklist label { display: flex; align-items: center; gap: 12px; padding: 12px 10px; min-height: 44px; font-size: 0.88rem; font-weight: 600; color: var(--deep); cursor: pointer; }
+  .checklist input[type="checkbox"] { width: 22px; height: 22px; flex-shrink: 0; accent-color: var(--accent); cursor: pointer; }
+  .action-row { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+  .action-btn { flex: 1; min-width: 180px; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border: none; border-radius: 8px; font-family: 'Raleway', sans-serif; font-weight: 800; font-size: 0.88rem; cursor: pointer; }
+  .action-btn.primary { background: var(--accent); color: #fff; }
+  .action-btn.secondary { background: var(--white); color: var(--deep); box-shadow: var(--shadow); }
+  .action-status { font-size: 0.76rem; color: var(--mid); font-weight: 600; margin-top: 8px; text-align: center; }
+  .footer { background: var(--deep); margin-top: 32px; padding: 24px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer img { height: 40px; width: auto; display: block; }
+  .footer-agent { font-size: 0.78rem; color: rgba(255,255,255,0.75); line-height: 1.6; text-align: right; }
+  .footer-agent strong { color: #fff; font-family: 'Raleway', sans-serif; font-size: 0.9rem; }
+  .footer-bottom { max-width: 1000px; margin: 10px auto 0; padding: 0 16px; font-size: 0.65rem; color: rgba(255,255,255,0.4); }
+  @media print {
+    .cp-btn, .cp-dots, .action-row, .route-btn { display: none !important; }
+    body { background: #fff; }
+    .card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <img class="logo" src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria" onerror="this.outerHTML='<span style=\'font-family:Raleway,sans-serif;font-size:1.3rem;font-weight:800;color:#1A4F5C\'>TRES65</span>'">
+  <div class="header-info">
+    <h1>Ficha Pre-Tour</h1>
+    <div class="header-meta">TRES65 Inmobiliaria · 06 de August de 2026</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <h2 class="section-title">Ruta sugerida</h2>
+  <div class="map-card">
+    <div id="tourMap"></div>
+    <p class="map-note"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><span>Ubicaciones aproximadas — confirmar dirección exacta antes del tour.</span></p>
+    <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&amp;origin=21.1030877,-89.6613591&amp;destination=21.0498410929,-89.6782925369&amp;travelmode=driving&amp;waypoints=21.0411724,-89.5550539|21.0405753202,-89.5246041142" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span>Ver ruta completa en Google Maps</span></a>
+  </div>
+  <h2 class="section-title">Propiedades — en orden de visita</h2>
+  <div class="cards-grid">
+    <div class="card">
+      <span class="order-badge">1</span>
+      <div class="card-carousel"><img class="card-photo active" src="https://assets.easybroker.com/property_images/5311682/92774812/EB-TK1682.jpeg?version=1752020570" alt="Casa en venta en Privada Nortemerida, Mérida, Yucatán. 1"><img class="card-photo" src="https://assets.easybroker.com/property_images/5311682/92774816/EB-TK1682.jpeg?version=1752020570" alt="Casa en venta en Privada Nortemerida, Mérida, Yucatán. 2"><img class="card-photo" src="https://assets.easybroker.com/property_images/5311682/92774788/EB-TK1682.jpeg?version=1752020570" alt="Casa en venta en Privada Nortemerida, Mérida, Yucatán. 3"><img class="card-photo" src="https://assets.easybroker.com/property_images/5311682/91642130/EB-TK1682.jpeg?version=1752020570" alt="Casa en venta en Privada Nortemerida, Mérida, Yucatán. 4"><img class="card-photo" src="https://assets.easybroker.com/property_images/5311682/91642131/EB-TK1682.jpeg?version=1752020570" alt="Casa en venta en Privada Nortemerida, Mérida, Yucatán. 5"><img class="card-photo" src="https://assets.easybroker.com/property_images/5311682/91642140/EB-TK1682.jpeg?version=1752020570" alt="Casa en venta en Privada Nortemerida, Mérida, Yucatán. 6"><button class="cp-btn prev" onclick="cpNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="cp-btn next" onclick="cpNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="cp-dots"><button class="dot active" onclick="cpDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 6"></button></div></div>
+      <div class="rating-widget" data-key="casa-komchen">
+        <button class="star-btn" data-val="1" onclick="setRating(this,1)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="2" onclick="setRating(this,2)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="3" onclick="setRating(this,3)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="4" onclick="setRating(this,4)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button>
+        <button class="dislike-btn" onclick="setDislike(this)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      </div>
+      <div class="card-body">
+        <div class="card-name-row">
+          <div class="card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-venta-en-privada-nortemerida-merida-yucatan-8dc861b1-6cde-47a5-acb8-491963c689ef" target="_blank" rel="noopener">Casa Komchen</a></div>
+        </div>
+        <div class="card-zone">EB-TK1682 · Komchen, Mérida, Yucatán</div>
+
+        <div class="price-row">
+          <div><div class="price-main">$15,900,000</div><div class="price-m2">$33,111/m²</div></div>
+          
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-cell"><div class="stat-lbl">Rec/Baños</div><div class="stat-val">4 / 5</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Construcción</div><div class="stat-val">480.2 m²</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Terreno</div><div class="stat-val">900.06 m²</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Plantas</div><div class="stat-val">No esp.</div></div>
+        </div>
+
+        <div class="semaforo">
+          <div class="semaforo-row"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span class="dot dot-green"></span><span class="semaforo-lbl">Estacionamiento:</span><span class="semaforo-val">2 cajón(es)</span></div>
+          <div class="semaforo-row"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m9 15 2 2 4-4"/></svg><span class="dot dot-yellow"></span><span class="semaforo-lbl">Documentación:</span><span class="semaforo-val">No especificada</span></div>
+        </div>
+
+        <div class="question-box">
+          <div class="question-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Pregunta obligatoria en sitio</div>
+          <div class="question-text">¿Puede confirmar cuántas plantas tiene la casa y si hay algún gravamen en la documentación?</div>
+        </div>
+
+        <textarea class="notes-field" data-key="casa-komchen" placeholder="Notas de la visita..."></textarea>
+      </div>
+    </div>
+    <div class="card">
+      <span class="order-badge">2</span>
+      <div class="card-carousel"><img class="card-photo active" src="https://assets.easybroker.com/property_images/5758831/100856108/EB-VC8831.jpeg?version=1769124853" alt="Casa en venta en privada Varena Living, Mérida, Yucatán. 1"><img class="card-photo" src="https://assets.easybroker.com/property_images/5758831/100865430/EB-VC8831.jpeg?version=1769124853" alt="Casa en venta en privada Varena Living, Mérida, Yucatán. 2"><button class="cp-btn prev" onclick="cpNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="cp-btn next" onclick="cpNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="cp-dots"><button class="dot active" onclick="cpDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 2"></button></div></div>
+      <div class="rating-widget" data-key="casa-cholul">
+        <button class="star-btn" data-val="1" onclick="setRating(this,1)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="2" onclick="setRating(this,2)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="3" onclick="setRating(this,3)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="4" onclick="setRating(this,4)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button>
+        <button class="dislike-btn" onclick="setDislike(this)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      </div>
+      <div class="card-body">
+        <div class="card-name-row">
+          <div class="card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-venta-en-privada-varena-living-merida-yucatan" target="_blank" rel="noopener">Casa Cholul</a></div>
+        </div>
+        <div class="card-zone">EB-VC8831 · Cholul, Mérida, Yucatán</div>
+
+        <div class="price-row">
+          <div><div class="price-main">$6,025,000</div><div class="price-m2">$19,884/m²</div></div>
+          
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-cell"><div class="stat-lbl">Rec/Baños</div><div class="stat-val">4 / 4</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Construcción</div><div class="stat-val">303.0 m²</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Terreno</div><div class="stat-val">312.0 m²</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Plantas</div><div class="stat-val">No esp.</div></div>
+        </div>
+
+        <div class="semaforo">
+          <div class="semaforo-row"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span class="dot dot-green"></span><span class="semaforo-lbl">Estacionamiento:</span><span class="semaforo-val">2 cajón(es)</span></div>
+          <div class="semaforo-row"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m9 15 2 2 4-4"/></svg><span class="dot dot-yellow"></span><span class="semaforo-lbl">Documentación:</span><span class="semaforo-val">No especificada</span></div>
+        </div>
+
+        <div class="question-box">
+          <div class="question-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Pregunta obligatoria en sitio</div>
+          <div class="question-text">¿La casa tiene un gravamen y cuántas plantas tiene en total?</div>
+        </div>
+
+        <textarea class="notes-field" data-key="casa-cholul" placeholder="Notas de la visita..."></textarea>
+      </div>
+    </div>
+    <div class="card">
+      <span class="order-badge">3</span>
+      <div class="card-carousel"><img class="card-photo active" src="https://assets.easybroker.com/property_images/3111081/71072743/EB-KY1081.JPG?version=1707007698" alt="Venta de Casas en Privada en Conkal | Al Norte de Mérida 1"><img class="card-photo" src="https://assets.easybroker.com/property_images/3111081/49692993/EB-KY1081.png?version=1657647419" alt="Venta de Casas en Privada en Conkal | Al Norte de Mérida 2"><img class="card-photo" src="https://assets.easybroker.com/property_images/3111081/49693003/EB-KY1081.png?version=1657647422" alt="Venta de Casas en Privada en Conkal | Al Norte de Mérida 3"><img class="card-photo" src="https://assets.easybroker.com/property_images/3111081/49693013/EB-KY1081.png?version=1657647425" alt="Venta de Casas en Privada en Conkal | Al Norte de Mérida 4"><img class="card-photo" src="https://assets.easybroker.com/property_images/3111081/49693019/EB-KY1081.png?version=1657647428" alt="Venta de Casas en Privada en Conkal | Al Norte de Mérida 5"><img class="card-photo" src="https://assets.easybroker.com/property_images/3111081/49693034/EB-KY1081.png?version=1657647431" alt="Venta de Casas en Privada en Conkal | Al Norte de Mérida 6"><button class="cp-btn prev" onclick="cpNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="cp-btn next" onclick="cpNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="cp-dots"><button class="dot active" onclick="cpDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 6"></button></div></div>
+      <div class="rating-widget" data-key="casa-conkal">
+        <button class="star-btn" data-val="1" onclick="setRating(this,1)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="2" onclick="setRating(this,2)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="3" onclick="setRating(this,3)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="4" onclick="setRating(this,4)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button>
+        <button class="dislike-btn" onclick="setDislike(this)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      </div>
+      <div class="card-body">
+        <div class="card-name-row">
+          <div class="card-name"><a href="https://www.easybroker.com/mx/listings/preventa-de-casas-en-privada-en-valle-conkal" target="_blank" rel="noopener">Casa Conkal</a></div>
+        </div>
+        <div class="card-zone">EB-KY1081 · Conkal, Conkal, Yucatán</div>
+
+        <div class="price-row">
+          <div><div class="price-main">$3,025,000</div><div class="price-m2">$23,092/m²</div></div>
+          
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-cell"><div class="stat-lbl">Rec/Baños</div><div class="stat-val">2 / 1</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Construcción</div><div class="stat-val">131.0 m²</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Terreno</div><div class="stat-val">225.11 m²</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Plantas</div><div class="stat-val">No esp.</div></div>
+        </div>
+
+        <div class="semaforo">
+          <div class="semaforo-row"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span class="dot dot-green"></span><span class="semaforo-lbl">Estacionamiento:</span><span class="semaforo-val">2 cajón(es)</span></div>
+          <div class="semaforo-row"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m9 15 2 2 4-4"/></svg><span class="dot dot-yellow"></span><span class="semaforo-lbl">Documentación:</span><span class="semaforo-val">No especificada</span></div>
+        </div>
+
+        <div class="question-box">
+          <div class="question-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Pregunta obligatoria en sitio</div>
+          <div class="question-text">¿La casa tiene algún gravamen o documentación pendiente que debamos conocer?</div>
+        </div>
+
+        <textarea class="notes-field" data-key="casa-conkal" placeholder="Notas de la visita..."></textarea>
+      </div>
+    </div>
+    <div class="card">
+      <span class="order-badge">4</span>
+      <div class="card-carousel"><img class="card-photo active" src="https://assets.easybroker.com/property_images/1547602/25139635/EB-EX7602.jpeg?version=1610729530" alt="Casas en Preventa en Privada Campocielo | Merida | Confort 1"><img class="card-photo" src="https://assets.easybroker.com/property_images/1547602/23236969/EB-EX7602.jpeg?version=1595549343" alt="Casas en Preventa en Privada Campocielo | Merida | Confort 2"><img class="card-photo" src="https://assets.easybroker.com/property_images/1547602/23236968/EB-EX7602.jpeg?version=1765390265" alt="Casas en Preventa en Privada Campocielo | Merida | Confort 3"><img class="card-photo" src="https://assets.easybroker.com/property_images/1547602/25139613/EB-EX7602.jpeg?version=1595549343" alt="Casas en Preventa en Privada Campocielo | Merida | Confort 4"><img class="card-photo" src="https://assets.easybroker.com/property_images/1547602/25139614/EB-EX7602.jpeg?version=1610729530" alt="Casas en Preventa en Privada Campocielo | Merida | Confort 5"><img class="card-photo" src="https://assets.easybroker.com/property_images/1547602/25139615/EB-EX7602.jpeg?version=1610729530" alt="Casas en Preventa en Privada Campocielo | Merida | Confort 6"><button class="cp-btn prev" onclick="cpNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="cp-btn next" onclick="cpNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="cp-dots"><button class="dot active" onclick="cpDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="cpDot(this)" aria-label="Foto 6"></button></div></div>
+      <div class="rating-widget" data-key="casa-dzity">
+        <button class="star-btn" data-val="1" onclick="setRating(this,1)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="2" onclick="setRating(this,2)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="3" onclick="setRating(this,3)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button><button class="star-btn" data-val="4" onclick="setRating(this,4)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></button>
+        <button class="dislike-btn" onclick="setDislike(this)"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      </div>
+      <div class="card-body">
+        <div class="card-name-row">
+          <div class="card-name"><a href="https://www.easybroker.com/mx/listings/casas-en-venta-en-privada-campocielo-dzitya" target="_blank" rel="noopener">Casa Dzityá</a></div>
+        </div>
+        <div class="card-zone">EB-EX7602 · Dzityá, Mérida, Yucatán</div>
+
+        <div class="price-row">
+          <div><div class="price-main">$3,450,000</div><div class="price-m2">$21,562/m²</div></div>
+          
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-cell"><div class="stat-lbl">Rec/Baños</div><div class="stat-val">2 / 2</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Construcción</div><div class="stat-val">160.0 m²</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Terreno</div><div class="stat-val">198.0 m²</div></div>
+          <div class="stat-cell"><div class="stat-lbl">Plantas</div><div class="stat-val">No esp.</div></div>
+        </div>
+
+        <div class="semaforo">
+          <div class="semaforo-row"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg><span class="dot dot-green"></span><span class="semaforo-lbl">Estacionamiento:</span><span class="semaforo-val">2 cajón(es)</span></div>
+          <div class="semaforo-row"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="m9 15 2 2 4-4"/></svg><span class="dot dot-yellow"></span><span class="semaforo-lbl">Documentación:</span><span class="semaforo-val">No especificada</span></div>
+        </div>
+
+        <div class="question-box">
+          <div class="question-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Pregunta obligatoria en sitio</div>
+          <div class="question-text">¿Puede confirmar si la propiedad tiene algún gravamen o documentación pendiente?</div>
+        </div>
+
+        <textarea class="notes-field" data-key="casa-dzity" placeholder="Notas de la visita..."></textarea>
+      </div>
+    </div></div>
+
+  <h2 class="section-title">Checklist logístico</h2>
+  <div class="checklist-card">
+    <ul class="checklist">
+      <li><label><input type="checkbox" data-key="chk-horarios"> Confirmar horarios de cita con cada desarrollador/vendedor</label></li>
+      <li><label><input type="checkbox" data-key="chk-id"> Llevar identificación</label></li>
+      <li><label><input type="checkbox" data-key="chk-llaves"> Confirmar quién tiene acceso/llaves de cada propiedad</label></li>
+    </ul>
+  </div>
+
+  <div class="action-row">
+    <button class="action-btn secondary" onclick="window.print()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg><span>Guardar como PDF</span></button>
+    <button class="action-btn primary" onclick="enviarAMaria()"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg><span>Enviar resumen a Maria</span></button>
+  </div>
+  <div class="action-status" id="sendStatus"></div>
+</div>
+
+<footer class="footer">
+  <img src="../logoblancotres.png" alt="TRES65 Inmobiliaria" onerror="this.outerHTML='<span style=\'font-family:Raleway,sans-serif;font-size:1.1rem;font-weight:800;color:#fff\'>TRES65</span>'">
+  <div class="footer-agent"><strong>TRES65 Inmobiliaria</strong><br> · </div>
+</footer>
+<div class="footer-bottom">© 2026 TRES65 Inmobiliaria® · Ficha de uso interno para el equipo — no es material para cliente</div>
+
+<script>
+  function cpNav(btn, dir) {
+    const box = btn.closest('.card-carousel');
+    const imgs = Array.from(box.querySelectorAll('.card-photo'));
+    const dots = Array.from(box.querySelectorAll('.dot'));
+    let idx = imgs.findIndex(i => i.classList.contains('active'));
+    imgs[idx].classList.remove('active'); dots[idx].classList.remove('active');
+    idx = (idx + dir + imgs.length) % imgs.length;
+    imgs[idx].classList.add('active'); dots[idx].classList.add('active');
+  }
+  function cpDot(dot) {
+    const box = dot.closest('.card-carousel');
+    const dots = Array.from(box.querySelectorAll('.dot'));
+    const imgs = Array.from(box.querySelectorAll('.card-photo'));
+    const idx = dots.indexOf(dot);
+    imgs.forEach(i => i.classList.remove('active')); dots.forEach(d => d.classList.remove('active'));
+    imgs[idx].classList.add('active'); dots[idx].classList.add('active');
+  }
+
+  const STORAGE_PREFIX = 'tres65-pretour-pretour-tres65-inmobiliaria-1786023376-';
+
+  document.querySelectorAll('.notes-field[data-key]').forEach(field => {
+    const k = STORAGE_PREFIX + 'notes-' + field.dataset.key;
+    const saved = localStorage.getItem(k);
+    if (saved) field.value = saved;
+    field.addEventListener('input', () => localStorage.setItem(k, field.value));
+  });
+  document.querySelectorAll('.checklist input[type="checkbox"][data-key]').forEach(box => {
+    const k = STORAGE_PREFIX + box.dataset.key;
+    box.checked = localStorage.getItem(k) === '1';
+    box.addEventListener('change', () => localStorage.setItem(k, box.checked ? '1' : '0'));
+  });
+
+  const stops = [{n:1,name:"Casa Komchen",lat:21.1030877,lng:-89.6613591},{n:2,name:"Casa Cholul",lat:21.0411724,lng:-89.5550539},{n:3,name:"Casa Conkal",lat:21.0405753202,lng:-89.5246041142},{n:4,name:"Casa Dzityá",lat:21.0498410929,lng:-89.6782925369}];
+  if (stops.length && document.getElementById('tourMap')) {
+    const tourMap = L.map('tourMap', { scrollWheelZoom: false });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(tourMap);
+    const latlngs = stops.map(s => [s.lat, s.lng]);
+    tourMap.fitBounds(L.latLngBounds(latlngs), { padding: [28, 28] });
+    if (stops.length > 1) {
+      L.polyline(latlngs, { color: '#1E7A6E', weight: 3, dashArray: '6,6', opacity: 0.8 }).addTo(tourMap);
+    }
+    stops.forEach(s => {
+      const icon = L.divIcon({
+        className: 'tour-pin',
+        html: '<div style="background:#1A4F5C;color:#fff;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:Raleway,sans-serif;font-weight:800;font-size:12px;box-shadow:0 2px 6px rgba(0,0,0,0.35);border:2px solid #fff;">' + s.n + '</div>',
+        iconSize: [26, 26], iconAnchor: [13, 13]
+      });
+      const gmapsPin = 'https://www.google.com/maps/search/?api=1&query=' + s.lat + ',' + s.lng;
+      const popupHtml = '<strong>' + s.n + '. ' + s.name + '</strong><br><a class="popup-gmaps" href="' + gmapsPin + '" target="_blank" rel="noopener">Abrir en Google Maps →</a>';
+      L.marker([s.lat, s.lng], { icon }).addTo(tourMap).bindPopup(popupHtml);
+    });
+  }
+
+  function setRating(btn, val) {
+    const widget = btn.closest('.rating-widget');
+    widget.querySelectorAll('.star-btn').forEach(b => b.classList.toggle('on', +b.dataset.val <= val));
+    widget.querySelector('.dislike-btn').classList.remove('on');
+    localStorage.setItem(STORAGE_PREFIX + 'rating-' + widget.dataset.key, val);
+    localStorage.removeItem(STORAGE_PREFIX + 'dislike-' + widget.dataset.key);
+  }
+  function setDislike(btn) {
+    const widget = btn.closest('.rating-widget');
+    widget.querySelectorAll('.star-btn').forEach(b => b.classList.remove('on'));
+    btn.classList.toggle('on');
+    localStorage.setItem(STORAGE_PREFIX + 'dislike-' + widget.dataset.key, btn.classList.contains('on') ? '1' : '0');
+    localStorage.removeItem(STORAGE_PREFIX + 'rating-' + widget.dataset.key);
+  }
+  document.querySelectorAll('.rating-widget[data-key]').forEach(widget => {
+    const rating = localStorage.getItem(STORAGE_PREFIX + 'rating-' + widget.dataset.key);
+    if (rating) widget.querySelectorAll('.star-btn').forEach(b => b.classList.toggle('on', +b.dataset.val <= +rating));
+    if (localStorage.getItem(STORAGE_PREFIX + 'dislike-' + widget.dataset.key) === '1') {
+      widget.querySelector('.dislike-btn').classList.add('on');
+    }
+  });
+
+  function enviarAMaria() {
+    const status = document.getElementById('sendStatus');
+    status.textContent = 'Enviando…';
+    const data = { notes: {}, ratings: {}, dislikes: {}, checklist: {} };
+    document.querySelectorAll('.notes-field[data-key]').forEach(f => { if (f.value.trim()) data.notes[f.dataset.key] = f.value.trim(); });
+    document.querySelectorAll('.rating-widget[data-key]').forEach(w => {
+      const r = localStorage.getItem(STORAGE_PREFIX + 'rating-' + w.dataset.key);
+      if (r) data.ratings[w.dataset.key] = +r;
+      if (localStorage.getItem(STORAGE_PREFIX + 'dislike-' + w.dataset.key) === '1') data.dislikes[w.dataset.key] = true;
+    });
+    document.querySelectorAll('.checklist input[data-key]').forEach(c => { data.checklist[c.dataset.key] = c.checked; });
+
+    fetch('https://agente-tres65-production.up.railway.app/pretour/send', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ slug: 'pretour-tres65-inmobiliaria-1786023376', phone: '5215527099533', data })
+    }).then(r => r.json()).then(r => {
+      status.textContent = r.ok ? '✓ Enviado a Maria por WhatsApp' : 'Error: ' + (r.error || 'intenta de nuevo');
+    }).catch(() => { status.textContent = 'No se pudo enviar — revisa tu conexión e intenta de nuevo.'; });
+  }
+</script>
+</body>
+</html>
