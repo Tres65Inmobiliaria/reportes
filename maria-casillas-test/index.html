@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Comparativo de Casas en Venta</title>
+<meta property="og:title" content="Análisis Comparativo de Casas en Venta">
+<meta property="og:description" content="Análisis comparativo · TRES65 Inmobiliaria">
+<meta property="og:image" content="https://tres65inmobiliaria.github.io/reportes/THUMBNAIL.png">
+<meta property="og:url" content="https://tres65inmobiliaria.github.io/reportes/maria-casillas-test/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #1a5c5a; --teal-mid: #1e7a6e; --teal-bright: #2aaa99;
+    --teal-light: #e0f4f1; --gold: #c9a84c; --gold-light: #f7f0dc;
+    --white: #ffffff; --off-white: #f7f9f8; --dark: #1a2e2d; --gray: #637270;
+    --gray-light: #eaf0ef; --shadow: 0 2px 20px rgba(26,92,90,0.08);
+    --shadow-hover: 0 10px 36px rgba(26,92,90,0.16); --radius: 12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--off-white); color: var(--dark); line-height: 1.6; font-size: 15px; }
+  .header { background: #fff; border-bottom: 1px solid var(--gray-light); padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .header-logo img { height: 70px; width: auto; display: block; }
+  .header-meta { text-align: right; }
+  .header-meta h1 { font-family: 'Raleway', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.3px; line-height: 1.3; }
+  .header-meta .tagline { font-size: 0.75rem; color: var(--gray); font-weight: 400; letter-spacing: 0.5px; margin-top: 3px; }
+  .header-accent { display: block; width: 40px; height: 2px; background: var(--teal-bright); margin: 6px 0 0 auto; border-radius: 2px; }
+  .market-banner { background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 100%); padding: 28px 48px; }
+  .market-banner-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center; }
+  .market-stat { text-align: center; }
+  .market-stat .val { font-family: 'Raleway', sans-serif; font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1.1; }
+  .market-stat .lbl { font-size: 0.65rem; color: rgba(255,255,255,0.65); letter-spacing: 0.6px; text-transform: uppercase; margin-top: 4px; font-weight: 500; }
+  .market-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); margin: 0 auto; }
+  @media(max-width:700px){ .market-banner-inner{ grid-template-columns:1fr 1fr; } .market-divider{display:none;} }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .section-head { padding: 44px 0 20px; }
+  .section-head h2 { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.2px; }
+  .section-head p { font-size: 0.82rem; color: var(--gray); margin-top: 5px; font-weight: 400; }
+  .warn-box { background: #fdf3e7; border-left: 3px solid #d98c2b; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+  .warn-box .warn-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #a5651a; margin-bottom: 6px; }
+  .warn-box p { font-size: 0.78rem; color: var(--dark); line-height: 1.6; }
+  .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; padding-bottom: 8px; }
+  @media(max-width:780px){ .cards-grid{ grid-template-columns:1fr; } }
+  .p-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1.5px solid transparent; overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; }
+  .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--teal-bright); }
+  .p-card-carousel { position: relative; width: 100%; height: 210px; overflow: hidden; background: var(--gray-light); }
+  .p-card-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+  .p-card-cover.active { display: block; }
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.88); border: none; color: var(--teal-deep); font-size: 1rem; font-weight: 700; cursor: pointer; z-index: 3; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: background .2s; line-height: 1; padding: 0; }
+  .carousel-btn:hover { background: #fff; }
+  .carousel-btn.prev { left: 10px; } .carousel-btn.next { right: 10px; }
+  .carousel-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 3; }
+  .carousel-dots .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.55); cursor: pointer; transition: background .2s, transform .2s; border: none; padding: 0; }
+  .carousel-dots .dot.active { background: #fff; transform: scale(1.35); }
+  .p-badge { position: absolute; top: 12px; right: 12px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; z-index: 2; max-width: 150px; text-align: center; white-space: normal; line-height: 1.3; box-shadow: 0 2px 10px rgba(0,0,0,0.18); background: var(--gold); color: #fff; }
+  .p-card-head { padding: 22px 22px 14px; border-bottom: 1px solid var(--gray-light); }
+  .p-card-id { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; color: var(--teal-bright); text-transform: uppercase; margin-bottom: 6px; }
+  .p-card-name { font-family: 'Raleway', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .p-card-name a { color: inherit; text-decoration: none; transition: color .2s; }
+  .p-card-name a:hover { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 3px; }
+  .p-card-zone { font-size: 0.75rem; color: var(--gray); margin-top: 3px; }
+  .p-price-row { padding: 14px 22px; background: linear-gradient(to right, var(--teal-light), #fff); display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .p-price-real { font-family: 'Raleway', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--teal-deep); line-height: 1; }
+  .p-price-cur { font-size: 0.7rem; font-weight: 600; color: var(--teal-mid); }
+  .p-price-m2 { font-size: 0.68rem; color: var(--gray); margin-left: auto; font-weight: 500; white-space: nowrap; }
+  .p-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-light); }
+  .p-stat { background: #fff; padding: 10px 14px; }
+  .p-stat-lbl { font-size: 0.6rem; font-weight: 700; color: var(--gray); letter-spacing: 0.8px; text-transform: uppercase; }
+  .p-stat-val { font-size: 0.88rem; font-weight: 600; color: var(--dark); margin-top: 1px; }
+  .p-desc { padding: 16px 22px 10px; font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
+  .p-tags { padding: 0 22px 16px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .p-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--teal-light); color: var(--teal-deep); }
+  .p-scores { padding: 14px 22px 18px; border-top: 1px solid var(--gray-light); }
+  .scores-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .score-name { font-size: 0.68rem; color: var(--dark); width: 150px; flex-shrink: 0; }
+  .score-bg { flex: 1; height: 5px; background: var(--gray-light); border-radius: 3px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--teal-mid), var(--teal-bright)); transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+  .score-num { font-size: 0.68rem; font-weight: 700; color: var(--teal-deep); width: 24px; text-align: right; }
+  .rent-box { margin: 0 22px 18px; padding: 12px 14px; background: var(--gold-light); border-left: 3px solid var(--gold); border-radius: 6px; }
+  .rent-box .rent-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
+  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); }
+  .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 8px; }
+  @media(max-width:680px){ .charts-row{grid-template-columns:1fr;} }
+  .chart-box { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+  .chart-box h4 { font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--teal-deep); margin-bottom: 20px; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 12px; height: 170px; padding-bottom: 2px; border-bottom: 1px solid var(--gray-light); }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+  .bar { width: 100%; max-width: 44px; margin: 0 auto; border-radius: 4px 4px 0 0; position: relative; }
+  .bar-v { position: absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.58rem; font-weight:700; color:var(--teal-deep); white-space:nowrap; }
+  .bar-lbl { font-size:0.62rem; color:var(--gray); text-align:center; font-weight:500; line-height:1.3; }
+  .table-scroll-hint { display: none; align-items: center; justify-content: center; margin-bottom: 10px; padding: 9px 16px; background: var(--teal-light); border-radius: 8px; border-left: 3px solid var(--teal-bright); }
+  .table-scroll-hint span { font-size: 0.72rem; font-weight: 600; color: var(--teal-deep); letter-spacing: 0.5px; }
+  @media (max-width: 768px) { .table-scroll-hint { display: flex; } }
+  .table-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sticky-col { position: sticky; left: 0; z-index: 2; background: #fff; white-space: nowrap; }
+  .compare-table thead th.sticky-col { background: var(--teal-deep); z-index: 3; }
+  @media (max-width: 768px) { .compare-table th, .compare-table td { min-width: 160px; } .sticky-col { min-width: 190px !important; } }
+  .table-wrap { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 8px; }
+  .compare-table { width:100%; border-collapse:collapse; }
+  .compare-table thead tr { background: var(--teal-deep); }
+  .compare-table thead th { padding: 14px 18px; text-align: left; color: #fff; font-family: 'Raleway', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.3px; }
+  .compare-table thead th:first-child { color:rgba(255,255,255,0.55); font-size:0.62rem; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; }
+  .compare-table tbody tr { border-bottom:1px solid var(--gray-light); transition:background .15s; }
+  .compare-table tbody tr:hover { background:var(--off-white); }
+  .compare-table tbody tr:last-child { border-bottom:none; }
+  .compare-table tbody td { padding:11px 18px; font-size:0.78rem; color:var(--dark); }
+  .compare-table tbody td:first-child { font-weight:600; color:var(--gray); font-size:0.7rem; letter-spacing:0.3px; }
+  .hl { background:var(--gold-light)!important; font-weight:700!important; color:var(--teal-deep)!important; border-radius:4px; padding:3px 7px; }
+  .tabs-nav { display: flex; gap: 4px; background: var(--gray-light); padding: 4px; border-radius: 8px; width: fit-content; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn { padding: 7px 16px; border: none; background: transparent; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 0.73rem; font-weight: 600; color: var(--gray); cursor: pointer; transition: all .2s; letter-spacing: 0.2px; }
+  .tab-btn.active { background:#fff; color:var(--teal-deep); box-shadow:0 1px 6px rgba(0,0,0,.08); }
+  .tab-pane { display:none; } .tab-pane.active { display:block; }
+  .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:680px){ .analysis-grid{grid-template-columns:1fr;} }
+  .a-box { background:#fff; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
+  .a-box h4 { font-family:'Raleway',sans-serif; font-size:0.86rem; font-weight:700; color:var(--teal-deep); margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid var(--teal-light); }
+  .a-box ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .a-box ul li { font-size:0.75rem; color:var(--gray); padding-left:16px; position:relative; line-height:1.5; }
+  .a-box ul li::before { content:'→'; position:absolute; left:0; color:var(--teal-bright); font-weight:700; }
+  .verdicts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media(max-width:780px){ .verdicts-grid{grid-template-columns:1fr;} }
+  .v-card { background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); border-top:3px solid var(--teal-bright); }
+  .v-card.v-dark { border-top-color:var(--teal-deep); grid-column: 1 / -1; }
+  .v-icon { font-size:1.6rem; margin-bottom:10px; }
+  .v-prop { font-size:0.6rem; font-weight:700; letter-spacing:1.1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:5px; }
+  .v-title { font-family:'Raleway',sans-serif; font-size:0.92rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+  .v-text { font-size:0.75rem; color:var(--gray); line-height:1.6; }
+  .footer { background: var(--dark); margin-top: 44px; padding: 36px 48px 24px; }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .footer-brand img { height: 60px; width: auto; display: block; margin-bottom: 12px; opacity: 0.95; }
+  .footer-brand p { font-size: 0.74rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+  .footer-agent { text-align:right; }
+  .agent-name { font-family:'Raleway',sans-serif; font-size:1rem; font-weight:700; color:#fff; letter-spacing:-0.2px; }
+  .agent-role { font-size:0.68rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:10px; }
+  .agent-contact { font-size:0.74rem; color:rgba(255,255,255,.5); line-height:1.9; }
+  .agent-contact a { color:rgba(255,255,255,.5); text-decoration:none; }
+  .footer-hr { border:none; border-top:1px solid rgba(255,255,255,.08); margin:22px 0 14px; }
+  .footer-bottom { max-width:1080px; margin:0 auto; font-size:0.66rem; color:rgba(255,255,255,.25); display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
+  #mobile-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: linear-gradient(160deg, #0d2420 0%, var(--teal-deep) 100%); flex-direction: column; align-items: center; justify-content: center; padding: 36px 28px; text-align: center; }
+  #mobile-overlay .mo-logo { margin-bottom: 28px; } #mobile-overlay .mo-logo img { height: 60px; width: auto; opacity: 0.98; }
+  #mobile-overlay .mo-icon { font-size: 2.4rem; margin-bottom: 14px; }
+  #mobile-overlay .mo-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 14px; border: 1px solid rgba(42,170,153,0.4); padding: 5px 14px; border-radius: 20px; display: inline-block; }
+  #mobile-overlay h2 { font-family: 'Raleway', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 16px; }
+  #mobile-overlay .mo-divider { width: 40px; height: 2px; background: var(--teal-bright); border-radius: 2px; margin: 0 auto 20px; }
+  #mobile-overlay .mo-rules { list-style: none; max-width: 340px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 9px; }
+  #mobile-overlay .mo-rules li { font-size: 0.76rem; color: rgba(255,255,255,0.65); display: flex; align-items: flex-start; gap: 8px; text-align: left; line-height: 1.5; }
+  #mobile-overlay .mo-rules li::before { content: '—'; color: var(--teal-bright); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  #mobile-overlay .mo-confirm { font-size: 0.72rem; color: rgba(255,255,255,0.4); max-width: 300px; margin: 0 auto 28px; font-style: italic; line-height: 1.6; }
+  .mo-btn { background: var(--teal-bright); color: #fff; border: none; padding: 14px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
+  .mo-btn:hover { background: #23988a; transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<div id="mobile-overlay">
+  <div class="mo-logo"><img src="../logoblancotres.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="mo-icon">⊘</div>
+  <div class="mo-tag">Documento Confidencial</div>
+  <h2>Reporte de Uso Interno</h2>
+  <div class="mo-divider"></div>
+  <ul class="mo-rules">
+    <li>Este reporte contiene información comercial estratégica preparada exclusivamente para el asesor y su cliente.</li>
+    <li>Queda estrictamente prohibido compartir, reenviar o publicar este documento sin autorización escrita.</li>
+    <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
+  </ul>
+  <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
+  <button class="mo-btn" onclick="closeMobileOverlay()">Acepto y accedo al reporte →</button>
+</div>
+
+<header class="header">
+  <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="header-meta">
+    <h1>Análisis Comparativo de Casas en Venta</h1>
+    <span class="header-accent"></span>
+    <p class="tagline">Zona Centro de Mérida</p>
+  </div>
+</header>
+
+<div class="market-banner"><div class="market-banner-inner">
+    <div class="market-stat"><div class="val">$5,500,000–$5,800,000</div><div class="lbl">Rango de precios encontrado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">-8.3% a -3.3%</div><div class="lbl">Vs presupuesto declarado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">2</div><div class="lbl">Recámaras</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">3</div><div class="lbl">Propiedades comparadas</div></div>
+    </div></div>
+
+<div class="wrap">
+  <div class="section-head reveal">
+    <h2>Perfil del cliente</h2>
+    <p>María Casillas · Pareja sin hijos que busca casa en el centro de Mérida, con mínimo 2 recámaras y prioridad en espacios cómodos para recibir visitas.</p>
+  </div>
+
+  <div class="warn-box reveal">
+    <div class="warn-lbl">◆ Sobre el presupuesto declarado</div>
+    <p>Las tres propiedades quedan por debajo de los 6,000,000 MXN declarados, ubicándose en un rango de 5,500,000 a 5,800,000 MXN, lo que deja a María un margen de entre 200,000 y 500,000 MXN para mejoras, mudanza o gastos de cierre.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4625031/102751693/EB-QT5031.jpg?version=1772744350" alt="Casa en venta en Mérida, Centro. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4625031/102751702/EB-QT5031.jpg?version=1772744350" alt="Casa en venta en Mérida, Centro. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4625031/102751703/EB-QT5031.jpg?version=1772744350" alt="Casa en venta en Mérida, Centro. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4625031/102751706/EB-QT5031.jpg?version=1772744350" alt="Casa en venta en Mérida, Centro. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4625031/102751700/EB-QT5031.jpg?version=1772744350" alt="Casa en venta en Mérida, Centro. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4625031/102751711/EB-QT5031.jpg?version=1772744350" alt="Casa en venta en Mérida, Centro. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge">◆ Mejor precio y mayor construcción (195 m²)</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-QT5031</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-venta-en-merida-centro-8e06cd60-5cd3-4688-a498-b41d3bdad845" target="_blank" rel="noopener">Casa en venta en Mérida, Centro.</a></div>
+        <div class="p-card-zone">Mérida Centro, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$5,500,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$28,205/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">195.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">— m²</div></div>
+    </div>
+      <div class="p-desc">Casa de dos plantas a 6 cuadras del centro histórico y 2 de la Ermita, con 195 m² de construcción, la mayor superficie del grupo. Incluye alberca, jardín de más de 40 m² y equipamiento completo (aires, calentador, refrigerador), lo que facilita una mudanza inmediata. Es la opción más económica y con mayor margen frente al presupuesto declarado.</div>
+      <div class="p-tags"><span class="p-tag">Mejor precio</span><span class="p-tag">Mayor construcción</span><span class="p-tag">Equipada</span><span class="p-tag">Alberca</span><span class="p-tag">Ubicación céntrica</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl">§ Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">-500,000 MXN (-8.3%)</div>
+        <div class="rent-note">Con -500,000 MXN (-8.3%) respecto al presupuesto, es la que ofrece mayor colchón financiero del grupo.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:95.0%"></div></div><span class="score-num">9.5</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5815167/102026815/EB-VI5167.png?version=1771371219" alt="Casa en venta en el Barrio de San Sebastián, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5815167/102026814/EB-VI5167.png?version=1771371219" alt="Casa en venta en el Barrio de San Sebastián, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5815167/102026826/EB-VI5167.png?version=1771371219" alt="Casa en venta en el Barrio de San Sebastián, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5815167/102026820/EB-VI5167.png?version=1771371219" alt="Casa en venta en el Barrio de San Sebastián, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5815167/102026816/EB-VI5167.png?version=1771371219" alt="Casa en venta en el Barrio de San Sebastián, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5815167/102026813/EB-VI5167.png?version=1771371219" alt="Casa en venta en el Barrio de San Sebastián, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge">◆ Barrio histórico con encanto (San Sebastián)</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-VI5167</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-venta-en-el-barrio-de-san-sebastian-merida-yucatan-merida-centro" target="_blank" rel="noopener">Casa en venta en el Barrio de San Sebastián, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Mérida Centro, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$5,800,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$50,039/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">115.91 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">157.91 m²</div></div>
+    </div>
+      <div class="p-desc">Ubicada en el Barrio de San Sebastián, uno de los más tradicionales y con identidad cultural del centro, a pocos minutos del centro histórico. Cuenta con jardín, terraza, bodega, alberca y política pet-friendly, aunque su construcción (115.91 m²) es más compacta que las otras opciones. La ficha de descripción se corta antes de terminar, por lo que conviene pedir información adicional.</div>
+      <div class="p-tags"><span class="p-tag">Barrio histórico</span><span class="p-tag">Pet-friendly</span><span class="p-tag">Alberca</span><span class="p-tag">Ficha incompleta</span><span class="p-tag">Construcción compacta</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl">§ Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">-200,000 MXN (-3.3%)</div>
+        <div class="rent-note">Su diferencia de -200,000 MXN (-3.3%) es igual a la de EB-VT4141, dejando un margen más ajustado que el de EB-QT5031.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5924141/104305767/EB-VT4141.JPG?version=1775863207" alt="Casa en preventa con alberca en el centro de Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5924141/104305768/EB-VT4141.PNG?version=1775863207" alt="Casa en preventa con alberca en el centro de Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5924141/104305770/EB-VT4141.JPG?version=1775863207" alt="Casa en preventa con alberca en el centro de Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5924141/104305769/EB-VT4141.JPG?version=1775863207" alt="Casa en preventa con alberca en el centro de Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5924141/104305771/EB-VT4141.JPG?version=1775863207" alt="Casa en preventa con alberca en el centro de Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5924141/104305773/EB-VT4141.JPG?version=1775863207" alt="Casa en preventa con alberca en el centro de Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge">◆ Mayor terreno (220 m²) - en preventa</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-VT4141</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-preventa-con-alberca-en-el-centro-de-merida-yucatan" target="_blank" rel="noopener">Casa en preventa con alberca en el centro de Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Mérida Centro, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$5,800,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$49,136/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">118.04 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">220.0 m²</div></div>
+    </div>
+      <div class="p-desc">Proyecto &#x27;Casa Oasis&#x27; en preventa dentro del centro histórico, que conserva muros de piedra y techos altos combinados con diseño contemporáneo. Tiene el terreno más grande del grupo (220 m²) y una propuesta con patios, terraza y alberca integrados a jardines. Al estar en preventa implica esperar tiempos de construcción, un factor a valorar frente a las opciones ya terminadas.</div>
+      <div class="p-tags"><span class="p-tag">Preventa</span><span class="p-tag">Mayor terreno</span><span class="p-tag">Diseño contemporáneo</span><span class="p-tag">Alberca</span><span class="p-tag">Riesgo de entrega</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl">§ Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">-200,000 MXN (-3.3%)</div>
+        <div class="rent-note">Comparte la misma diferencia de -200,000 MXN (-3.3%) que EB-VI5167, con un margen menor al de EB-QT5031.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div>
+      </div>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Comparativa de números clave</h2><p>Precio y precio por m² construido</p></div>
+  <div class="charts-row reveal">
+    <div class="chart-box">
+      <h4>Precio de venta (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$5,800,000</span>
+          </div>
+          <span class="bar-lbl">Casa en venta</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$5,800,000</span>
+          </div>
+          <span class="bar-lbl">Casa en preventa</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:95%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$5,500,000</span>
+          </div>
+          <span class="bar-lbl">Casa en venta</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">El valor exacto va rotulado sobre cada barra.</p>
+    </div>
+    <div class="chart-box">
+      <h4>Precio por m² construido (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$50,039</span>
+          </div>
+          <span class="bar-lbl">Casa en venta</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:98%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$49,136</span>
+          </div>
+          <span class="bar-lbl">Casa en preventa</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:56%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$28,205</span>
+          </div>
+          <span class="bar-lbl">Casa en venta</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">El valor exacto va rotulado sobre cada barra.</p>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Tabla comparativa completa</h2><p>Todos los factores decisivos sin filtros</p></div>
+  <div class="table-scroll-hint"><span>‹ desliza para ver las propiedades ›</span></div>
+  <div class="table-wrap reveal"><div class="table-scroll-container">
+    <table class="compare-table">
+      <thead><tr><th class="sticky-col">Criterio</th><th>Casa en venta</th><th>Casa en venta</th><th>Casa en preventa</th></tr></thead>
+      <tbody><tr><td class="sticky-col">Zona</td><td>Mérida Centro, Mérida, Yucatán</td><td>Mérida Centro, Mérida, Yucatán</td><td>Mérida Centro, Mérida, Yucatán</td></tr><tr><td class="sticky-col">Precio</td><td>$5,500,000 MXN</td><td>$5,800,000 MXN</td><td>$5,800,000 MXN</td></tr><tr><td class="sticky-col">Precio/m² construido</td><td>$28,205 MXN</td><td>$50,039 MXN</td><td>$49,136 MXN</td></tr><tr><td class="sticky-col">Construcción</td><td>195.0 m²</td><td>115.91 m²</td><td>118.04 m²</td></tr><tr><td class="sticky-col">Terreno</td><td>— m²</td><td>157.91 m²</td><td>220.0 m²</td></tr><tr><td class="sticky-col">Recámaras / Baños</td><td>2 / 2</td><td>2 / 2</td><td>2 / 2</td></tr><tr><td class="sticky-col">Diferencia vs presupuesto</td><td>-500,000 (-8.3%)</td><td>-200,000 (-3.3%)</td><td>-200,000 (-3.3%)</td></tr></tbody>
+    </table>
+  </div></div>
+
+  <div class="section-head reveal"><h2>Análisis por prioridad</h2><p>Lo que cambia según qué esté priorizando el cliente</p></div>
+  <div class="reveal">
+    <div class="tabs-nav"><button class="tab-btn active" onclick="switchTab('t0',this)">Ajuste al presupuesto</button><button class="tab-btn" onclick="switchTab('t1',this)">Distribución y vida social</button><button class="tab-btn" onclick="switchTab('t2',this)">Riesgo y pendientes</button></div>
+    
+    <div class="tab-pane active" id="tab-t0">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Todas dentro de presupuesto</h4><ul><li>Las tres opciones quedan por debajo de los $6,000,000 MXN declarados</li><li>EB-QT5031 ofrece el mayor margen: -500,000 MXN por debajo del presupuesto (-8.3%)</li><li>EB-VI5167 y EB-VT4141 dejan un margen similar de -200,000 MXN (-3.3%) cada una</li></ul></div>
+        <div class="a-box"><h4>Precio por m² a considerar</h4><ul><li>EB-VI5167 y EB-VT4141 tienen un precio por m² notablemente mayor (~50,000 MXN/m²) que EB-QT5031 (28,205 MXN/m²), reflejo de su menor superficie construida</li><li>El margen de ahorro en San Sebastián y en la preventa es más ajustado ante posibles gastos adicionales de escrituración o acabados</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t1">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Espacios para recibir bien resueltos</h4><ul><li>Las tres cuentan con alberca, jardín y terraza, ideales para recibir amigos o familia sin necesidad de espacios infantiles</li><li>EB-QT5031 suma una sala de estar adicional en planta baja, ampliando el área social</li><li>EB-VI5167 permite mascotas, un plus si la pareja tiene o planea tener una</li></ul></div>
+        <div class="a-box"><h4>Diferencias de tamaño y pendientes</h4><ul><li>EB-VI5167 y EB-VT4141 tienen construcción más compacta (115-118 m²) frente a los 195 m² de EB-QT5031</li><li>Ninguna ficha detalla estacionamiento, un punto importante a confirmar dado el perfil de pareja con posible vehículo</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t2">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Propiedades listas para habitar</h4><ul><li>EB-QT5031 y EB-VI5167 son construcciones terminadas, lo que reduce el riesgo de tiempos de entrega</li><li>EB-QT5031 incluye equipamiento (aires, calentador, refrigerador), lo que agiliza la mudanza</li></ul></div>
+        <div class="a-box"><h4>Puntos pendientes de aclarar</h4><ul><li>EB-VT4141 está en preventa, lo que implica esperar tiempos de construcción y posibles ajustes en la entrega</li><li>Ninguna de las tres fichas especifica estacionamiento; conviene confirmarlo directamente con el vendedor</li><li>La descripción de EB-VI5167 aparece incompleta, por lo que se recomienda solicitar información adicional antes de decidir</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head reveal"><h2>Veredictos finales</h2><p>Sin ambigüedad — y sin esconder lo que sigue sin resolverse</p></div>
+  <div class="verdicts-grid">
+    <div class="v-card reveal">
+      <div class="v-icon">★</div>
+      <div class="v-prop">EB-QT5031</div>
+      <div class="v-title">La opción más completa y con mayor margen</div>
+      <p class="v-text">Con el precio más bajo del grupo y la mayor superficie construida (195 m²), esta casa ofrece el mejor equilibrio entre presupuesto y espacio. Su equipamiento incluido y su ubicación a pocas cuadras del centro histórico la hacen lista para habitar sin inversión adicional inmediata. El único punto a confirmar es la disponibilidad de estacionamiento, que no se especifica en la ficha.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon">🏛️</div>
+      <div class="v-prop">EB-VI5167</div>
+      <div class="v-title">Encanto histórico con superficie más compacta</div>
+      <p class="v-text">San Sebastián aporta identidad cultural y cercanía al centro, con jardín, terraza y alberca que favorecen la vida social de la pareja. Sin embargo, su construcción es la más reducida del grupo y la descripción del listado está incompleta, por lo que se recomienda pedir más detalles antes de avanzar.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon">🏗️</div>
+      <div class="v-prop">EB-VT4141</div>
+      <div class="v-title">Mayor terreno, pero con tiempos de entrega</div>
+      <p class="v-text">Esta preventa destaca por tener el terreno más amplio (220 m²) y un diseño que combina elementos tradicionales con toques contemporáneos, ideal para quienes buscan un proyecto a su gusto. El principal punto a sopesar es que, al estar en preventa, la entrega no es inmediata, algo relevante si María busca mudarse pronto.</p>
+    </div>
+    <div class="v-card v-dark reveal">
+      <div class="v-icon">⊙</div>
+      <div class="v-prop">Para María Casillas</div>
+      <div class="v-title">Tres buenas alternativas dentro de presupuesto, con matices clave</div>
+      <p class="v-text">María cuenta con tres opciones sólidas en el centro de Mérida, todas por debajo de su presupuesto de $6,000,000 MXN y con espacios pensados para recibir en pareja. EB-QT5031 destaca por ofrecer más metros construidos, mejor precio y estar lista para habitar de inmediato. EB-VI5167 aporta el encanto de un barrio histórico, aunque con menor superficie y una ficha que conviene completar. EB-VT4141 ofrece el terreno más grande, pero implica esperar los tiempos de la preventa. ¿Qué pesa más para María en este momento: mudarse ya con el mejor precio, vivir el encanto de un barrio tradicional, o invertir en un proyecto a futuro con mayor terreno?</p>
+    </div></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../logoblancotres.png" alt="TRES65 Inmobiliaria">
+      <p>Especialistas en propiedades de<br>Mérida, Yucatán.<br>www.tres65inmobiliaria.com</p>
+    </div>
+    <div class="footer-agent">
+      <div class="agent-name">Guillermo Martínez Espinosa</div>
+      <div class="agent-role">Agente Inmobiliario · TRES65 Inmobiliaria</div>
+      <div class="agent-contact">+52 999 241 3657<br><a href="mailto:gmartinez@tres65inmobiliaria.com">gmartinez@tres65inmobiliaria.com</a></div>
+    </div>
+  </div>
+  <hr class="footer-hr">
+  <div class="footer-bottom">
+    <span>© 2026 TRES65 Inmobiliaria® · Marca registrada · Todos los derechos reservados</span>
+    <span>Análisis confidencial · Datos verificados en EasyBroker</span>
+  </div>
+</footer>
+
+<script>
+  function closeMobileOverlay() { document.getElementById('mobile-overlay').style.display = 'none'; sessionStorage.setItem('mo_dismissed', '1'); }
+  function checkMobile() { if (sessionStorage.getItem('mo_dismissed')) return; document.getElementById('mobile-overlay').style.display = 'flex'; }
+  window.addEventListener('DOMContentLoaded', checkMobile);
+  function carouselNav(btn, dir) {
+    const container = btn.closest('.p-card-carousel');
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    let idx = imgs.findIndex(img => img.classList.contains('active'));
+    imgs[idx].classList.remove('active'); dots[idx].classList.remove('active');
+    idx = (idx + dir + imgs.length) % imgs.length;
+    imgs[idx].classList.add('active'); dots[idx].classList.add('active');
+  }
+  function carouselDot(dot) {
+    const container = dot.closest('.p-card-carousel');
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const targetIdx = dots.indexOf(dot);
+    imgs.forEach(img => img.classList.remove('active')); dots.forEach(d => d.classList.remove('active'));
+    imgs[targetIdx].classList.add('active'); dots[targetIdx].classList.add('active');
+  }
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
