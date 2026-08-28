@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Comparativo · Andrea Tamer</title>
+<meta property="og:title" content="Análisis Comparativo · Andrea Tamer">
+<meta property="og:description" content="Tu inversión, analizada con el cuidado que merece">
+<meta property="og:image" content="https://tres65inmobiliaria.github.io/reportes/THUMBNAIL.png">
+<meta property="og:url" content="https://tres65inmobiliaria.github.io/reportes/andrea-tamer-1787882275/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #1a5c5a; --teal-mid: #1e7a6e; --teal-bright: #2aaa99;
+    --teal-light: #e0f4f1; --gold: #c9a84c; --gold-light: #f7f0dc;
+    --white: #ffffff; --off-white: #f7f9f8; --dark: #1a2e2d; --gray: #637270;
+    --gray-light: #eaf0ef; --shadow: 0 2px 20px rgba(26,92,90,0.08);
+    --shadow-hover: 0 10px 36px rgba(26,92,90,0.16); --radius: 12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--off-white); color: var(--dark); line-height: 1.6; font-size: 15px; }
+  .header { background: #fff; border-bottom: 1px solid var(--gray-light); padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .header-logo img { height: 70px; width: auto; display: block; }
+  .header-meta { text-align: right; }
+  .header-meta h1 { font-family: 'Raleway', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.3px; line-height: 1.3; }
+  .header-meta .tagline { font-size: 0.75rem; color: var(--gray); font-weight: 400; letter-spacing: 0.5px; margin-top: 3px; }
+  .header-accent { display: block; width: 40px; height: 2px; background: var(--teal-bright); margin: 6px 0 0 auto; border-radius: 2px; }
+  .market-banner { background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 100%); padding: 28px 48px; }
+  .market-banner-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center; }
+  .market-stat { text-align: center; }
+  .market-stat .val { font-family: 'Raleway', sans-serif; font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1.1; }
+  .market-stat .lbl { font-size: 0.65rem; color: rgba(255,255,255,0.65); letter-spacing: 0.6px; text-transform: uppercase; margin-top: 4px; font-weight: 500; }
+  .market-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); margin: 0 auto; }
+  @media(max-width:700px){ .market-banner-inner{ grid-template-columns:1fr 1fr; } .market-divider{display:none;} }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .section-head { padding: 44px 0 20px; }
+  .section-head h2 { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.2px; }
+  .section-head p { font-size: 0.82rem; color: var(--gray); margin-top: 5px; font-weight: 400; }
+  .warn-box { background: #fdf3e7; border-left: 3px solid #d98c2b; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+  .warn-box .warn-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #a5651a; margin-bottom: 6px; }
+  .warn-box p { font-size: 0.78rem; color: var(--dark); line-height: 1.6; }
+  .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; padding-bottom: 8px; }
+  @media(max-width:780px){ .cards-grid{ grid-template-columns:1fr; } }
+  .p-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1.5px solid transparent; overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; }
+  .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--teal-bright); }
+  .p-card-carousel { position: relative; width: 100%; height: 210px; overflow: hidden; background: var(--gray-light); }
+  .p-card-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+  .p-card-cover.active { display: block; }
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.88); border: none; color: var(--teal-deep); font-size: 1rem; font-weight: 700; cursor: pointer; z-index: 3; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: background .2s; line-height: 1; padding: 0; }
+  .carousel-btn:hover { background: #fff; }
+  .carousel-btn.prev { left: 10px; } .carousel-btn.next { right: 10px; }
+  .carousel-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 3; }
+  .carousel-dots .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.55); cursor: pointer; transition: background .2s, transform .2s; border: none; padding: 0; }
+  .carousel-dots .dot.active { background: #fff; transform: scale(1.35); }
+  .p-badge { position: absolute; top: 12px; right: 12px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; z-index: 2; max-width: 150px; text-align: center; white-space: normal; line-height: 1.3; box-shadow: 0 2px 10px rgba(0,0,0,0.18); background: var(--gold); color: #fff; }
+  .p-card-head { padding: 22px 22px 14px; border-bottom: 1px solid var(--gray-light); }
+  .p-card-id { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; color: var(--teal-bright); text-transform: uppercase; margin-bottom: 6px; }
+  .p-card-name { font-family: 'Raleway', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .p-card-name a { color: inherit; text-decoration: none; transition: color .2s; }
+  .p-card-name a:hover { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 3px; }
+  .p-card-zone { font-size: 0.75rem; color: var(--gray); margin-top: 3px; }
+  .p-price-row { padding: 14px 22px; background: linear-gradient(to right, var(--teal-light), #fff); display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .p-price-real { font-family: 'Raleway', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--teal-deep); line-height: 1; }
+  .p-price-cur { font-size: 0.7rem; font-weight: 600; color: var(--teal-mid); }
+  .p-price-m2 { font-size: 0.68rem; color: var(--gray); margin-left: auto; font-weight: 500; white-space: nowrap; }
+  .p-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-light); }
+  .p-stat { background: #fff; padding: 10px 14px; }
+  .p-stat-lbl { font-size: 0.6rem; font-weight: 700; color: var(--gray); letter-spacing: 0.8px; text-transform: uppercase; }
+  .p-stat-val { font-size: 0.88rem; font-weight: 600; color: var(--dark); margin-top: 1px; }
+  .p-desc { padding: 16px 22px 10px; font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
+  .p-tags { padding: 0 22px 16px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .p-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--teal-light); color: var(--teal-deep); }
+  .p-scores { padding: 14px 22px 18px; border-top: 1px solid var(--gray-light); }
+  .scores-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .score-name { font-size: 0.68rem; color: var(--dark); width: 150px; flex-shrink: 0; }
+  .score-bg { flex: 1; height: 5px; background: var(--gray-light); border-radius: 3px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--teal-mid), var(--teal-bright)); transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+  .score-num { font-size: 0.68rem; font-weight: 700; color: var(--teal-deep); width: 24px; text-align: right; }
+  .rent-box { margin: 0 22px 18px; padding: 12px 14px; background: var(--gold-light); border-left: 3px solid var(--gold); border-radius: 6px; }
+  .rent-box .rent-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
+  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); }
+  .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 8px; }
+  @media(max-width:680px){ .charts-row{grid-template-columns:1fr;} }
+  .chart-box { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+  .chart-box h4 { font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--teal-deep); margin-bottom: 20px; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 12px; height: 170px; padding-bottom: 2px; border-bottom: 1px solid var(--gray-light); }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+  .bar { width: 100%; max-width: 44px; margin: 0 auto; border-radius: 4px 4px 0 0; position: relative; }
+  .bar-v { position: absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.58rem; font-weight:700; color:var(--teal-deep); white-space:nowrap; }
+  .bar-lbl { font-size:0.62rem; color:var(--gray); text-align:center; font-weight:500; line-height:1.3; }
+  .table-scroll-hint { display: none; align-items: center; justify-content: center; margin-bottom: 10px; padding: 9px 16px; background: var(--teal-light); border-radius: 8px; border-left: 3px solid var(--teal-bright); }
+  .table-scroll-hint span { font-size: 0.72rem; font-weight: 600; color: var(--teal-deep); letter-spacing: 0.5px; }
+  @media (max-width: 768px) { .table-scroll-hint { display: flex; } }
+  .table-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sticky-col { position: sticky; left: 0; z-index: 2; background: #fff; white-space: nowrap; }
+  .compare-table thead th.sticky-col { background: var(--teal-deep); z-index: 3; }
+  @media (max-width: 768px) { .compare-table th, .compare-table td { min-width: 160px; } .sticky-col { min-width: 190px !important; } }
+  .table-wrap { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 8px; }
+  .compare-table { width:100%; border-collapse:collapse; }
+  .compare-table thead tr { background: var(--teal-deep); }
+  .compare-table thead th { padding: 14px 18px; text-align: left; color: #fff; font-family: 'Raleway', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.3px; }
+  .compare-table thead th:first-child { color:rgba(255,255,255,0.55); font-size:0.62rem; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; }
+  .compare-table tbody tr { border-bottom:1px solid var(--gray-light); transition:background .15s; }
+  .compare-table tbody tr:hover { background:var(--off-white); }
+  .compare-table tbody tr:last-child { border-bottom:none; }
+  .compare-table tbody td { padding:11px 18px; font-size:0.78rem; color:var(--dark); }
+  .compare-table tbody td:first-child { font-weight:600; color:var(--gray); font-size:0.7rem; letter-spacing:0.3px; }
+  .hl { background:var(--gold-light)!important; font-weight:700!important; color:var(--teal-deep)!important; border-radius:4px; padding:3px 7px; }
+  .tabs-nav { display: flex; gap: 4px; background: var(--gray-light); padding: 4px; border-radius: 8px; width: fit-content; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn { padding: 7px 16px; border: none; background: transparent; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 0.73rem; font-weight: 600; color: var(--gray); cursor: pointer; transition: all .2s; letter-spacing: 0.2px; }
+  .tab-btn.active { background:#fff; color:var(--teal-deep); box-shadow:0 1px 6px rgba(0,0,0,.08); }
+  .tab-pane { display:none; } .tab-pane.active { display:block; }
+  .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:680px){ .analysis-grid{grid-template-columns:1fr;} }
+  .a-box { background:#fff; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
+  .a-box h4 { font-family:'Raleway',sans-serif; font-size:0.86rem; font-weight:700; color:var(--teal-deep); margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid var(--teal-light); }
+  .a-box ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .a-box ul li { font-size:0.75rem; color:var(--gray); padding-left:16px; position:relative; line-height:1.5; }
+  .a-box ul li::before { content:'→'; position:absolute; left:0; color:var(--teal-bright); font-weight:700; }
+  .verdicts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media(max-width:780px){ .verdicts-grid{grid-template-columns:1fr;} }
+  .v-card { background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); border-top:3px solid var(--teal-bright); }
+  .v-card.v-dark { border-top-color:var(--teal-deep); grid-column: 1 / -1; }
+  .v-icon { font-size:1.6rem; margin-bottom:10px; }
+  .v-prop { font-size:0.6rem; font-weight:700; letter-spacing:1.1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:5px; }
+  .v-title { font-family:'Raleway',sans-serif; font-size:0.92rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+  .v-text { font-size:0.75rem; color:var(--gray); line-height:1.6; }
+  .glossary-box { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:26px 28px; }
+  .glossary-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
+  @media(max-width:680px){ .glossary-grid{grid-template-columns:1fr;} }
+  .glossary-term { font-family:'Raleway',sans-serif; font-size:0.82rem; font-weight:700; color:var(--teal-deep); margin-bottom:2px; }
+  .glossary-def { font-size:0.76rem; color:var(--gray); line-height:1.5; }
+  .footer { background: var(--dark); margin-top: 44px; padding: 36px 48px 24px; }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .footer-brand img { height: 60px; width: auto; display: block; margin-bottom: 12px; opacity: 0.95; }
+  .footer-brand p { font-size: 0.74rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+  .footer-agent { text-align:right; }
+  .agent-name { font-family:'Raleway',sans-serif; font-size:1rem; font-weight:700; color:#fff; letter-spacing:-0.2px; }
+  .agent-role { font-size:0.68rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:10px; }
+  .agent-contact { font-size:0.74rem; color:rgba(255,255,255,.5); line-height:1.9; }
+  .agent-contact a { color:rgba(255,255,255,.5); text-decoration:none; }
+  .footer-hr { border:none; border-top:1px solid rgba(255,255,255,.08); margin:22px 0 14px; }
+  .footer-bottom { max-width:1080px; margin:0 auto; font-size:0.66rem; color:rgba(255,255,255,.25); display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
+  #mobile-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: linear-gradient(160deg, #0d2420 0%, var(--teal-deep) 100%); flex-direction: column; align-items: center; justify-content: center; padding: 36px 28px; text-align: center; }
+  #mobile-overlay .mo-logo { margin-bottom: 28px; } #mobile-overlay .mo-logo img { height: 60px; width: auto; opacity: 0.98; }
+  #mobile-overlay .mo-icon { font-size: 2.4rem; margin-bottom: 14px; }
+  #mobile-overlay .mo-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 14px; border: 1px solid rgba(42,170,153,0.4); padding: 5px 14px; border-radius: 20px; display: inline-block; }
+  #mobile-overlay h2 { font-family: 'Raleway', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 16px; }
+  #mobile-overlay .mo-divider { width: 40px; height: 2px; background: var(--teal-bright); border-radius: 2px; margin: 0 auto 20px; }
+  #mobile-overlay .mo-rules { list-style: none; max-width: 340px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 9px; }
+  #mobile-overlay .mo-rules li { font-size: 0.76rem; color: rgba(255,255,255,0.65); display: flex; align-items: flex-start; gap: 8px; text-align: left; line-height: 1.5; }
+  #mobile-overlay .mo-rules li::before { content: '—'; color: var(--teal-bright); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  #mobile-overlay .mo-confirm { font-size: 0.72rem; color: rgba(255,255,255,0.4); max-width: 300px; margin: 0 auto 28px; font-style: italic; line-height: 1.6; }
+  .mo-btn { background: var(--teal-bright); color: #fff; border: none; padding: 14px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
+  .mo-btn:hover { background: #23988a; transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<div id="mobile-overlay">
+  <div class="mo-logo"><img src="../logoblancotres.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="mo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+  <div class="mo-tag">Documento Confidencial</div>
+  <h2>Reporte de Uso Interno</h2>
+  <div class="mo-divider"></div>
+  <ul class="mo-rules">
+    <li>Este reporte contiene información comercial estratégica preparada exclusivamente para el asesor y su cliente.</li>
+    <li>Queda estrictamente prohibido compartir, reenviar o publicar este documento sin autorización escrita.</li>
+    <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
+  </ul>
+  <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
+  <button class="mo-btn" onclick="closeMobileOverlay()">Acepto y accedo al reporte →</button>
+</div>
+
+<header class="header">
+  <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="header-meta">
+    <h1>Análisis Comparativo · Andrea Tamer</h1>
+    <span class="header-accent"></span>
+    <p class="tagline">TRES65 Inmobiliaria · August 2026</p>
+  </div>
+</header>
+
+<div class="market-banner"><div class="market-banner-inner">
+    <div class="market-stat"><div class="val">$4,690,000–$8,450,000</div><div class="lbl">Rango de precios encontrado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">—</div><div class="lbl">Vs presupuesto declarado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">4</div><div class="lbl">Recámaras</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">5</div><div class="lbl">Propiedades comparadas</div></div>
+    </div></div>
+
+<div class="wrap">
+  <div class="section-head reveal">
+    <h2>Perfil del cliente</h2>
+    <p>Familia en búsqueda de residencia en zona norte · Cliente interesado en una casa de 4 recámaras con espacios para convivir, alberca y buena ubicación en el corredor norte de Mérida (Temozón / Cholul).</p>
+  </div>
+
+  <div class="warn-box reveal">
+    <div class="warn-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Sobre el presupuesto declarado</div>
+    <p>No se especificó un presupuesto declarado, así que el análisis se basa en el rango real de las opciones encontradas: desde $4,690,000 hasta $8,450,000, una diferencia de casi el doble entre la más accesible y la más alta.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/6127876/108630941/EB-WN7876.png?version=1784847765" alt="Residencia en venta privada Temozón Norte, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6127876/108630945/EB-WN7876.jpeg?version=1784847765" alt="Residencia en venta privada Temozón Norte, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6127876/108630944/EB-WN7876.jpeg?version=1784847765" alt="Residencia en venta privada Temozón Norte, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6127876/108630939/EB-WN7876.jpeg?version=1784847764" alt="Residencia en venta privada Temozón Norte, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6127876/108630940/EB-WN7876.jpeg?version=1784847764" alt="Residencia en venta privada Temozón Norte, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6127876/108630942/EB-WN7876.jpeg?version=1784847765" alt="Residencia en venta privada Temozón Norte, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Construcción nueva, 4 autos bajo techo</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-WN7876</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/residencia-en-venta-privada-temozon-norte-merida-yucatan" target="_blank" rel="noopener">Residencia en venta privada Temozón Norte, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Temozón Norte, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$7,950,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$23,794/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">5 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">334.12 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">300.0 m²</div></div>
+    </div>
+      <div class="p-desc">Residencia de reciente construcción en Nukuul, privada exclusiva de solo 49 lotes en Temozón Norte. Ofrece acabados de primer nivel, alberca privada, carpintería a medida y cochera para 4 vehículos, lo que la hace la opción más completa en términos de terminado, aunque también la de mayor precio por metro cuadrado del grupo.</div>
+      <div class="p-tags"><span class="p-tag">Obra nueva</span><span class="p-tag">Privada exclusiva</span><span class="p-tag">Alberca</span><span class="p-tag">4 autos</span><span class="p-tag">Acabados premium</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">—</div>
+        <div class="rent-note">Es la segunda propiedad más cara del grupo, casi $3.3 millones por encima de la opción más económica (Casa Cholul 2).</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:55.0%"></div></div><span class="score-num">5.5</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5033351/108867507/EB-SI3351.jpg?version=1785368238" alt="Casa en venta en privada, Temozón, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5033351/108869031/EB-SI3351.jpg?version=1785369586" alt="Casa en venta en privada, Temozón, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5033351/108869032/EB-SI3351.jpg?version=1785369586" alt="Casa en venta en privada, Temozón, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5033351/108867509/EB-SI3351.jpg?version=1785368238" alt="Casa en venta en privada, Temozón, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5033351/108868621/EB-SI3351.jpg?version=1785369171" alt="Casa en venta en privada, Temozón, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5033351/108867510/EB-SI3351.jpg?version=1785368238" alt="Casa en venta en privada, Temozón, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Mayor terreno y construcción (367 m² / 390 m²)</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-SI3351</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-venta-en-privada-temozon-merida-yucatan" target="_blank" rel="noopener">Casa en venta en privada, Temozón, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Temozón Norte, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$8,450,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$21,667/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">390.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">367.0 m²</div></div>
+    </div>
+      <div class="p-desc">Casa en Privada Corteza, dentro de Temozón Norte, con la construcción y el terreno más amplios de todo el grupo. Su ubicación cercana a Plaza La Isla y hospital Faro es un plus, aunque cuenta con un espacio menos de estacionamiento (3) frente a otras opciones y es la propiedad de mayor precio.</div>
+      <div class="p-tags"><span class="p-tag">Terreno más grande</span><span class="p-tag">Ubicación premium</span><span class="p-tag">Alberca</span><span class="p-tag">3 autos</span><span class="p-tag">Precio más alto</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">—</div>
+        <div class="rent-note">Es la propiedad más cara del grupo, con una diferencia de $3,760,000 respecto a la más económica (Casa Cholul 2).</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:45.0%"></div></div><span class="score-num">4.5</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:95.0%"></div></div><span class="score-num">9.5</span></div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4540100/109082201/EB-QL0100.jpg?version=1785873786" alt="Casa en venta en Mérida, Privada Kinish. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4540100/109082230/EB-QL0100.jpg?version=1785873789" alt="Casa en venta en Mérida, Privada Kinish. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4540100/109082229/EB-QL0100.jpg?version=1785873789" alt="Casa en venta en Mérida, Privada Kinish. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4540100/109082228/EB-QL0100.jpg?version=1785873789" alt="Casa en venta en Mérida, Privada Kinish. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4540100/109082212/EB-QL0100.jpg?version=1785873787" alt="Casa en venta en Mérida, Privada Kinish. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4540100/109082226/EB-QL0100.jpg?version=1785873789" alt="Casa en venta en Mérida, Privada Kinish. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Mejor precio por m² en privada consolidada</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-QL0100</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-venta-en-merida-privada-kinish-a06c4e1b-391e-440c-b59a-c5eada3f03c3" target="_blank" rel="noopener">Casa en venta en Mérida, Privada Kinish.</a></div>
+        <div class="p-card-zone">Cholul, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$6,000,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$18,293/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">328.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">325.0 m²</div></div>
+    </div>
+      <div class="p-desc">Ubicada en Privada Kinish, en Cholul, ofrece un balance sólido entre precio, terreno (325 m²) y construcción (328 m²), con doble altura en sala y cocina equipada. Su estacionamiento es para solo 2 autos, algo a considerar si la familia maneja más de un vehículo.</div>
+      <div class="p-tags"><span class="p-tag">Buen precio por m²</span><span class="p-tag">Privada con amenidades</span><span class="p-tag">2 autos</span><span class="p-tag">Doble altura</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">—</div>
+        <div class="rent-note">Se ubica en un punto medio de precio, $1,310,000 por encima de la opción más económica y $2,450,000 por debajo de la más cara.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/2663282/41714238/EB-JF3282.jpg?version=1639771797" alt="Preventa de Residencias en Mérida, Cholul 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2663282/41714237/EB-JF3282.jpg?version=1639771797" alt="Preventa de Residencias en Mérida, Cholul 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2663282/41714235/EB-JF3282.jpg?version=1639771797" alt="Preventa de Residencias en Mérida, Cholul 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2663282/41714234/EB-JF3282.jpg?version=1639771797" alt="Preventa de Residencias en Mérida, Cholul 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2663282/41714226/EB-JF3282.jpg?version=1639771797" alt="Preventa de Residencias en Mérida, Cholul 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2663282/41714230/EB-JF3282.jpg?version=1639771797" alt="Preventa de Residencias en Mérida, Cholul 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Precio más accesible ($4,690,000)</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-JF3282</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/preventa-de-residencias-en-cholul-cholul-merida" target="_blank" rel="noopener">Preventa de Residencias en Mérida, Cholul</a></div>
+        <div class="p-card-zone">Cholul, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$4,690,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$19,461/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">241.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">265.0 m²</div></div>
+    </div>
+      <div class="p-desc">Residencia en preventa dentro de Macora 86, en Cholul, actualmente en construcción. Es la opción más económica y con 4 cajones de estacionamiento, pero tiene la construcción más pequeña del grupo (241 m²) y, al no estar terminada, implica esperar tiempos de entrega y validar avances de obra.</div>
+      <div class="p-tags"><span class="p-tag">Preventa</span><span class="p-tag">Precio accesible</span><span class="p-tag">4 autos</span><span class="p-tag">Construcción más pequeña</span><span class="p-tag">En obra</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">—</div>
+        <div class="rent-note">Es la propiedad más económica del grupo; la diferencia frente a la más cara (Casa Temozón Norte 2) es de $3,760,000.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5014478/85739049/EB-SG4478.jpg?version=1738879691" alt="Casa en venta en privada Cholul, al norte de la ciudad Mérida. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5014478/85739044/EB-SG4478.jpeg?version=1738879691" alt="Casa en venta en privada Cholul, al norte de la ciudad Mérida. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5014478/85739048/EB-SG4478.jpeg?version=1738879691" alt="Casa en venta en privada Cholul, al norte de la ciudad Mérida. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5014478/85739045/EB-SG4478.jpeg?version=1738879691" alt="Casa en venta en privada Cholul, al norte de la ciudad Mérida. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5014478/85739046/EB-SG4478.jpeg?version=1738879691" alt="Casa en venta en privada Cholul, al norte de la ciudad Mérida. 5">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Equilibrio precio-amenidades</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-SG4478</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-venta-en-privada-cholul-al-norte-de-la-ciudad-merida" target="_blank" rel="noopener">Casa en venta en privada Cholul, al norte de la ciudad Mérida.</a></div>
+        <div class="p-card-zone">Cholul, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$5,599,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$20,568/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">272.22 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">300.57 m²</div></div>
+    </div>
+      <div class="p-desc">En Privada Plenum, Cholul, destaca por su amplia gama de amenidades (alberca, gimnasio, cowork, cancha, pet park) en una privada de 95 terrenos. Tiene un precio intermedio-bajo y construcción de 272.22 m², aunque su estacionamiento es de solo 2 autos.</div>
+      <div class="p-tags"><span class="p-tag">Amenidades completas</span><span class="p-tag">Precio competitivo</span><span class="p-tag">2 autos</span><span class="p-tag">Privada grande</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">—</div>
+        <div class="rent-note">Su precio está $909,000 por encima de la opción más accesible y $2,851,000 por debajo de la más cara.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div>
+      </div>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Comparativa de números clave</h2><p>Precio y precio por m² construido</p></div>
+  <div class="charts-row reveal">
+    <div class="chart-box">
+      <h4>Precio de venta (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$8,450,000</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte 2</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:89%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$7,950,000</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:45%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$6,000,000</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:36%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$5,599,000</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul 3</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:16%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$4,690,000</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul 2</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">Escala desde $3,986,500 para que las diferencias se distingan — el valor exacto va rotulado sobre cada barra.</p>
+    </div>
+    <div class="chart-box">
+      <h4>Precio por m² construido (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$23,794</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:74%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$21,667</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte 2</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:61%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$20,568</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul 3</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:47%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$19,461</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul 2</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:33%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$18,293</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">Escala desde $15,549 para que las diferencias se distingan — el valor exacto va rotulado sobre cada barra.</p>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Tabla comparativa completa</h2><p>Todos los factores decisivos sin filtros</p></div>
+  <div class="table-scroll-hint"><span>‹ desliza para ver las propiedades ›</span></div>
+  <div class="table-wrap reveal"><div class="table-scroll-container">
+    <table class="compare-table">
+      <thead><tr><th class="sticky-col">Criterio</th><th>Casa Temozón Norte</th><th>Casa Temozón Norte 2</th><th>Casa Cholul</th><th>Casa Cholul 2</th><th>Casa Cholul 3</th></tr></thead>
+      <tbody><tr><td class="sticky-col">Zona</td><td>Temozón Norte, Mérida, Yucatán</td><td>Temozón Norte, Mérida, Yucatán</td><td>Cholul, Mérida, Yucatán</td><td>Cholul, Mérida, Yucatán</td><td>Cholul, Mérida, Yucatán</td></tr><tr><td class="sticky-col">Precio</td><td>$7,950,000 MXN</td><td>$8,450,000 MXN</td><td>$6,000,000 MXN</td><td>$4,690,000 MXN</td><td>$5,599,000 MXN</td></tr><tr><td class="sticky-col">Precio/m² construido</td><td>$23,794 MXN</td><td>$21,667 MXN</td><td>$18,293 MXN</td><td>$19,461 MXN</td><td>$20,568 MXN</td></tr><tr><td class="sticky-col">Construcción</td><td>334.12 m²</td><td>390.0 m²</td><td>328.0 m²</td><td>241.0 m²</td><td>272.22 m²</td></tr><tr><td class="sticky-col">Terreno</td><td>300.0 m²</td><td>367.0 m²</td><td>325.0 m²</td><td>265.0 m²</td><td>300.57 m²</td></tr><tr><td class="sticky-col">Recámaras / Baños</td><td>4 / 5</td><td>4 / 4</td><td>4 / 4</td><td>4 / 4</td><td>4 / 4</td></tr><tr><td class="sticky-col">Diferencia vs presupuesto</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody>
+    </table>
+  </div></div>
+
+  <div class="section-head reveal"><h2>Análisis por prioridad</h2><p>Lo que cambia según qué esté priorizando el cliente</p></div>
+  <div class="reveal">
+    <div class="tabs-nav"><button class="tab-btn active" onclick="switchTab('t0',this)">Ajuste al presupuesto</button><button class="tab-btn" onclick="switchTab('t1',this)">Distribución y vida social</button><button class="tab-btn" onclick="switchTab('t2',this)">Riesgo y pendientes</button></div>
+    
+    <div class="tab-pane active" id="tab-t0">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Opciones que cuidan el bolsillo</h4><ul><li>Casa Cholul 2 es la más accesible con $4,690,000</li><li>Casa Cholul 3 ofrece buen balance de amenidades por $5,599,000</li><li>Casa Cholul tiene el mejor precio por metro cuadrado de una privada ya consolidada</li></ul></div>
+        <div class="a-box"><h4>Donde el presupuesto se estira</h4><ul><li>Casa Temozón Norte y Casa Temozón Norte 2 superan los $7,900,000, casi el doble que la opción más económica</li><li>El precio por metro cuadrado en Temozón Norte es notablemente más alto que en Cholul</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t1">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Espacios para recibir</h4><ul><li>Todas las propiedades cuentan con 4 recámaras y al menos 4 baños completos</li><li>Casa Temozón Norte 2 tiene la construcción y terreno más amplios para eventos familiares</li><li>Casa Cholul 3 destaca por su privada con salón social, alberca y áreas deportivas</li></ul></div>
+        <div class="a-box"><h4>Puntos a revisar en distribución</h4><ul><li>Casa Cholul y Casa Cholul 3 solo ofrecen 2 cajones de estacionamiento, limitante si reciben varias visitas</li><li>Casa Cholul 2 tiene la construcción más reducida (241 m²), lo que puede sentirse ajustado para convivencia amplia</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t2">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Certeza de entrega</h4><ul><li>Casa Temozón Norte, Casa Temozón Norte 2, Casa Cholul y Casa Cholul 3 están listas o con construcción concluida</li></ul></div>
+        <div class="a-box"><h4>Elementos a validar antes de decidir</h4><ul><li>Casa Cholul 2 está en preventa y bajo construcción, por lo que se debe confirmar fecha de entrega y avance de obra</li><li>Las fichas de todas las propiedades tienen descripciones truncadas, conviene solicitar el detalle completo antes de la visita</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head reveal"><h2>Veredictos finales</h2><p>Sin ambigüedad — y sin esconder lo que sigue sin resolverse</p></div>
+  <div class="verdicts-grid">
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div>
+      <div class="v-prop">Casa Temozón Norte</div>
+      <div class="v-title">Casa Temozón Norte: acabados premium en privada exclusiva</div>
+      <p class="v-text">Casa Temozón Norte ofrece la construcción más reciente del grupo y detalles de acabado que no se repiten en las demás opciones, como la carpintería a medida y los 4 espacios de estacionamiento. Es ideal para quien prioriza terminado nuevo sobre precio, ya que se ubica en el segundo lugar más alto del rango.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
+      <div class="v-prop">Casa Temozón Norte 2</div>
+      <div class="v-title">Casa Temozón Norte 2: la de mayor espacio</div>
+      <p class="v-text">Con 367 m² de terreno y 390 m² de construcción, Casa Temozón Norte 2 es la propiedad más amplia de todas las comparadas. Es la opción más cara del grupo, por lo que conviene evaluarla si el espacio es más importante que ajustarse a un presupuesto medio.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg></div>
+      <div class="v-prop">Casa Cholul</div>
+      <div class="v-title">Casa Cholul: el balance entre precio y espacio</div>
+      <p class="v-text">Casa Cholul presenta el mejor precio por metro cuadrado del grupo, en una privada ya consolidada con 136 lotes. Es una buena alternativa intermedia, aunque su estacionamiento de solo 2 autos puede ser un punto a considerar.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="v-prop">Casa Cholul 2</div>
+      <div class="v-title">Casa Cholul 2: la opción más económica, pero en preventa</div>
+      <p class="v-text">Casa Cholul 2 tiene el precio más bajo de todas las comparadas y buen número de cajones de estacionamiento (4), pero al estar en preventa y bajo construcción implica esperar tiempos de entrega. Es recomendable para quien tiene flexibilidad de tiempo y busca maximizar presupuesto.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></div>
+      <div class="v-prop">Casa Cholul 3</div>
+      <div class="v-title">Casa Cholul 3: la de más amenidades en la privada</div>
+      <p class="v-text">Casa Cholul 3 se distingue por pertenecer a una privada con amplia gama de amenidades (alberca, gimnasio, cowork, cancha), a un precio competitivo. Su estacionamiento limitado a 2 autos es el principal punto a revisar frente a otras opciones.</p>
+    </div>
+    <div class="v-card v-dark reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="v-prop">Para Familia en búsqueda de residencia en zona norte</div>
+      <div class="v-title">Cinco caminos, un mismo objetivo: encontrar el hogar correcto</div>
+      <p class="v-text">Las cinco opciones cumplen con el requisito base de 4 recámaras y espacios pensados para recibir, pero se dividen claramente en dos grupos: Temozón Norte, con mayor inversión y acabados más finos, y Cholul, con precios más accesibles y buen balance de amenidades. Casa Cholul 2, aunque la más económica, requiere paciencia por estar en preventa, mientras que Casa Cholul y Casa Cholul 3 ofrecen el mejor punto de entrada sin sacrificar comodidad. ¿Qué pesa más para ustedes en esta decisión: el terminado y la ubicación premium, o maximizar el presupuesto disponible?</p>
+    </div></div>
+  
+  <div class="section-head reveal"><h2>Glosario</h2><p>Términos usados en este reporte, explicados sin tecnicismos</p></div>
+  <div class="glossary-box reveal"><div class="glossary-grid"><div><div class="glossary-term">preventa</div><div class="glossary-def">Es cuando la propiedad se vende antes o durante su construcción, por lo que aún no está lista para habitarse.</div></div><div><div class="glossary-term">plusvalía</div><div class="glossary-def">Es el aumento de valor que gana una propiedad con el tiempo, generalmente por la zona donde se ubica.</div></div><div><div class="glossary-term">bajo construcción</div><div class="glossary-def">Significa que la casa todavía se está edificando y no está terminada para entregarse de inmediato.</div></div></div></div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../logoblancotres.png" alt="TRES65 Inmobiliaria">
+      <p>Especialistas en propiedades de<br>Mérida, Yucatán.<br>www.tres65inmobiliaria.com</p>
+    </div>
+    <div class="footer-agent">
+      <div class="agent-name">Damara Traconis Corres</div>
+      <div class="agent-role">Agente Inmobiliario Certificado · TRES65 Inmobiliaria</div>
+      <div class="agent-contact">+52 999 278 6153<br><a href="mailto:damara@tres65inmobiliaria.com">damara@tres65inmobiliaria.com</a></div>
+    </div>
+  </div>
+  <hr class="footer-hr">
+  <div class="footer-bottom">
+    <span>© 2026 TRES65 Inmobiliaria® · Marca registrada · Todos los derechos reservados</span>
+    <span>Análisis confidencial · Datos verificados en EasyBroker</span>
+  </div>
+</footer>
+
+<script>
+  function closeMobileOverlay() { document.getElementById('mobile-overlay').style.display = 'none'; sessionStorage.setItem('mo_dismissed', '1'); }
+  function checkMobile() { if (sessionStorage.getItem('mo_dismissed')) return; document.getElementById('mobile-overlay').style.display = 'flex'; }
+  window.addEventListener('DOMContentLoaded', checkMobile);
+  function carouselNav(btn, dir) {
+    const container = btn.closest('.p-card-carousel');
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    let idx = imgs.findIndex(img => img.classList.contains('active'));
+    imgs[idx].classList.remove('active'); dots[idx].classList.remove('active');
+    idx = (idx + dir + imgs.length) % imgs.length;
+    imgs[idx].classList.add('active'); dots[idx].classList.add('active');
+  }
+  function carouselDot(dot) {
+    const container = dot.closest('.p-card-carousel');
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const targetIdx = dots.indexOf(dot);
+    imgs.forEach(img => img.classList.remove('active')); dots.forEach(d => d.classList.remove('active'));
+    imgs[targetIdx].classList.add('active'); dots[targetIdx].classList.add('active');
+  }
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
