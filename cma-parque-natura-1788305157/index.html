@@ -167,7 +167,6 @@
 </style>
 </head>
 <body>
-<div id="mobile-overlay" style="display:none;"></div>
 <header class="header">
   <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
   <div class="header-meta">
@@ -413,9 +412,6 @@
   </div>
 </footer>
 <script>
-  function closeMobileOverlay() { document.getElementById('mobile-overlay').style.display = 'none'; sessionStorage.setItem('mo_dismissed', '1'); }
-  function checkMobile() { if (sessionStorage.getItem('mo_dismissed')) return; document.getElementById('mobile-overlay').style.display = 'flex'; }
-  window.addEventListener('DOMContentLoaded', checkMobile);
   function carouselNav(btn, dir) {
     const container = btn.closest('.p-card-carousel');
     const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
@@ -433,35 +429,6 @@
     imgs.forEach(img => img.classList.remove('active')); dots.forEach(d => d.classList.remove('active'));
     imgs[targetIdx].classList.add('active'); dots[targetIdx].classList.add('active');
   }
-  function switchTab(id, btn) {
-    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + id).classList.add('active');
-    btn.classList.add('active');
-  }
-  function setTourInterest(publicId, interes, btn) {
-    if (!window.REPORT_CLIENT_TOKEN) return;
-    const card = btn.closest('.p-card');
-    card.querySelectorAll('.tour-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    try { localStorage.setItem('tour_interest_' + publicId, interes); } catch (e) {}
-    fetch('https://agente-tres65-production.up.railway.app/portal/analisis-interes', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({client_token: window.REPORT_CLIENT_TOKEN, public_id: publicId, interes: interes})
-    }).catch(e => console.error('Error guardando interés:', e));
-  }
-  function restoreTourInterest() {
-    document.querySelectorAll('.tour-interest').forEach(el => {
-      const publicId = el.dataset.publicId;
-      let saved = null;
-      try { saved = localStorage.getItem('tour_interest_' + publicId); } catch (e) {}
-      if (!saved) return;
-      const btn = el.querySelector('.tour-btn[data-interes="' + saved + '"]');
-      if (btn) btn.classList.add('active');
-    });
-  }
-  window.addEventListener('DOMContentLoaded', restoreTourInterest);
 </script>
 </body>
 </html>
