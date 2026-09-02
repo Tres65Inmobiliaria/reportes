@@ -164,17 +164,12 @@
   .price-box{background:linear-gradient(135deg, var(--teal-deep), var(--teal-mid)); color:#fff; border-radius:var(--radius); padding:32px; text-align:center; margin:24px 0;}
   .price-box .lbl{font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; opacity:0.85;}
   .price-box .val{font-family:'Raleway',sans-serif; font-size:2.2rem; font-weight:800; margin:8px 0;}
-  #mobile-overlay .mo-privacy-link { color: var(--teal-bright); text-decoration: underline; }
-  #mobile-overlay .mo-privacy-check { display: flex; align-items: flex-start; gap: 10px; max-width: 320px; margin: 0 auto 20px; text-align: left; }
-  #mobile-overlay .mo-privacy-check input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--teal-bright); cursor: pointer; }
-  #mobile-overlay .mo-privacy-check label { font-size: 0.74rem; color: rgba(255,255,255,0.75); line-height: 1.5; cursor: pointer; }
-  .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
 </style>
 </head>
 <body>
 <div id="mobile-overlay">
   <div class="mo-logo"><img src="../logoblancotres.png" alt="TRES65 Inmobiliaria"></div>
-  <div class="mo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+  <div class="mo-icon"><img src="../ronda-silencio.png" alt="" style="height:60px; width:auto;"></div>
   <div class="mo-tag">Documento Confidencial</div>
   <h2>Reporte de Uso Interno</h2>
   <div class="mo-divider"></div>
@@ -184,11 +179,7 @@
     <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
   </ul>
   <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
-  <div class="mo-privacy-check">
-    <input type="checkbox" id="mo-privacy-checkbox" onchange="document.getElementById('mo-accept-btn').disabled = !this.checked">
-    <label for="mo-privacy-checkbox">He leído y acepto el <a class="mo-privacy-link" href="https://www.tres65inmobiliaria.com/Aviso_privacidad" target="_blank" rel="noopener">Aviso de Privacidad</a> de TRES65 Inmobiliaria.</label>
-  </div>
-  <button class="mo-btn" id="mo-accept-btn" onclick="closeMobileOverlay()" disabled>Acepto y accedo al reporte →</button>
+  <button class="mo-btn" onclick="closeMobileOverlay()">Acepto y accedo al reporte →</button>
 </div>
 <header class="header">
   <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
@@ -198,6 +189,7 @@
     <p class="tagline">TRES65 Inmobiliaria · September 2026</p>
   </div>
 </header>
+<div style="text-align:center; padding:10px 16px; background:var(--teal-light); color:var(--teal-deep); font-family:'Raleway',sans-serif; font-size:0.85rem; font-weight:600;">Tu patrimonio. Nuestro compromiso. Los 365 días del año.</div>
 <div class="wrap">
   <div class="section-head reveal"><h2>Propiedad de la clienta</h2><p><strong>Rocío Rico Santos</strong> — Residencia en Privada Parque Natura</p></div>
   <div class="cards-grid">
@@ -446,7 +438,6 @@
     <div class="footer-agent">
       <div class="agent-name">Moisés Traconis Corres</div>
       <div class="agent-role">Agente Inmobiliario Certificado · TRES65 Inmobiliaria</div>
-      <img src="../logo-ampi.png" alt="AMPI Mérida" style="height:32px; width:auto; margin-top:10px; background:#fff; padding:4px 8px; border-radius:6px;">
     </div>
   </div>
 </footer>
