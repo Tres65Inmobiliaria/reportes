@@ -154,8 +154,13 @@
   #mobile-overlay .mo-rules li { font-size: 0.76rem; color: rgba(255,255,255,0.65); display: flex; align-items: flex-start; gap: 8px; text-align: left; line-height: 1.5; }
   #mobile-overlay .mo-rules li::before { content: '—'; color: var(--teal-bright); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
   #mobile-overlay .mo-confirm { font-size: 0.72rem; color: rgba(255,255,255,0.4); max-width: 300px; margin: 0 auto 28px; font-style: italic; line-height: 1.6; }
+  #mobile-overlay .mo-privacy-link { color: var(--teal-bright); text-decoration: underline; }
+  #mobile-overlay .mo-privacy-check { display: flex; align-items: flex-start; gap: 10px; max-width: 320px; margin: 0 auto 20px; text-align: left; }
+  #mobile-overlay .mo-privacy-check input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--teal-bright); cursor: pointer; }
+  #mobile-overlay .mo-privacy-check label { font-size: 0.74rem; color: rgba(255,255,255,0.75); line-height: 1.5; cursor: pointer; }
   .mo-btn { background: var(--teal-bright); color: #fff; border: none; padding: 14px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
   .mo-btn:hover { background: #23988a; transform: translateY(-2px); }
+  .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
 
   .cma-table{width:100%; border-collapse:collapse; background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);}
   .cma-table th{background:var(--teal-deep); color:#fff; padding:12px 16px; text-align:left; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px;}
@@ -164,6 +169,11 @@
   .price-box{background:linear-gradient(135deg, var(--teal-deep), var(--teal-mid)); color:#fff; border-radius:var(--radius); padding:32px; text-align:center; margin:24px 0;}
   .price-box .lbl{font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; opacity:0.85;}
   .price-box .val{font-family:'Raleway',sans-serif; font-size:2.2rem; font-weight:800; margin:8px 0;}
+  #mobile-overlay .mo-privacy-link { color: var(--teal-bright); text-decoration: underline; }
+  #mobile-overlay .mo-privacy-check { display: flex; align-items: flex-start; gap: 10px; max-width: 320px; margin: 0 auto 20px; text-align: left; }
+  #mobile-overlay .mo-privacy-check input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--teal-bright); cursor: pointer; }
+  #mobile-overlay .mo-privacy-check label { font-size: 0.74rem; color: rgba(255,255,255,0.75); line-height: 1.5; cursor: pointer; }
+  .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
 </style>
 </head>
 <body>
@@ -179,7 +189,11 @@
     <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
   </ul>
   <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
-  <button class="mo-btn" onclick="closeMobileOverlay()">Acepto y accedo al reporte →</button>
+  <div class="mo-privacy-check">
+    <input type="checkbox" id="mo-privacy-checkbox" onchange="document.getElementById('mo-accept-btn').disabled = !this.checked">
+    <label for="mo-privacy-checkbox">He leído y acepto el <a class="mo-privacy-link" href="https://www.tres65inmobiliaria.com/Aviso_privacidad" target="_blank" rel="noopener">Aviso de Privacidad</a> de TRES65 Inmobiliaria.</label>
+  </div>
+  <button class="mo-btn" id="mo-accept-btn" onclick="closeMobileOverlay()" disabled>Acepto y accedo al reporte →</button>
 </div>
 <header class="header">
   <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
@@ -223,13 +237,13 @@
       <div class="p-price-row">
         <span class="p-price-real">$6,390,000</span>
         <span class="p-price-cur">MXN</span>
-        <span class="p-price-m2">$22,903/m²</span>
+        <span class="p-price-m2">$22,880/m²</span>
       </div>
       <div class="p-stats">
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">279 m²</div></div>
-        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">336 m²</div></div>
       </div>
     </div>
     <div class="p-card reveal">
@@ -368,7 +382,7 @@
     <td>3 rec / 4 baños</td>
     <td>279 m²</td>
     <td>$6,390,000</td>
-    <td>$22,903/m²</td>
+    <td>$22,880/m²</td>
   </tr>
   <tr>
     <td><a href="https://www.easybroker.com/mx/listings/casa-en-venta-en-privada-parque-natura-equipada-con-3-recamaras-y-doble-altura" target="_blank" rel="noopener">Casa en Venta en Privada Parque Natura | Equipada, Doble Altura</a></td>
@@ -429,7 +443,7 @@
 
   <div class="section-head reveal"><h2>Metodología</h2></div>
   <div class="warn-box reveal">
-    <p>Promedio de precio por m² de los 8 comparables: <strong>$22,164/m²</strong> (rango $19,000–$27,812/m²). Se usó el conjunto completo de comparables (no solo los de 3 recámaras) para evitar sesgo de muestra chica — dos comparables de 3 recámaras por sí solos no son una muestra confiable. El rango sugerido posiciona la propiedad en la parte media del grupo, con margen de negociación típico entre precio de lista y precio de cierre real.</p>
+    <p>Promedio de precio por m² de los 8 comparables: <strong>$22,161/m²</strong> (rango $19,000–$27,812/m²). Se usó el conjunto completo de comparables (no solo los de 3 recámaras) para evitar sesgo de muestra chica — dos comparables de 3 recámaras por sí solos no son una muestra confiable. El rango sugerido posiciona la propiedad en la parte media del grupo, con margen de negociación típico entre precio de lista y precio de cierre real.</p>
   </div>
 </div>
 <footer class="footer">
@@ -438,6 +452,7 @@
     <div class="footer-agent">
       <div class="agent-name">Moisés Traconis Corres</div>
       <div class="agent-role">Agente Inmobiliario Certificado · TRES65 Inmobiliaria</div>
+      <img src="../logos-ampi-realtor.png" alt="AMPI Mérida y REALTOR" style="height:96px; width:auto; margin-top:10px;">
     </div>
   </div>
 </footer>
