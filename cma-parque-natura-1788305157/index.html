@@ -164,6 +164,11 @@
   .price-box{background:linear-gradient(135deg, var(--teal-deep), var(--teal-mid)); color:#fff; border-radius:var(--radius); padding:32px; text-align:center; margin:24px 0;}
   .price-box .lbl{font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; opacity:0.85;}
   .price-box .val{font-family:'Raleway',sans-serif; font-size:2.2rem; font-weight:800; margin:8px 0;}
+  #mobile-overlay .mo-privacy-link { color: var(--teal-bright); text-decoration: underline; }
+  #mobile-overlay .mo-privacy-check { display: flex; align-items: flex-start; gap: 10px; max-width: 320px; margin: 0 auto 20px; text-align: left; }
+  #mobile-overlay .mo-privacy-check input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--teal-bright); cursor: pointer; }
+  #mobile-overlay .mo-privacy-check label { font-size: 0.74rem; color: rgba(255,255,255,0.75); line-height: 1.5; cursor: pointer; }
+  .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
 </style>
 </head>
 <body>
@@ -179,7 +184,11 @@
     <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
   </ul>
   <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
-  <button class="mo-btn" onclick="closeMobileOverlay()">Acepto y accedo al reporte →</button>
+  <div class="mo-privacy-check">
+    <input type="checkbox" id="mo-privacy-checkbox" onchange="document.getElementById('mo-accept-btn').disabled = !this.checked">
+    <label for="mo-privacy-checkbox">He leído y acepto el <a class="mo-privacy-link" href="https://www.tres65inmobiliaria.com/Aviso_privacidad" target="_blank" rel="noopener">Aviso de Privacidad</a> de TRES65 Inmobiliaria.</label>
+  </div>
+  <button class="mo-btn" id="mo-accept-btn" onclick="closeMobileOverlay()" disabled>Acepto y accedo al reporte →</button>
 </div>
 <header class="header">
   <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
@@ -437,6 +446,7 @@
     <div class="footer-agent">
       <div class="agent-name">Moisés Traconis Corres</div>
       <div class="agent-role">Agente Inmobiliario Certificado · TRES65 Inmobiliaria</div>
+      <img src="../logo-ampi.png" alt="AMPI Mérida" style="height:32px; width:auto; margin-top:10px; background:#fff; padding:4px 8px; border-radius:6px;">
     </div>
   </div>
 </footer>
