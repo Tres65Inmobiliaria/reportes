@@ -149,7 +149,7 @@
   .agent-contact a { color:rgba(255,255,255,.5); text-decoration:none; }
   .footer-hr { border:none; border-top:1px solid rgba(255,255,255,.08); margin:22px 0 14px; }
   .footer-bottom { max-width:1080px; margin:0 auto; font-size:0.66rem; color:rgba(255,255,255,.25); display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
-  #mobile-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: linear-gradient(160deg, #0d2420 0%, var(--teal-deep) 100%); flex-direction: column; align-items: center; justify-content: center; padding: 36px 28px; text-align: center; }
+  #mobile-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: linear-gradient(160deg, #0d2420 0%, var(--teal-deep) 100%); flex-direction: column; align-items: center; justify-content: center; justify-content: safe center; padding: 36px 28px; text-align: center; overflow-y: auto; -webkit-overflow-scrolling: touch; }
   #mobile-overlay .mo-logo { margin: 6px auto 20px; } #mobile-overlay .mo-logo img { height: 68px; width: auto; opacity: 0.98; }
   #mobile-overlay .mo-icon { font-size: 2.4rem; margin-bottom: 14px; }
   #mobile-overlay .mo-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 14px; border: 1px solid rgba(42,170,153,0.4); padding: 5px 14px; border-radius: 20px; display: inline-block; }
@@ -166,9 +166,14 @@
   .mo-btn { background: var(--teal-bright); color: #fff; border: none; padding: 14px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
   .mo-btn:hover { background: #23988a; transform: translateY(-2px); }
   .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
+  @media (max-width: 680px) { .footer-inner { flex-direction: column; align-items: flex-start; } .footer-agent { text-align: left; } }
 
   .cma-table{width:100%; border-collapse:collapse; background:#fff; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);}
   .cma-table th{background:var(--teal-deep); color:#fff; padding:12px 16px; text-align:left; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.5px;}
+  .table-scroll-hint{ display:none; align-items:center; justify-content:center; margin-bottom:10px; padding:9px 16px; background:var(--teal-light); border-radius:8px; border-left:3px solid var(--teal-bright); }
+  .table-scroll-hint span{ font-size:0.72rem; font-weight:600; color:var(--teal-deep); letter-spacing:0.5px; }
+  @media (max-width: 768px) { .table-scroll-hint{ display:flex; } .cma-table th, .cma-table td{ min-width:150px; } .cma-table th:first-child, .cma-table td:first-child{ min-width:190px; } }
+  .table-scroll-container{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .cma-table td{padding:12px 16px; border-bottom:1px solid var(--gray-light); font-size:0.85rem;}
   .cma-table a{color:var(--teal-deep); font-weight:600; text-decoration:none;}
   .price-box{background:linear-gradient(135deg, var(--teal-deep), var(--teal-mid)); color:#fff; border-radius:var(--radius); padding:32px; text-align:center; margin:24px 0;}
@@ -179,6 +184,7 @@
   #mobile-overlay .mo-privacy-check input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--teal-bright); cursor: pointer; }
   #mobile-overlay .mo-privacy-check label { font-size: 0.74rem; color: rgba(255,255,255,0.75); line-height: 1.5; cursor: pointer; }
   .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
+  @media (max-width: 680px) { .footer-inner { flex-direction: column; align-items: flex-start; } .footer-agent { text-align: left; } }
 </style>
 </head>
 <body>
@@ -436,7 +442,8 @@
     </div></div>
 
   <div class="section-head reveal"><h2>Tabla comparativa</h2></div>
-  <div class="table-wrap reveal"><table class="cma-table">
+  <div class="table-scroll-hint"><span>‹ desliza para ver toda la tabla ›</span></div>
+  <div class="table-wrap reveal"><div class="table-scroll-container"><table class="cma-table">
     <thead><tr><th>Ficha</th><th>Recámaras</th><th>Construcción</th><th>Precio</th><th>$/m²</th></tr></thead>
     <tbody>
   <tr>
@@ -516,7 +523,7 @@
     <td>$6,400,000</td>
     <td>$21,789/m²</td>
   </tr></tbody>
-  </table></div>
+  </table></div></div>
 
   <div class="price-box reveal">
     <div class="lbl">Precio de venta sugerido</div>
