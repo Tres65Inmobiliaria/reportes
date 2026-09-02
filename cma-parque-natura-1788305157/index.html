@@ -167,6 +167,20 @@
 </style>
 </head>
 <body>
+<div id="mobile-overlay">
+  <div class="mo-logo"><img src="../logoblancotres.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="mo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+  <div class="mo-tag">Documento Confidencial</div>
+  <h2>Reporte de Uso Interno</h2>
+  <div class="mo-divider"></div>
+  <ul class="mo-rules">
+    <li>Este reporte contiene información comercial estratégica preparada exclusivamente para el asesor y su cliente.</li>
+    <li>Queda estrictamente prohibido compartir, reenviar o publicar este documento sin autorización escrita.</li>
+    <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
+  </ul>
+  <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
+  <button class="mo-btn" onclick="closeMobileOverlay()">Acepto y accedo al reporte →</button>
+</div>
 <header class="header">
   <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
   <div class="header-meta">
@@ -188,13 +202,14 @@
       </div>
       <div class="p-tags" style="padding:0 22px 18px;"><span class="p-tag">Alberca privada</span><span class="p-tag">Bar con meseta de granito</span><span class="p-tag">Terraza techada</span><span class="p-tag">Garage 4 autos (2 techados)</span><span class="p-tag">Cuarto de servicio con baño</span><span class="p-tag">A/C inverter en toda la casa</span></div>
     </div>
-
+    
     <div class="p-card reveal" style="display:flex; flex-direction:column;">
       <div class="p-card-head" style="padding:16px 22px 10px;">
         <div class="p-card-name" style="font-weight:700;">Ubicación: Parque Natura, Cholul</div>
       </div>
       <div style="flex:1; margin:0 22px 22px; border-radius:8px; overflow:hidden; min-height:340px;"><iframe src="https://www.google.com/maps?q=21.0351097,-89.5438211&z=15&output=embed" style="width:100%; height:100%; min-height:340px; border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    </div>  </div>
+    </div>
+  </div>
 
   <div class="section-head reveal"><h2>Comparables activos en Parque Natura</h2><p>8 fichas en venta en el mismo desarrollo — con fotos para identificar cada casa</p></div>
   <div class="cards-grid">
@@ -213,6 +228,7 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">279 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">—</div></div>
       </div>
     </div>
     <div class="p-card reveal">
@@ -230,6 +246,7 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">3</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">320 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">—</div></div>
       </div>
     </div>
     <div class="p-card reveal">
@@ -247,6 +264,7 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">400 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">371 m²</div></div>
       </div>
     </div>
     <div class="p-card reveal">
@@ -264,6 +282,7 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">317 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">351 m²</div></div>
       </div>
     </div>
     <div class="p-card reveal">
@@ -281,6 +300,7 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">473 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">511 m²</div></div>
       </div>
     </div>
     <div class="p-card reveal">
@@ -298,6 +318,7 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">5</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">355 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">384 m²</div></div>
       </div>
     </div>
     <div class="p-card reveal">
@@ -315,6 +336,7 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">295 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">335 m²</div></div>
       </div>
     </div>
     <div class="p-card reveal">
@@ -332,6 +354,7 @@
         <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">306 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">377 m²</div></div>
       </div>
     </div></div>
 
@@ -418,6 +441,9 @@
   </div>
 </footer>
 <script>
+  function closeMobileOverlay() { document.getElementById('mobile-overlay').style.display = 'none'; sessionStorage.setItem('mo_dismissed', '1'); }
+  function checkMobile() { if (sessionStorage.getItem('mo_dismissed')) return; document.getElementById('mobile-overlay').style.display = 'flex'; }
+  window.addEventListener('DOMContentLoaded', checkMobile);
   function carouselNav(btn, dir) {
     const container = btn.closest('.p-card-carousel');
     const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
