@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Comparativo · PRUEBA footer ampi</title>
+<meta property="og:title" content="Análisis Comparativo · PRUEBA footer ampi">
+<meta property="og:description" content="Tu inversión, analizada con el cuidado que merece">
+<meta property="og:image" content="https://tres65inmobiliaria.github.io/reportes/THUMBNAIL.png">
+<meta property="og:url" content="https://tres65inmobiliaria.github.io/reportes/prueba-footer-ampi-1788368037/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #1a5c5a; --teal-mid: #1e7a6e; --teal-bright: #2aaa99;
+    --teal-light: #e0f4f1; --gold: #c9a84c; --gold-light: #f7f0dc;
+    --white: #ffffff; --off-white: #f7f9f8; --dark: #1a2e2d; --gray: #637270;
+    --gray-light: #eaf0ef; --shadow: 0 2px 20px rgba(26,92,90,0.08);
+    --shadow-hover: 0 10px 36px rgba(26,92,90,0.16); --radius: 12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--off-white); color: var(--dark); line-height: 1.6; font-size: 15px; }
+  .header { background: #fff; border-bottom: 1px solid var(--gray-light); padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .header-logo img { height: 70px; width: auto; display: block; }
+  .header-meta { text-align: right; }
+  .header-meta h1 { font-family: 'Raleway', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.3px; line-height: 1.3; }
+  .header-meta .tagline { font-size: 0.75rem; color: var(--gray); font-weight: 400; letter-spacing: 0.5px; margin-top: 3px; }
+  .header-accent { display: block; width: 40px; height: 2px; background: var(--teal-bright); margin: 6px 0 0 auto; border-radius: 2px; }
+  .market-banner { background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 100%); padding: 28px 48px; }
+  .market-banner-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center; }
+  .market-stat { text-align: center; }
+  .market-stat .val { font-family: 'Raleway', sans-serif; font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1.1; }
+  .market-stat .lbl { font-size: 0.65rem; color: rgba(255,255,255,0.65); letter-spacing: 0.6px; text-transform: uppercase; margin-top: 4px; font-weight: 500; }
+  .market-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); margin: 0 auto; }
+  @media(max-width:700px){ .market-banner-inner{ grid-template-columns:1fr 1fr; } .market-divider{display:none;} }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .section-head { padding: 44px 0 20px; }
+  .section-head h2 { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.2px; }
+  .section-head p { font-size: 0.82rem; color: var(--gray); margin-top: 5px; font-weight: 400; }
+  .warn-box { background: #fdf3e7; border-left: 3px solid #d98c2b; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+  .warn-box .warn-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #a5651a; margin-bottom: 6px; }
+  .warn-box p { font-size: 0.78rem; color: var(--dark); line-height: 1.6; }
+  .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; padding-bottom: 8px; }
+  @media(max-width:780px){ .cards-grid{ grid-template-columns:1fr; } }
+  .p-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1.5px solid transparent; overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; }
+  .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--teal-bright); }
+  .p-card-carousel { position: relative; width: 100%; height: 210px; overflow: hidden; background: var(--gray-light); }
+  .p-card-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+  .p-card-cover.active { display: block; }
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.88); border: none; color: var(--teal-deep); font-size: 1rem; font-weight: 700; cursor: pointer; z-index: 3; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: background .2s; line-height: 1; padding: 0; }
+  .carousel-btn:hover { background: #fff; }
+  .carousel-btn.prev { left: 10px; } .carousel-btn.next { right: 10px; }
+  .carousel-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 3; }
+  .carousel-dots .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.55); cursor: pointer; transition: background .2s, transform .2s; border: none; padding: 0; }
+  .carousel-dots .dot.active { background: #fff; transform: scale(1.35); }
+  .p-badge { position: absolute; top: 12px; right: 12px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; z-index: 2; max-width: 150px; text-align: center; white-space: normal; line-height: 1.3; box-shadow: 0 2px 10px rgba(0,0,0,0.18); background: var(--gold); color: #fff; }
+  .p-card-head { padding: 22px 22px 14px; border-bottom: 1px solid var(--gray-light); }
+  .p-card-id { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; color: var(--teal-bright); text-transform: uppercase; margin-bottom: 6px; }
+  .p-card-name { font-family: 'Raleway', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .p-card-name a { color: inherit; text-decoration: none; transition: color .2s; }
+  .p-card-name a:hover { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 3px; }
+  .p-card-zone { font-size: 0.75rem; color: var(--gray); margin-top: 3px; }
+  .p-price-row { padding: 14px 22px; background: linear-gradient(to right, var(--teal-light), #fff); display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .p-price-real { font-family: 'Raleway', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--teal-deep); line-height: 1; }
+  .p-price-cur { font-size: 0.7rem; font-weight: 600; color: var(--teal-mid); }
+  .p-price-m2 { font-size: 0.68rem; color: var(--gray); margin-left: auto; font-weight: 500; white-space: nowrap; }
+  .p-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-light); }
+  .p-stat { background: #fff; padding: 10px 14px; }
+  .p-stat-lbl { font-size: 0.6rem; font-weight: 700; color: var(--gray); letter-spacing: 0.8px; text-transform: uppercase; }
+  .p-stat-val { font-size: 0.88rem; font-weight: 600; color: var(--dark); margin-top: 1px; }
+  .p-desc { padding: 16px 22px 10px; font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
+  .p-tags { padding: 0 22px 16px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .p-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--teal-light); color: var(--teal-deep); }
+  .p-scores { padding: 14px 22px 18px; border-top: 1px solid var(--gray-light); }
+  .scores-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .score-name { font-size: 0.68rem; color: var(--dark); width: 150px; flex-shrink: 0; }
+  .score-bg { flex: 1; height: 5px; background: var(--gray-light); border-radius: 3px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--teal-mid), var(--teal-bright)); transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+  .score-num { font-size: 0.68rem; font-weight: 700; color: var(--teal-deep); width: 24px; text-align: right; }
+  .tour-interest { margin: 0 22px 18px; padding: 12px 14px; background: var(--off-white); border-radius: 6px; text-align: center; }
+  .tour-interest-lbl { font-size: 0.68rem; font-weight: 700; color: var(--gray); margin-bottom: 8px; }
+  .tour-interest-btns { display: flex; gap: 10px; justify-content: center; }
+  .tour-btn { display: inline-flex; align-items: center; gap: 5px; font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; border: 1px solid var(--gray-light); background: #fff; color: var(--dark); cursor: pointer; }
+  .tour-btn.tour-yes.active { background: var(--teal-mid); border-color: var(--teal-mid); color: #fff; }
+  .tour-btn.tour-no.active { background: #c0453a; border-color: #c0453a; color: #fff; }
+  .rent-box { margin: 0 22px 18px; padding: 12px 14px; background: var(--gold-light); border-left: 3px solid var(--gold); border-radius: 6px; }
+  .rent-box .rent-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
+  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); }
+  .charts-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding-bottom: 8px; }
+  @media(max-width:680px){ .charts-row{grid-template-columns:1fr;} }
+  .chart-box { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+  .chart-box h4 { font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--teal-deep); margin-bottom: 20px; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 12px; height: 170px; padding-bottom: 2px; border-bottom: 1px solid var(--gray-light); }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+  .bar { width: 100%; max-width: 44px; margin: 0 auto; border-radius: 4px 4px 0 0; position: relative; }
+  .bar-v { position: absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.58rem; font-weight:700; color:var(--teal-deep); white-space:nowrap; }
+  .bar-lbl { font-size:0.62rem; color:var(--gray); text-align:center; font-weight:500; line-height:1.3; }
+  .table-scroll-hint { display: none; align-items: center; justify-content: center; margin-bottom: 10px; padding: 9px 16px; background: var(--teal-light); border-radius: 8px; border-left: 3px solid var(--teal-bright); }
+  .table-scroll-hint span { font-size: 0.72rem; font-weight: 600; color: var(--teal-deep); letter-spacing: 0.5px; }
+  @media (max-width: 768px) { .table-scroll-hint { display: flex; } }
+  .table-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sticky-col { position: sticky; left: 0; z-index: 2; background: #fff; white-space: nowrap; }
+  .compare-table thead th.sticky-col { background: var(--teal-deep); z-index: 3; }
+  @media (max-width: 768px) { .compare-table th, .compare-table td { min-width: 160px; } .sticky-col { min-width: 190px !important; } }
+  .table-wrap { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 8px; }
+  .compare-table { width:100%; border-collapse:collapse; }
+  .compare-table thead tr { background: var(--teal-deep); }
+  .compare-table thead th { padding: 14px 18px; text-align: left; color: #fff; font-family: 'Raleway', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.3px; }
+  .compare-table thead th:first-child { color:rgba(255,255,255,0.55); font-size:0.62rem; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; }
+  .compare-table tbody tr { border-bottom:1px solid var(--gray-light); transition:background .15s; }
+  .compare-table tbody tr:hover { background:var(--off-white); }
+  .compare-table tbody tr:last-child { border-bottom:none; }
+  .compare-table tbody td { padding:11px 18px; font-size:0.78rem; color:var(--dark); }
+  .compare-table tbody td:first-child { font-weight:600; color:var(--gray); font-size:0.7rem; letter-spacing:0.3px; }
+  .hl { background:var(--gold-light)!important; font-weight:700!important; color:var(--teal-deep)!important; border-radius:4px; padding:3px 7px; }
+  .tabs-nav { display: flex; gap: 4px; background: var(--gray-light); padding: 4px; border-radius: 8px; width: fit-content; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn { padding: 7px 16px; border: none; background: transparent; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 0.73rem; font-weight: 600; color: var(--gray); cursor: pointer; transition: all .2s; letter-spacing: 0.2px; }
+  .tab-btn.active { background:#fff; color:var(--teal-deep); box-shadow:0 1px 6px rgba(0,0,0,.08); }
+  .tab-pane { display:none; } .tab-pane.active { display:block; }
+  .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:680px){ .analysis-grid{grid-template-columns:1fr;} }
+  .a-box { background:#fff; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
+  .a-box h4 { font-family:'Raleway',sans-serif; font-size:0.86rem; font-weight:700; color:var(--teal-deep); margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid var(--teal-light); }
+  .a-box ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .a-box ul li { font-size:0.75rem; color:var(--gray); padding-left:16px; position:relative; line-height:1.5; }
+  .a-box ul li::before { content:'→'; position:absolute; left:0; color:var(--teal-bright); font-weight:700; }
+  .verdicts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media(max-width:780px){ .verdicts-grid{grid-template-columns:1fr;} }
+  .v-card { background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); border-top:3px solid var(--teal-bright); }
+  .v-card.v-dark { border-top-color:var(--teal-deep); grid-column: 1 / -1; }
+  .v-icon { font-size:1.6rem; margin-bottom:10px; }
+  .v-prop { font-size:0.6rem; font-weight:700; letter-spacing:1.1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:5px; }
+  .v-title { font-family:'Raleway',sans-serif; font-size:0.92rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+  .v-text { font-size:0.75rem; color:var(--gray); line-height:1.6; }
+  .glossary-box { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:26px 28px; }
+  .glossary-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
+  @media(max-width:680px){ .glossary-grid{grid-template-columns:1fr;} }
+  .glossary-term { font-family:'Raleway',sans-serif; font-size:0.82rem; font-weight:700; color:var(--teal-deep); margin-bottom:2px; }
+  .glossary-def { font-size:0.76rem; color:var(--gray); line-height:1.5; }
+  .footer { background: var(--dark); margin-top: 44px; padding: 36px 48px 24px; }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .footer-brand img { height: 60px; width: auto; display: block; margin-bottom: 12px; opacity: 0.95; }
+  .footer-brand p { font-size: 0.74rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+  .footer-agent { text-align:right; }
+  .agent-name { font-family:'Raleway',sans-serif; font-size:1rem; font-weight:700; color:#fff; letter-spacing:-0.2px; }
+  .agent-role { font-size:0.68rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:10px; }
+  .agent-contact { font-size:0.74rem; color:rgba(255,255,255,.5); line-height:1.9; }
+  .agent-contact a { color:rgba(255,255,255,.5); text-decoration:none; }
+  .footer-hr { border:none; border-top:1px solid rgba(255,255,255,.08); margin:22px 0 14px; }
+  .footer-bottom { max-width:1080px; margin:0 auto; font-size:0.66rem; color:rgba(255,255,255,.25); display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
+  #mobile-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: linear-gradient(160deg, #0d2420 0%, var(--teal-deep) 100%); flex-direction: column; align-items: center; justify-content: center; padding: 36px 28px; text-align: center; }
+  #mobile-overlay .mo-logo { margin-bottom: 28px; } #mobile-overlay .mo-logo img { height: 60px; width: auto; opacity: 0.98; }
+  #mobile-overlay .mo-icon { font-size: 2.4rem; margin-bottom: 14px; }
+  #mobile-overlay .mo-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 14px; border: 1px solid rgba(42,170,153,0.4); padding: 5px 14px; border-radius: 20px; display: inline-block; }
+  #mobile-overlay h2 { font-family: 'Raleway', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 16px; }
+  #mobile-overlay .mo-divider { width: 40px; height: 2px; background: var(--teal-bright); border-radius: 2px; margin: 0 auto 20px; }
+  #mobile-overlay .mo-rules { list-style: none; max-width: 340px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 9px; }
+  #mobile-overlay .mo-rules li { font-size: 0.76rem; color: rgba(255,255,255,0.65); display: flex; align-items: flex-start; gap: 8px; text-align: left; line-height: 1.5; }
+  #mobile-overlay .mo-rules li::before { content: '—'; color: var(--teal-bright); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  #mobile-overlay .mo-confirm { font-size: 0.72rem; color: rgba(255,255,255,0.4); max-width: 300px; margin: 0 auto 28px; font-style: italic; line-height: 1.6; }
+  #mobile-overlay .mo-privacy-link { color: var(--teal-bright); text-decoration: underline; }
+  #mobile-overlay .mo-privacy-check { display: flex; align-items: flex-start; gap: 10px; max-width: 320px; margin: 0 auto 20px; text-align: left; }
+  #mobile-overlay .mo-privacy-check input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--teal-bright); cursor: pointer; }
+  #mobile-overlay .mo-privacy-check label { font-size: 0.74rem; color: rgba(255,255,255,0.75); line-height: 1.5; cursor: pointer; }
+  .mo-btn { background: var(--teal-bright); color: #fff; border: none; padding: 14px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
+  .mo-btn:hover { background: #23988a; transform: translateY(-2px); }
+  .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
+</style>
+</head>
+<body>
+
+<div id="mobile-overlay">
+  <div class="mo-logo"><img src="../logoblancotres.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="mo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg></div>
+  <div class="mo-tag">Documento Confidencial</div>
+  <h2>Reporte de Uso Interno</h2>
+  <div class="mo-divider"></div>
+  <ul class="mo-rules">
+    <li>Este reporte contiene información comercial estratégica preparada exclusivamente para el asesor y su cliente.</li>
+    <li>Queda estrictamente prohibido compartir, reenviar o publicar este documento sin autorización escrita.</li>
+    <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
+  </ul>
+  <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
+  <div class="mo-privacy-check">
+    <input type="checkbox" id="mo-privacy-checkbox" onchange="document.getElementById('mo-accept-btn').disabled = !this.checked">
+    <label for="mo-privacy-checkbox">He leído y acepto el <a class="mo-privacy-link" href="https://www.tres65inmobiliaria.com/Aviso_privacidad" target="_blank" rel="noopener">Aviso de Privacidad</a> de TRES65 Inmobiliaria.</label>
+  </div>
+  <button class="mo-btn" id="mo-accept-btn" onclick="closeMobileOverlay()" disabled>Acepto y accedo al reporte →</button>
+</div>
+
+<header class="header">
+  <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="header-meta">
+    <h1>Análisis Comparativo · PRUEBA footer ampi</h1>
+    <span class="header-accent"></span>
+    <p class="tagline">TRES65 Inmobiliaria · September 2026</p>
+  </div>
+</header>
+
+<div class="market-banner"><div class="market-banner-inner">
+    <div class="market-stat"><div class="val">$3,195,000–$3,790,000</div><div class="lbl">Rango de precios encontrado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">—</div><div class="lbl">Vs presupuesto declarado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">3</div><div class="lbl">Recámaras</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">2</div><div class="lbl">Propiedades comparadas</div></div>
+    </div></div>
+
+<div class="wrap">
+  <div class="section-head reveal">
+    <h2>Perfil del cliente</h2>
+    <p>Cliente interesado en zona norte de Mérida · Comprador que busca una casa de 3 recámaras en el norte de Mérida, evaluando entre una opción en preventa y una lista para habitar.</p>
+  </div>
+
+  <div class="warn-box reveal">
+    <div class="warn-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Sobre el presupuesto declarado</div>
+    <p>No se declaró un presupuesto específico, así que comparamos ambas propiedades dentro del rango real de mercado encontrado: de $3,195,000 a $3,790,000 MXN, una diferencia de $595,000 MXN entre ambas.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5962148/105078774/EB-VX2148.jpeg?version=1777397793" alt="Casa en preventa en Real Montejo, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5962148/105078775/EB-VX2148.jpeg?version=1777397793" alt="Casa en preventa en Real Montejo, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5962148/105078778/EB-VX2148.jpeg?version=1777397793" alt="Casa en preventa en Real Montejo, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5962148/105078151/EB-VX2148.jpeg?version=1777397600" alt="Casa en preventa en Real Montejo, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5962148/105078153/EB-VX2148.jpeg?version=1777397600" alt="Casa en preventa en Real Montejo, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5962148/105078152/EB-VX2148.jpeg?version=1777397600" alt="Casa en preventa en Real Montejo, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Mayor terreno (170 m²)</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-VX2148</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/casa-en-preventa-en-real-montejo-merida-yucatan-a0ba183f-d79c-47c6-b0bf-967055ea0111" target="_blank" rel="noopener">Casa en preventa en Real Montejo, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Real Montejo, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$3,790,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$22,970/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">3 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">165.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">170.0 m²</div></div>
+    </div>
+      <div class="p-desc">Casa Real Montejo es una propiedad en preventa de dos plantas, ubicada en un fraccionamiento consolidado y de buena plusvalía al norte-poniente de la ciudad, cerca de Gran Plaza y la Universidad Anáhuac Mayab. Ofrece 165 m² de construcción sobre un terreno de 170 m², el más amplio de las dos opciones. Su ficha no especifica el número de cajones de estacionamiento, lo cual conviene confirmar antes de decidir.</div>
+      <div class="p-tags"><span class="p-tag">Preventa</span><span class="p-tag">Terreno más amplio</span><span class="p-tag">Zona de plusvalía</span><span class="p-tag">Dos niveles</span><span class="p-tag">Ficha incompleta en estacionamiento</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">—</div>
+        <div class="rent-note">Es la opción más cara de las dos, con $595,000 MXN por encima de Casa San Juan Bautista y un precio por m² notablemente más alto.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:60.0%"></div></div><span class="score-num">6.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div>
+      </div>
+      
+      <div class="tour-interest" data-public-id="EB-VX2148">
+        <div class="tour-interest-lbl">¿Te gustaría visitarla?</div>
+        <div class="tour-interest-btns">
+          <button type="button" class="tour-btn tour-yes" data-interes="si" onclick="setTourInterest('EB-VX2148','si',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 6 9 17l-5-5"/></svg> Sí</button>
+          <button type="button" class="tour-btn tour-no" data-interes="no" onclick="setTourInterest('EB-VX2148','no',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> No</button>
+        </div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5960852/105024655/EB-VX0852.JPEG?version=1777313879" alt="Casas en venta cerca de Real Montejo, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5960852/105024574/EB-VX0852.JPEG?version=1777313803" alt="Casas en venta cerca de Real Montejo, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5960852/105024576/EB-VX0852.JPEG?version=1777313803" alt="Casas en venta cerca de Real Montejo, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5960852/105024653/EB-VX0852.JPEG?version=1777313879" alt="Casas en venta cerca de Real Montejo, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5960852/105024801/EB-VX0852.jpeg?version=1777313954" alt="Casas en venta cerca de Real Montejo, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5960852/105024799/EB-VX0852.jpeg?version=1777313954" alt="Casas en venta cerca de Real Montejo, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Mayor construcción (210 m²)</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-VX0852</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/mx/listings/casas-en-venta-cerca-de-real-montejo-merida-yucatan" target="_blank" rel="noopener">Casas en venta cerca de Real Montejo, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">San Juan Bautista, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$3,195,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$15,214/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">3 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">210.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">144.0 m²</div></div>
+    </div>
+      <div class="p-desc">Casa San Juan Bautista ofrece 210 m² de construcción, la mayor de las dos comparadas, con cochera para 2 autos, jardín interior y sala-comedor con vista al jardín, ideal para recibir. Su terreno es más compacto (144 m²), pero compensa con un precio más accesible y un costo por m² considerablemente menor. Es la opción más completa en distribución y equipamiento confirmado.</div>
+      <div class="p-tags"><span class="p-tag">Precio más accesible</span><span class="p-tag">2 cajones confirmados</span><span class="p-tag">Jardín interior</span><span class="p-tag">Mayor construcción</span><span class="p-tag">Buena relación precio-m²</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">—</div>
+        <div class="rent-note">Es $595,000 MXN más económica que Casa Real Montejo, con un precio por m² sensiblemente menor, lo que la hace la opción de mejor valor por peso invertido.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div>
+      </div>
+      
+      <div class="tour-interest" data-public-id="EB-VX0852">
+        <div class="tour-interest-lbl">¿Te gustaría visitarla?</div>
+        <div class="tour-interest-btns">
+          <button type="button" class="tour-btn tour-yes" data-interes="si" onclick="setTourInterest('EB-VX0852','si',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 6 9 17l-5-5"/></svg> Sí</button>
+          <button type="button" class="tour-btn tour-no" data-interes="no" onclick="setTourInterest('EB-VX0852','no',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> No</button>
+        </div>
+      </div>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Comparativa de números clave</h2><p>Precio y precio por m² construido</p></div>
+  <div class="charts-row reveal">
+    <div class="chart-box">
+      <h4>Precio de venta (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$3,790,000</span>
+          </div>
+          <span class="bar-lbl">Casa Real Montejo</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:45%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$3,195,000</span>
+          </div>
+          <span class="bar-lbl">Casa San Juan Bautista</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">Escala desde $2,715,750 para que las diferencias se distingan — el valor exacto va rotulado sobre cada barra.</p>
+    </div>
+    <div class="chart-box">
+      <h4>Precio por m² construido (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$22,970</span>
+          </div>
+          <span class="bar-lbl">Casa Real Montejo</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:23%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$15,214</span>
+          </div>
+          <span class="bar-lbl">Casa San Juan Bautista</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">Escala desde $12,932 para que las diferencias se distingan — el valor exacto va rotulado sobre cada barra.</p>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Tabla comparativa completa</h2><p>Todos los factores decisivos sin filtros</p></div>
+  <div class="table-scroll-hint"><span>‹ desliza para ver las propiedades ›</span></div>
+  <div class="table-wrap reveal"><div class="table-scroll-container">
+    <table class="compare-table">
+      <thead><tr><th class="sticky-col">Criterio</th><th>Casa Real Montejo</th><th>Casa San Juan Bautista</th></tr></thead>
+      <tbody><tr><td class="sticky-col">Zona</td><td>Real Montejo, Mérida, Yucatán</td><td>San Juan Bautista, Mérida, Yucatán</td></tr><tr><td class="sticky-col">Precio</td><td>$3,790,000 MXN</td><td>$3,195,000 MXN</td></tr><tr><td class="sticky-col">Precio/m² construido</td><td>$22,970 MXN</td><td>$15,214 MXN</td></tr><tr><td class="sticky-col">Construcción</td><td>165.0 m²</td><td>210.0 m²</td></tr><tr><td class="sticky-col">Terreno</td><td>170.0 m²</td><td>144.0 m²</td></tr><tr><td class="sticky-col">Recámaras / Baños</td><td>3 / 3</td><td>3 / 3</td></tr><tr><td class="sticky-col">Diferencia vs presupuesto</td><td>—</td><td>—</td></tr></tbody>
+    </table>
+  </div></div>
+
+  <div class="section-head reveal"><h2>Análisis por prioridad</h2><p>Lo que cambia según qué esté priorizando el cliente</p></div>
+  <div class="reveal">
+    <div class="tabs-nav"><button class="tab-btn active" onclick="switchTab('t0',this)">Ajuste al presupuesto</button><button class="tab-btn" onclick="switchTab('t1',this)">Distribución y vida social</button><button class="tab-btn" onclick="switchTab('t2',this)">Riesgo y pendientes</button></div>
+    
+    <div class="tab-pane active" id="tab-t0">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>A favor de Casa San Juan Bautista</h4><ul><li>Precio $595,000 MXN menor</li><li>Precio por m² notablemente más bajo</li><li>Más metros de construcción por el mismo presupuesto</li></ul></div>
+        <div class="a-box"><h4>En contra de Casa Real Montejo</h4><ul><li>Precio por m² casi duplica al de Casa San Juan Bautista</li><li>Es la opción más cara de las dos comparadas</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t1">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>A favor de Casa San Juan Bautista</h4><ul><li>Jardín interior y sala-comedor con vista al jardín</li><li>2 cajones de estacionamiento confirmados en ficha</li><li>Mayor superficie de construcción (210 m²)</li></ul></div>
+        <div class="a-box"><h4>Pendientes de Casa Real Montejo</h4><ul><li>No especifica número de cajones de estacionamiento</li><li>Terreno más amplio (170 m²) pero con menos construcción útil</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t2">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>A favor de Casa San Juan Bautista</h4><ul><li>Ficha con distribución detallada y clara</li><li>No está en preventa, reduce incertidumbre de tiempos</li></ul></div>
+        <div class="a-box"><h4>Riesgos de Casa Real Montejo</h4><ul><li>Está en preventa, sujeta a tiempos de construcción</li><li>Ficha incompleta respecto a estacionamiento</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head reveal"><h2>Veredictos finales</h2><p>Sin ambigüedad — y sin esconder lo que sigue sin resolverse</p></div>
+  <div class="verdicts-grid">
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="v-prop">Casa Real Montejo</div>
+      <div class="v-title">Casa Real Montejo: ubicación y terreno amplio, pero en preventa</div>
+      <p class="v-text">Casa Real Montejo destaca por su terreno de 170 m² y su ubicación en una zona consolidada y de buena plusvalía, cerca de plazas comerciales y universidades. Sin embargo, al estar en preventa implica esperar tiempos de construcción, y su ficha no aclara el número de cajones de estacionamiento, algo importante de confirmar antes de avanzar.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="v-prop">Casa San Juan Bautista</div>
+      <div class="v-title">Casa San Juan Bautista: la opción más completa y de mejor precio</div>
+      <p class="v-text">Casa San Juan Bautista ofrece más metros de construcción, jardín interior y 2 cajones de estacionamiento confirmados, todo a un precio $595,000 MXN menor que la otra opción. Es la propuesta con mejor relación precio-espacio de las dos comparadas.</p>
+    </div>
+    <div class="v-card v-dark reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="v-prop">Para Cliente interesado en zona norte de Mérida</div>
+      <div class="v-title">Dos caminos distintos: terreno y ubicación vs. espacio y ahorro</div>
+      <p class="v-text">Si buscas más terreno y estar en una zona de alta plusvalía cerca de plazas y universidades, Casa Real Montejo es atractiva, aunque deberás considerar los tiempos de preventa y confirmar el tema del estacionamiento. Si priorizas más espacio construido, jardín interior y ahorrar $595,000 MXN, Casa San Juan Bautista es la opción más sólida y lista para vivir. ¿Qué pesa más para ti en esta decisión: la ubicación y el terreno, o el espacio construido y el ahorro inmediato?</p>
+    </div></div>
+  
+  <div class="section-head reveal"><h2>Glosario</h2><p>Términos usados en este reporte, explicados sin tecnicismos</p></div>
+  <div class="glossary-box reveal"><div class="glossary-grid"><div><div class="glossary-term">Preventa</div><div class="glossary-def">Significa que la casa aún está en construcción y se compra antes de que esté terminada.</div></div><div><div class="glossary-term">Plusvalía</div><div class="glossary-def">Es el aumento de valor que puede tener una propiedad con el tiempo gracias a su ubicación o desarrollo de la zona.</div></div></div></div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../logoblancotres.png" alt="TRES65 Inmobiliaria">
+      <p>Especialistas en propiedades de<br>Mérida, Yucatán.<br>www.tres65inmobiliaria.com</p>
+    </div>
+    <div class="footer-agent">
+      <div class="agent-name">Guillermo Martínez Espinosa</div>
+      <div class="agent-role">Agente Inmobiliario Certificado · TRES65 Inmobiliaria</div>
+      <div class="agent-contact">+52 999 241 3657<br><a href="mailto:gmartinez@tres65inmobiliaria.com">gmartinez@tres65inmobiliaria.com</a></div>
+      <img src="../logo-ampi.png" alt="AMPI Mérida" style="height:32px; width:auto; margin-top:10px; background:#fff; padding:4px 8px; border-radius:6px;">
+    </div>
+  </div>
+  <hr class="footer-hr">
+  <div class="footer-bottom">
+    <span>© 2026 TRES65 Inmobiliaria® · Marca registrada · Todos los derechos reservados</span>
+    <span>Análisis confidencial · Datos verificados en EasyBroker</span>
+  </div>
+</footer>
+
+<script>window.REPORT_CLIENT_TOKEN = "7UrQrsNr6RE";</script>
+<script>
+  function closeMobileOverlay() { document.getElementById('mobile-overlay').style.display = 'none'; sessionStorage.setItem('mo_dismissed', '1'); }
+  function checkMobile() { if (sessionStorage.getItem('mo_dismissed')) return; document.getElementById('mobile-overlay').style.display = 'flex'; }
+  window.addEventListener('DOMContentLoaded', checkMobile);
+  function carouselNav(btn, dir) {
+    const container = btn.closest('.p-card-carousel');
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    let idx = imgs.findIndex(img => img.classList.contains('active'));
+    imgs[idx].classList.remove('active'); dots[idx].classList.remove('active');
+    idx = (idx + dir + imgs.length) % imgs.length;
+    imgs[idx].classList.add('active'); dots[idx].classList.add('active');
+  }
+  function carouselDot(dot) {
+    const container = dot.closest('.p-card-carousel');
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const targetIdx = dots.indexOf(dot);
+    imgs.forEach(img => img.classList.remove('active')); dots.forEach(d => d.classList.remove('active'));
+    imgs[targetIdx].classList.add('active'); dots[targetIdx].classList.add('active');
+  }
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+  function setTourInterest(publicId, interes, btn) {
+    if (!window.REPORT_CLIENT_TOKEN) return;
+    const card = btn.closest('.p-card');
+    card.querySelectorAll('.tour-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    try { localStorage.setItem('tour_interest_' + publicId, interes); } catch (e) {}
+    fetch('https://agente-tres65-production.up.railway.app/portal/analisis-interes', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({client_token: window.REPORT_CLIENT_TOKEN, public_id: publicId, interes: interes})
+    }).catch(e => console.error('Error guardando interés:', e));
+  }
+  function restoreTourInterest() {
+    document.querySelectorAll('.tour-interest').forEach(el => {
+      const publicId = el.dataset.publicId;
+      let saved = null;
+      try { saved = localStorage.getItem('tour_interest_' + publicId); } catch (e) {}
+      if (!saved) return;
+      const btn = el.querySelector('.tour-btn[data-interes="' + saved + '"]');
+      if (btn) btn.classList.add('active');
+    });
+  }
+  window.addEventListener('DOMContentLoaded', restoreTourInterest);
+</script>
+</body>
+</html>
