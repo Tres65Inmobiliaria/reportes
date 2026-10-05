@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Comparativo · Marco Torres</title>
+<meta property="og:title" content="Análisis Comparativo · Marco Torres">
+<meta property="og:description" content="Tu inversión, analizada con el cuidado que merece">
+<meta property="og:image" content="https://tres65inmobiliaria.github.io/reportes/THUMBNAIL.png">
+<meta property="og:url" content="https://tres65inmobiliaria.github.io/reportes/marco-torres-1791213704/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #1a5c5a; --teal-mid: #1e7a6e; --teal-bright: #2aaa99;
+    --teal-light: #e0f4f1; --gold: #c9a84c; --gold-light: #f7f0dc;
+    --white: #ffffff; --off-white: #f7f9f8; --dark: #1a2e2d; --gray: #637270;
+    --gray-light: #eaf0ef; --shadow: 0 2px 20px rgba(26,92,90,0.08);
+    --shadow-hover: 0 10px 36px rgba(26,92,90,0.16); --radius: 12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--off-white); color: var(--dark); line-height: 1.6; font-size: 15px; }
+  .header { background: #fff; border-bottom: 1px solid var(--gray-light); padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .header-logo img { height: 70px; width: auto; display: block; }
+  .header-meta { text-align: right; }
+  .header-meta h1 { font-family: 'Raleway', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.3px; line-height: 1.3; }
+  .header-meta .tagline { font-size: 0.75rem; color: var(--gray); font-weight: 400; letter-spacing: 0.5px; margin-top: 3px; }
+  .header-accent { display: block; width: 40px; height: 2px; background: var(--teal-bright); margin: 6px 0 0 auto; border-radius: 2px; }
+  .market-banner { background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 100%); padding: 28px 48px; }
+  .market-banner-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center; }
+  .market-stat { text-align: center; }
+  .market-stat .val { font-family: 'Raleway', sans-serif; font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1.1; }
+  .market-stat .lbl { font-size: 0.65rem; color: rgba(255,255,255,0.65); letter-spacing: 0.6px; text-transform: uppercase; margin-top: 4px; font-weight: 500; }
+  .market-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); margin: 0 auto; }
+  @media(max-width:700px){ .market-banner-inner{ grid-template-columns:1fr 1fr; } .market-divider{display:none;} }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .section-head { padding: 44px 0 20px; }
+  .section-head h2 { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.2px; }
+  .section-head p { font-size: 0.82rem; color: var(--gray); margin-top: 5px; font-weight: 400; }
+  .warn-box { background: #fdf3e7; border-left: 3px solid #d98c2b; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+  .warn-box .warn-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #a5651a; margin-bottom: 6px; }
+  .warn-box p { font-size: 0.78rem; color: var(--dark); line-height: 1.6; }
+  .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; padding-bottom: 8px; }
+  @media(max-width:780px){ .cards-grid{ grid-template-columns:1fr; } }
+  .p-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1.5px solid transparent; overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; }
+  .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--teal-bright); }
+  .p-card-carousel { position: relative; width: 100%; height: 210px; overflow: hidden; background: var(--gray-light); }
+  .p-card-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+  .p-card-cover.active { display: block; }
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.88); border: none; color: var(--teal-deep); font-size: 1rem; font-weight: 700; cursor: pointer; z-index: 3; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: background .2s; line-height: 1; padding: 0; }
+  .carousel-btn:hover { background: #fff; }
+  .carousel-btn.prev { left: 10px; } .carousel-btn.next { right: 10px; }
+  .carousel-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 3; }
+  .carousel-dots .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.55); cursor: pointer; transition: background .2s, transform .2s; border: none; padding: 0; }
+  .carousel-dots .dot.active { background: #fff; transform: scale(1.35); }
+  .p-badge { position: absolute; top: 12px; right: 12px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; z-index: 2; max-width: 150px; text-align: center; white-space: normal; line-height: 1.3; box-shadow: 0 2px 10px rgba(0,0,0,0.18); background: var(--gold); color: #fff; }
+  .p-card-head { padding: 22px 22px 14px; border-bottom: 1px solid var(--gray-light); }
+  .p-card-id { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; color: var(--teal-bright); text-transform: uppercase; margin-bottom: 6px; }
+  .p-card-name { font-family: 'Raleway', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .p-card-name a { color: inherit; text-decoration: none; transition: color .2s; }
+  .p-card-name a:hover { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 3px; }
+  .p-card-zone { font-size: 0.75rem; color: var(--gray); margin-top: 3px; }
+  .p-price-row { padding: 14px 22px; background: linear-gradient(to right, var(--teal-light), #fff); display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .p-price-real { font-family: 'Raleway', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--teal-deep); line-height: 1; }
+  .p-price-cur { font-size: 0.7rem; font-weight: 600; color: var(--teal-mid); }
+  .p-price-m2 { font-size: 0.68rem; color: var(--gray); margin-left: auto; font-weight: 500; white-space: nowrap; }
+  .p-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-light); }
+  .p-stat { background: #fff; padding: 10px 14px; }
+  .p-stat-lbl { font-size: 0.6rem; font-weight: 700; color: var(--gray); letter-spacing: 0.8px; text-transform: uppercase; }
+  .p-stat-val { font-size: 0.88rem; font-weight: 600; color: var(--dark); margin-top: 1px; }
+  .p-desc { padding: 16px 22px 10px; font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
+  .p-tags { padding: 0 22px 16px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .p-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--teal-light); color: var(--teal-deep); }
+  .p-scores { padding: 14px 22px 18px; border-top: 1px solid var(--gray-light); }
+  .scores-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .score-name { font-size: 0.68rem; color: var(--dark); width: 150px; flex-shrink: 0; }
+  .score-bg { flex: 1; height: 5px; background: var(--gray-light); border-radius: 3px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--teal-mid), var(--teal-bright)); transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+  .score-num { font-size: 0.68rem; font-weight: 700; color: var(--teal-deep); width: 24px; text-align: right; }
+  .tour-interest { margin: 0 22px 18px; padding: 12px 14px; background: var(--off-white); border-radius: 6px; text-align: center; }
+  .tour-interest-lbl { font-size: 0.68rem; font-weight: 700; color: var(--gray); margin-bottom: 8px; }
+  .tour-interest-btns { display: flex; gap: 10px; justify-content: center; }
+  .tour-btn { display: inline-flex; align-items: center; gap: 5px; font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; border: 1px solid var(--gray-light); background: #fff; color: var(--dark); cursor: pointer; }
+  .tour-btn.tour-yes.active { background: var(--teal-mid); border-color: var(--teal-mid); color: #fff; }
+  .tour-btn.tour-no.active { background: #c0453a; border-color: #c0453a; color: #fff; }
+  .rent-box { margin: 0 22px 18px; padding: 12px 14px; background: var(--gold-light); border-left: 3px solid var(--gold); border-radius: 6px; }
+  .rent-box .rent-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
+  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); }
+  .charts-row { display: grid; grid-template-columns: 1fr; gap: 20px; padding-bottom: 8px; }
+  .chart-box { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+  .chart-box h4 { font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--teal-deep); margin-bottom: 20px; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 12px; height: 170px; padding-bottom: 2px; border-bottom: 1px solid var(--gray-light); }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+  .bar { width: 100%; max-width: 44px; margin: 0 auto; border-radius: 4px 4px 0 0; position: relative; }
+  .bar-v { position: absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.58rem; font-weight:700; color:var(--teal-deep); white-space:nowrap; }
+  .bar-lbl { font-size:0.62rem; color:var(--gray); text-align:center; font-weight:500; line-height:1.3; }
+  .table-scroll-hint { display: none; align-items: center; justify-content: center; margin-bottom: 10px; padding: 9px 16px; background: var(--teal-light); border-radius: 8px; border-left: 3px solid var(--teal-bright); }
+  .table-scroll-hint span { font-size: 0.72rem; font-weight: 600; color: var(--teal-deep); letter-spacing: 0.5px; }
+  @media (max-width: 768px) { .table-scroll-hint { display: flex; } }
+  .table-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sticky-col { position: sticky; left: 0; z-index: 2; background: #fff; white-space: nowrap; }
+  .compare-table thead th.sticky-col { background: var(--teal-deep); z-index: 3; }
+  @media (max-width: 768px) { .compare-table th, .compare-table td { min-width: 160px; } .sticky-col { min-width: 190px !important; } }
+  .table-wrap { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 8px; }
+  .compare-table { width:100%; border-collapse:collapse; }
+  .compare-table thead tr { background: var(--teal-deep); }
+  .compare-table thead th { padding: 14px 18px; text-align: left; color: #fff; font-family: 'Raleway', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.3px; }
+  .compare-table thead th:first-child { color:rgba(255,255,255,0.55); font-size:0.62rem; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; }
+  .compare-table tbody tr { border-bottom:1px solid var(--gray-light); transition:background .15s; }
+  .compare-table tbody tr:hover { background:var(--off-white); }
+  .compare-table tbody tr:last-child { border-bottom:none; }
+  .compare-table tbody td { padding:11px 18px; font-size:0.78rem; color:var(--dark); }
+  .compare-table tbody td:first-child { font-weight:600; color:var(--gray); font-size:0.7rem; letter-spacing:0.3px; }
+  .hl { background:var(--gold-light)!important; font-weight:700!important; color:var(--teal-deep)!important; border-radius:4px; padding:3px 7px; }
+  .tabs-nav { display: flex; gap: 4px; background: var(--gray-light); padding: 4px; border-radius: 8px; width: fit-content; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn { padding: 7px 16px; border: none; background: transparent; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 0.73rem; font-weight: 600; color: var(--gray); cursor: pointer; transition: all .2s; letter-spacing: 0.2px; }
+  .tab-btn.active { background:#fff; color:var(--teal-deep); box-shadow:0 1px 6px rgba(0,0,0,.08); }
+  .tab-pane { display:none; } .tab-pane.active { display:block; }
+  .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:680px){ .analysis-grid{grid-template-columns:1fr;} }
+  .a-box { background:#fff; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
+  .a-box h4 { font-family:'Raleway',sans-serif; font-size:0.86rem; font-weight:700; color:var(--teal-deep); margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid var(--teal-light); }
+  .a-box ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .a-box ul li { font-size:0.75rem; color:var(--gray); padding-left:16px; position:relative; line-height:1.5; }
+  .a-box ul li::before { content:'→'; position:absolute; left:0; color:var(--teal-bright); font-weight:700; }
+  .verdicts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media(max-width:780px){ .verdicts-grid{grid-template-columns:1fr;} }
+  .v-card { background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); border-top:3px solid var(--teal-bright); }
+  .v-card.v-dark { border-top-color:var(--teal-deep); grid-column: 1 / -1; }
+  .v-icon { font-size:1.6rem; margin-bottom:10px; }
+  .v-prop { font-size:0.6rem; font-weight:700; letter-spacing:1.1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:5px; }
+  .v-title { font-family:'Raleway',sans-serif; font-size:0.92rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+  .v-text { font-size:0.75rem; color:var(--gray); line-height:1.6; }
+  .glossary-box { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:26px 28px; }
+  .glossary-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
+  @media(max-width:680px){ .glossary-grid{grid-template-columns:1fr;} }
+  .glossary-term { font-family:'Raleway',sans-serif; font-size:0.82rem; font-weight:700; color:var(--teal-deep); margin-bottom:2px; }
+  .glossary-def { font-size:0.76rem; color:var(--gray); line-height:1.5; }
+  .footer { background: var(--dark); margin-top: 44px; padding: 36px 48px 24px; }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .footer-brand img { height: 60px; width: auto; display: block; margin-bottom: 12px; opacity: 0.95; }
+  .footer-brand p { font-size: 0.74rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+  .footer-agent { text-align:right; }
+  @media (max-width: 680px) { .footer-inner { flex-direction: column; align-items: flex-start; } .footer-agent { text-align: left; } }
+  .agent-name { font-family:'Raleway',sans-serif; font-size:1rem; font-weight:700; color:#fff; letter-spacing:-0.2px; }
+  .agent-role { font-size:0.68rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:10px; }
+  .agent-contact { font-size:0.74rem; color:rgba(255,255,255,.5); line-height:1.9; }
+  .agent-contact a { color:rgba(255,255,255,.5); text-decoration:none; }
+  .footer-hr { border:none; border-top:1px solid rgba(255,255,255,.08); margin:22px 0 14px; }
+  .footer-bottom { max-width:1080px; margin:0 auto; font-size:0.66rem; color:rgba(255,255,255,.25); display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
+  #mobile-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: linear-gradient(160deg, #0d2420 0%, var(--teal-deep) 100%); flex-direction: column; align-items: center; justify-content: center; justify-content: safe center; padding: 36px 28px; text-align: center; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  #mobile-overlay .mo-logo { margin: 6px auto 20px; } #mobile-overlay .mo-logo img { height: 68px; width: auto; opacity: 0.98; }
+  #mobile-overlay .mo-icon { font-size: 2.4rem; margin-bottom: 14px; }
+  #mobile-overlay .mo-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 14px; border: 1px solid rgba(42,170,153,0.4); padding: 5px 14px; border-radius: 20px; display: inline-block; }
+  #mobile-overlay h2 { font-family: 'Raleway', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 16px; }
+  #mobile-overlay .mo-divider { width: 40px; height: 2px; background: var(--teal-bright); border-radius: 2px; margin: 0 auto 20px; }
+  #mobile-overlay .mo-rules { list-style: none; max-width: 340px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 9px; }
+  #mobile-overlay .mo-rules li { font-size: 0.76rem; color: rgba(255,255,255,0.65); display: flex; align-items: flex-start; gap: 8px; text-align: left; line-height: 1.5; }
+  #mobile-overlay .mo-rules li::before { content: '—'; color: var(--teal-bright); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  #mobile-overlay .mo-confirm { font-size: 0.72rem; color: rgba(255,255,255,0.4); max-width: 300px; margin: 0 auto 28px; font-style: italic; line-height: 1.6; }
+  #mobile-overlay .mo-privacy-link { color: var(--teal-bright); text-decoration: underline; }
+  #mobile-overlay .mo-privacy-check { display: flex; align-items: flex-start; gap: 10px; max-width: 320px; margin: 0 auto 20px; text-align: left; }
+  #mobile-overlay .mo-privacy-check input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--teal-bright); cursor: pointer; }
+  #mobile-overlay .mo-privacy-check label { font-size: 0.74rem; color: rgba(255,255,255,0.75); line-height: 1.5; cursor: pointer; }
+  .mo-btn { background: var(--teal-bright); color: #fff; border: none; padding: 14px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
+  .mo-btn:hover { background: #23988a; transform: translateY(-2px); }
+  .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
+</style>
+</head>
+<body>
+
+<div id="mobile-overlay">
+  <div class="mo-icon"><img src="../ronda-silencio.png" alt="" style="height:180px; width:auto;"></div>
+  <div class="mo-tag">Documento Confidencial</div>
+  <h2>Reporte de Uso Interno</h2>
+  <div class="mo-logo"><img src="../logoblancotres.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="mo-divider"></div>
+  <ul class="mo-rules">
+    <li>Este reporte contiene información comercial estratégica preparada exclusivamente para el asesor y su cliente.</li>
+    <li>Queda estrictamente prohibido compartir, reenviar o publicar este documento sin autorización escrita.</li>
+    <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
+  </ul>
+  <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
+  <div class="mo-privacy-check">
+    <input type="checkbox" id="mo-privacy-checkbox" onchange="document.getElementById('mo-accept-btn').disabled = !this.checked">
+    <label for="mo-privacy-checkbox">He leído y acepto el <a class="mo-privacy-link" href="https://www.tres65inmobiliaria.com/Aviso_privacidad" target="_blank" rel="noopener">Aviso de Privacidad</a> de TRES65 Inmobiliaria.</label>
+  </div>
+  <button class="mo-btn" id="mo-accept-btn" onclick="closeMobileOverlay()" disabled>Acepto y accedo al reporte →</button>
+</div>
+
+<header class="header">
+  <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="header-meta">
+    <h1>Análisis Comparativo · Marco Torres</h1>
+    <span class="header-accent"></span>
+    <p class="tagline">TRES65 Inmobiliaria · October 2026</p>
+  </div>
+</header>
+
+<div style="text-align:center; padding:10px 16px; background:var(--teal-light); color:var(--teal-deep); font-family:'Raleway',sans-serif; font-size:0.85rem; font-weight:600;">Tu patrimonio. Nuestro compromiso. Los 365 días del año.</div>
+
+<div class="market-banner"><div class="market-banner-inner">
+    <div class="market-stat"><div class="val">$550,000–$2,635,011</div><div class="lbl">Rango de precios encontrado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">+10.0% a +427.0%</div><div class="lbl">Vs presupuesto declarado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">—</div><div class="lbl">Recámaras</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">14</div><div class="lbl">Propiedades comparadas</div></div>
+    </div></div>
+
+<div class="wrap">
+  <div class="section-head reveal">
+    <h2>Perfil del cliente</h2>
+    <p>Marco Torres · Busca un terreno de inversión al norte de Mérida, después del periférico, en zonas conurbadas con buen potencial de plusvalía a mediano y largo plazo.</p>
+  </div>
+
+  <div class="warn-box reveal">
+    <div class="warn-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Sobre el presupuesto declarado</div>
+    <p>El presupuesto declarado de $500,000 con recurso propio solo alcanza cómodamente a Casa Conkal 2 ($550,000); el resto de las opciones analizadas, especialmente las de mayor plusvalía proyectada, están considerablemente por encima, pero varias ofrecen planes de financiamiento a plazos sin intereses que permiten acceder a ellas sin comprometer todo el capital de inmediato.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/2648560/41521340/EB-JD8560.png?s=add4cd85168ec0a8&amp;version=1639170295" alt="Lotes residenciales con Amenidades a pocos minutos de la Playa. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2648560/41521344/EB-JD8560.png?s=090ea62976048043&amp;version=1639170295" alt="Lotes residenciales con Amenidades a pocos minutos de la Playa. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2648560/41521346/EB-JD8560.png?s=9a5fbc03f6a065c9&amp;version=1639170295" alt="Lotes residenciales con Amenidades a pocos minutos de la Playa. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2648560/41521343/EB-JD8560.png?s=055ee7b31c166679&amp;version=1639170295" alt="Lotes residenciales con Amenidades a pocos minutos de la Playa. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2648560/41521341/EB-JD8560.png?s=02e7db65d9f0d1f8&amp;version=1639170295" alt="Lotes residenciales con Amenidades a pocos minutos de la Playa. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/2648560/41521338/EB-JD8560.png?s=e367b33636f74eab&amp;version=1639170295" alt="Lotes residenciales con Amenidades a pocos minutos de la Playa. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Cerca de la playa, financiamiento a 36 meses</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-JD8560</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-residenciales-con-amenidades-a-pocos-minutos-de-la-playa" target="_blank" rel="noopener">Lotes residenciales con Amenidades a pocos minutos de la Playa.</a></div>
+        <div class="p-card-zone">Komchen, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$1,324,800</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">360.0 m²</div></div>
+    </div>
+      <div class="p-desc">Lote de 360 m² en Komchen, parte de un desarrollo con amenidades completas y a pocos minutos de la playa, con financiamiento a 12, 24 y 36 meses. Buena alternativa si se busca diversificar hacia la costa.</div>
+      <div class="p-tags"><span class="p-tag">Cerca de la playa</span><span class="p-tag">Financiamiento a plazos</span><span class="p-tag">Amenidades completas</span><span class="p-tag">Komchen</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+824,800 MXN (+165.0%)</div>
+        <div class="rent-note">Con $824,800 de diferencia, requiere definitivamente usar el esquema de financiamiento para no comprometer todo el capital.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:40.0%"></div></div><span class="score-num">4.0</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5571941/96890181/EB-UK1941.png?s=d13b22808c91d534&amp;version=1760051493" alt="Lotes en venta en privada en Cholul, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5571941/96890168/EB-UK1941.png?s=b9c4f4b5a5689e17&amp;version=1760051493" alt="Lotes en venta en privada en Cholul, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5571941/96890160/EB-UK1941.png?s=e0083ce802374da6&amp;version=1760051493" alt="Lotes en venta en privada en Cholul, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5571941/96890164/EB-UK1941.jpg?s=2dc1734a4d46690e&amp;version=1760051493" alt="Lotes en venta en privada en Cholul, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5571941/96890158/EB-UK1941.png?s=374c6905187a0daa&amp;version=1760051493" alt="Lotes en venta en privada en Cholul, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5571941/96890163/EB-UK1941.png?s=75667591bd8549b0&amp;version=1760051493" alt="Lotes en venta en privada en Cholul, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Precio más alto del grupo</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-UK1941</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-en-venta-en-privada-en-cholul-merida-yucatan" target="_blank" rel="noopener">Lotes en venta en privada en Cholul, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Cholul, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$2,635,011</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">335.03 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno de 335.03 m² en Cholul, dentro de un desarrollo de alto nivel con casa club, cuatro parques y entorno totalmente residencial. Es la opción de mayor inversión inicial entre todas las analizadas.</div>
+      <div class="p-tags"><span class="p-tag">Precio más alto</span><span class="p-tag">Cholul</span><span class="p-tag">Entorno premium</span><span class="p-tag">Alta demanda</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+2,135,011 MXN (+427.0%)</div>
+        <div class="rent-note">Su diferencia de $2,135,011 es la mayor del grupo, por lo que requeriría financiamiento o capital adicional significativo.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:15.0%"></div></div><span class="score-num">1.5</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4800075/81341907/EB-RL0075.jpg?s=1d6ee6f25ba1b180&amp;version=1729107158" alt="Lotes en venta en Conkal, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4800075/81341915/EB-RL0075.jpg?s=aa299320dc83ea93&amp;version=1729107160" alt="Lotes en venta en Conkal, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4800075/81341917/EB-RL0075.jpeg?s=eabebe3fe2edc40c&amp;version=1729107160" alt="Lotes en venta en Conkal, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4800075/81341920/EB-RL0075.jpeg?s=c27022b1febe2d4b&amp;version=1729107161" alt="Lotes en venta en Conkal, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4800075/81341922/EB-RL0075.jpg?s=915176f485712e75&amp;version=1729107162" alt="Lotes en venta en Conkal, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4800075/81341919/EB-RL0075.jpg?s=58a547772e6e8bf0&amp;version=1729107161" alt="Lotes en venta en Conkal, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Opción de entrada con financiamiento</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-RL0075</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-en-venta-en-conkal-yucatan-conkal" target="_blank" rel="noopener">Lotes en venta en Conkal, Yucatán.</a></div>
+        <div class="p-card-zone">Conkal, Conkal, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$647,398</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">212.96 m²</div></div>
+    </div>
+      <div class="p-desc">Lote de 212.96 m² en el desarrollo Marzela, en Conkal, con financiamiento de hasta 60 meses sin intereses. Ofrece amenidades completas (casa club, gimnasio, albercas) por un precio cercano al presupuesto si se usa el esquema a plazos.</div>
+      <div class="p-tags"><span class="p-tag">Financiamiento a 60 meses</span><span class="p-tag">Amenidades completas</span><span class="p-tag">Conkal</span><span class="p-tag">En construcción</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+147,398 MXN (+29.5%)</div>
+        <div class="rent-note">Con $147,398 de diferencia sobre el presupuesto, es manejable si se aprovecha el financiamiento a plazos.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5623694/97950036/EB-UP3694.jpg?s=d80d743d193422e0&amp;version=1762204408" alt="Lotes en venta en privada Temozón Norte, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5623694/97950034/EB-UP3694.jpg?s=0adc6bf83d9b13f5&amp;version=1762204408" alt="Lotes en venta en privada Temozón Norte, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5623694/97950029/EB-UP3694.jpg?s=b853dcf3acd09d4e&amp;version=1762204408" alt="Lotes en venta en privada Temozón Norte, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5623694/97950035/EB-UP3694.jpg?s=88dfefc9ece037e2&amp;version=1762204408" alt="Lotes en venta en privada Temozón Norte, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5623694/97950042/EB-UP3694.jpg?s=9491ea8db0266b36&amp;version=1762204408" alt="Lotes en venta en privada Temozón Norte, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5623694/97950043/EB-UP3694.jpg?s=fefee2898f131905&amp;version=1762204408" alt="Lotes en venta en privada Temozón Norte, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Exclusividad en Temozón Norte</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-UP3694</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-en-venta-en-privada-temozon-norte-merida-yucatan" target="_blank" rel="noopener">Lotes en venta en privada Temozón Norte, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Temozón Norte, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$2,221,895</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">341.83 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno de 341.83 m² en Nukuul, una privada exclusiva de solo 49 lotes en Temozón Norte, considerada la zona más exclusiva de Mérida. Enfoque en sostenibilidad y tranquilidad, con barda perimetral y vigilancia 24/7.</div>
+      <div class="p-tags"><span class="p-tag">Zona exclusiva</span><span class="p-tag">Temozón Norte</span><span class="p-tag">Solo 49 lotes</span><span class="p-tag">Alta plusvalía</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+1,721,895 MXN (+344.4%)</div>
+        <div class="rent-note">Con $1,721,895 de diferencia, es de las más altas del grupo, propia de su exclusividad.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:30.0%"></div></div><span class="score-num">3.0</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/1247681/35575603/EB-DT7681.JPG?s=01a3d82a68f8e4a8&amp;version=1624401061" alt="Venta de terrenos  en blanca 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/1247681/52496775/EB-DT7681.jpg?s=b86f0c8b427ce8eb&amp;version=1663958129" alt="Venta de terrenos  en blanca 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/1247681/52496769/EB-DT7681.jpg?s=be1f919052e7f8fb&amp;version=1663958129" alt="Venta de terrenos  en blanca 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/1247681/52496777/EB-DT7681.jpg?s=64d07063f069321d&amp;version=1663958129" alt="Venta de terrenos  en blanca 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/1247681/52496782/EB-DT7681.jpg?s=1d0d1b69648c3626&amp;version=1663958129" alt="Venta de terrenos  en blanca 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/1247681/52496781/EB-DT7681.jpg?s=a1438b531be355cf&amp;version=1663958129" alt="Venta de terrenos  en blanca 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Buen tamaño de lote cerca de Progreso</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-DT7681</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/venta-de-lotes-en-blanca-residencial" target="_blank" rel="noopener">Venta de terrenos  en blanca</a></div>
+        <div class="p-card-zone">Kikteil, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$923,322</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">412.75 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno de 412.75 m² en Kikteil, zona conocida como &#x27;triángulo dorado&#x27; por su crecimiento y cercanía a Progreso. Buena superficie para el precio, aunque está más alejado del periférico que otras opciones.</div>
+      <div class="p-tags"><span class="p-tag">Lote amplio</span><span class="p-tag">Zona en crecimiento</span><span class="p-tag">Cerca de Progreso</span><span class="p-tag">Financiamiento disponible</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+423,322 MXN (+84.7%)</div>
+        <div class="rent-note">Su diferencia de $423,322 es considerable, pero su superficie compensa el costo por metro.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:60.0%"></div></div><span class="score-num">6.0</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4393512/96397104/EB-PW3512.jpg?s=db35dd21d4f207db&amp;version=1759178411" alt="Lotes en venta en Mérida, privada con campo de golf. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4393512/96397270/EB-PW3512.jpg?s=b1a414347e99f14e&amp;version=1759178411" alt="Lotes en venta en Mérida, privada con campo de golf. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4393512/96397271/EB-PW3512.jpg?s=75fd4de7c5421248&amp;version=1759178411" alt="Lotes en venta en Mérida, privada con campo de golf. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4393512/96397103/EB-PW3512.jpg?s=4511290243f48f72&amp;version=1759178411" alt="Lotes en venta en Mérida, privada con campo de golf. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4393512/96397096/EB-PW3512.jpg?s=cf15d0019ebf3253&amp;version=1759178411" alt="Lotes en venta en Mérida, privada con campo de golf. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4393512/96397098/EB-PW3512.jpg?s=73720e8cc22580d7&amp;version=1759178411" alt="Lotes en venta en Mérida, privada con campo de golf. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Mayor terreno (417.25 m²)</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-PW3512</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-en-venta-en-merida-privada" target="_blank" rel="noopener">Lotes en venta en Mérida, privada con campo de golf.</a></div>
+        <div class="p-card-zone">Tamanché, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$2,622,416</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">417.25 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno de 417.25 m², el más grande del grupo, dentro de Gran Provincia, un desarrollo con campo de golf de 9 hoyos y amenidades de lujo. Es otra de las favoritas señaladas para plusvalía a largo plazo.</div>
+      <div class="p-tags"><span class="p-tag">Mayor terreno del grupo</span><span class="p-tag">Campo de golf</span><span class="p-tag">Favorita a largo plazo</span><span class="p-tag">Gran Provincia</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+2,122,416 MXN (+424.5%)</div>
+        <div class="rent-note">Con $2,122,416 de diferencia, es de las más altas del grupo, aunque ofrece el lote más grande y un entorno premium.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:25.0%"></div></div><span class="score-num">2.5</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:95.0%"></div></div><span class="score-num">9.5</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4467286/106637041/EB-QD7286.jpg?s=f6ff1b5f11ca93a5&amp;version=1780509906" alt="Lotes residenciales en venta en Zona Country, Mérida, Yucatán 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4467286/106637046/EB-QD7286.jpg?s=fc8f5e2298988311&amp;version=1780509907" alt="Lotes residenciales en venta en Zona Country, Mérida, Yucatán 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4467286/106637052/EB-QD7286.jpg?s=73415bb9a78222c5&amp;version=1780509908" alt="Lotes residenciales en venta en Zona Country, Mérida, Yucatán 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4467286/106637050/EB-QD7286.jpg?s=a1c44a7eece2d3fd&amp;version=1780509908" alt="Lotes residenciales en venta en Zona Country, Mérida, Yucatán 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4467286/106637049/EB-QD7286.jpg?s=61d919a0b930fb83&amp;version=1780509908" alt="Lotes residenciales en venta en Zona Country, Mérida, Yucatán 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4467286/106637053/EB-QD7286.jpg?s=e0e442462afa85e7&amp;version=1780509908" alt="Lotes residenciales en venta en Zona Country, Mérida, Yucatán 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Favorita para plusvalía en Zona Country</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-QD7286</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-residenciales-en-venta-en-zona-country-merida-yucatan" target="_blank" rel="noopener">Lotes residenciales en venta en Zona Country, Mérida, Yucatán</a></div>
+        <div class="p-card-zone">Dzibilchaltún, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$2,212,532</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">356.0 m²</div></div>
+    </div>
+      <div class="p-desc">Lote de 356 m² en Antigua, dentro de la Zona Country, a 20 minutos de la playa y 15 de los centros comerciales. Es una de las comunidades más deseadas por residentes e inversionistas del norte de Mérida.</div>
+      <div class="p-tags"><span class="p-tag">Zona Country</span><span class="p-tag">Favorita a largo plazo</span><span class="p-tag">Alta demanda</span><span class="p-tag">Antigua</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+1,712,532 MXN (+342.5%)</div>
+        <div class="rent-note">Su diferencia de $1,712,532 es elevada, aunque corresponde a una de las zonas con mayor proyección de crecimiento señaladas.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:30.0%"></div></div><span class="score-num">3.0</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/6285548/111651786/EB-XD5548.jpg?s=09e273ccd38cb03c&amp;version=1790979792" alt="Terrenos en venta a pie de calle en Conkal, Yucatán. 1">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Precio más bajo del grupo</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-XD5548</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/terrenos-en-venta-a-pie-de-calle-en-conkal-yucatan" target="_blank" rel="noopener">Terrenos en venta a pie de calle en Conkal, Yucatán.</a></div>
+        <div class="p-card-zone">Conkal, Conkal, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$550,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">239.2 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno a pie de calle en Conkal, con 239.2 m² de superficie, es la opción que mejor se ajusta al presupuesto de contado disponible. Es una zona en crecimiento con acceso a servicios, aunque la ficha es bastante general y no detalla amenidades ni plan maestro de desarrollo.</div>
+      <div class="p-tags"><span class="p-tag">Dentro de presupuesto</span><span class="p-tag">Pie de calle</span><span class="p-tag">Ficha con poca información</span><span class="p-tag">Conkal</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+50,000 MXN (+10.0%)</div>
+        <div class="rent-note">Es la única propiedad que está prácticamente en el presupuesto declarado, con apenas $50,000 de diferencia.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:100.0%"></div></div><span class="score-num">10.0</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:55.0%"></div></div><span class="score-num">5.5</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:30.0%"></div></div><span class="score-num">3.0</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4077297/67424399/EB-OQ7297.jpg?s=bffad66d0aaa0538&amp;version=1697737648" alt="Lotes residenciales en venta en Mérida, Cholul. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4077297/106574958/EB-OQ7297.jpeg?s=c3872d7d636c2f0c&amp;version=1780418218" alt="Lotes residenciales en venta en Mérida, Cholul. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4077297/106574953/EB-OQ7297.jpeg?s=ebb78da01668c620&amp;version=1780418217" alt="Lotes residenciales en venta en Mérida, Cholul. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4077297/106574955/EB-OQ7297.jpeg?s=deb7efc21adb2995&amp;version=1780418217" alt="Lotes residenciales en venta en Mérida, Cholul. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4077297/106574952/EB-OQ7297.jpeg?s=c2c318316fac76dd&amp;version=1780418217" alt="Lotes residenciales en venta en Mérida, Cholul. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4077297/106574957/EB-OQ7297.jpeg?s=0f91301e23a3aab8&amp;version=1780418217" alt="Lotes residenciales en venta en Mérida, Cholul. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Zona Diamante con proyección</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-OQ7297</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-residenciales-en-venta-en-merida-cholul-cholul" target="_blank" rel="noopener">Lotes residenciales en venta en Mérida, Cholul.</a></div>
+        <div class="p-card-zone">Cholul, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$1,168,750</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">275.0 m²</div></div>
+    </div>
+      <div class="p-desc">Lote de 275 m² en Aira Residencial, Cholul, zona diamante con alta plusvalía por su cercanía a hospitales, universidades y plazas comerciales. Buen punto medio entre precio y ubicación estratégica.</div>
+      <div class="p-tags"><span class="p-tag">Zona Diamante</span><span class="p-tag">Alta conectividad</span><span class="p-tag">Cholul</span><span class="p-tag">Buena relación tamaño-precio</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+668,750 MXN (+133.8%)</div>
+        <div class="rent-note">Con $668,750 de diferencia, supera el presupuesto pero se ubica en una de las zonas de mayor demanda al norte.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:55.0%"></div></div><span class="score-num">5.5</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/3766201/61801991/EB-NL6201.jpg?s=037911aa1eb3adb7&amp;version=1685148459" alt="Lotes premium en venta en Mérida, Cholul 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/3766201/61801972/EB-NL6201.jpg?s=4c8e0b7defbbeea4&amp;version=1685148452" alt="Lotes premium en venta en Mérida, Cholul 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/3766201/61801974/EB-NL6201.jpg?s=5b788d3546b598b9&amp;version=1685148452" alt="Lotes premium en venta en Mérida, Cholul 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/3766201/61801973/EB-NL6201.jpg?s=e4c027672d354cac&amp;version=1685148452" alt="Lotes premium en venta en Mérida, Cholul 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/3766201/61801975/EB-NL6201.jpg?s=e14ced698785dda2&amp;version=1685148453" alt="Lotes premium en venta en Mérida, Cholul 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/3766201/61801976/EB-NL6201.jpg?s=b32563b833cc4c1c&amp;version=1685148453" alt="Lotes premium en venta en Mérida, Cholul 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Lotes premium en Cholul</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-NL6201</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-en-venta-en-merida-cholul" target="_blank" rel="noopener">Lotes premium en venta en Mérida, Cholul</a></div>
+        <div class="p-card-zone">Cholul, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$806,325</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">206.75 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno de 206.75 m² en un desarrollo de lotes premium con orientación norte-sur y amenidades de alta gama como casa club, alberca y game room. Precio accesible para la categoría de la zona.</div>
+      <div class="p-tags"><span class="p-tag">Lote premium</span><span class="p-tag">Cholul</span><span class="p-tag">Orientación norte-sur</span><span class="p-tag">Buen precio por ubicación</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+306,325 MXN (+61.3%)</div>
+        <div class="rent-note">Su diferencia de $306,325 lo coloca como una de las opciones más accesibles fuera del rango exacto de presupuesto.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4250106/70641164/EB-PI0106.jpg?s=bbc798f356c6732d&amp;version=1706129216" alt="Lotes residenciales en venta Al Norte de Mérida. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4250106/70641163/EB-PI0106.jpg?s=51b2edf24a614c17&amp;version=1706129216" alt="Lotes residenciales en venta Al Norte de Mérida. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4250106/70641162/EB-PI0106.jpg?s=e8dd252b44d1a17d&amp;version=1706129216" alt="Lotes residenciales en venta Al Norte de Mérida. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4250106/70641169/EB-PI0106.jpg?s=112f9ab3681a8c85&amp;version=1706129217" alt="Lotes residenciales en venta Al Norte de Mérida. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4250106/70641171/EB-PI0106.jpg?s=6a65c6e9035719d7&amp;version=1706129218" alt="Lotes residenciales en venta Al Norte de Mérida. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4250106/70641168/EB-PI0106.jpg?s=e4fe2d82dba31d74&amp;version=1706129217" alt="Lotes residenciales en venta Al Norte de Mérida. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Lote más pequeño, zona Country</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-PI0106</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-residenciales-en-venta-en-al-norte-de-merida" target="_blank" rel="noopener">Lotes residenciales en venta Al Norte de Mérida.</a></div>
+        <div class="p-card-zone">Xcunya, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$1,148,965</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">200.0 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno de 200 m², el más compacto del grupo, dentro del desarrollo Savia en zona Country, con múltiples vías de acceso y gran proyección de crecimiento. Ideal si se prioriza ubicación sobre superficie.</div>
+      <div class="p-tags"><span class="p-tag">Lote compacto</span><span class="p-tag">Zona Country</span><span class="p-tag">Alta conectividad</span><span class="p-tag">Buena plusvalía proyectada</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+648,965 MXN (+129.8%)</div>
+        <div class="rent-note">La diferencia de $648,965 es relevante, pero se compensa con la ubicación estratégica de la zona Country.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5626372/105718668/EB-UP6372.jpeg?s=9b3f9dc3e5d2f1aa&amp;version=1778699500" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5626372/98004701/EB-UP6372.png?s=f856ac34dc153524&amp;version=1762291502" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5626372/98004705/EB-UP6372.png?s=9acd2a74358376ee&amp;version=1762291502" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5626372/98004696/EB-UP6372.png?s=10bba17875d1b513&amp;version=1762291502" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5626372/98004687/EB-UP6372.png?s=a488e7fb1ca8571d&amp;version=1762291502" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5626372/98004700/EB-UP6372.png?s=af2d61942d076508&amp;version=1762291502" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Desarrollo boutique en Cholul</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-UP6372</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-en-venta-en-privada-cholul-merida-yucatan-cholul" target="_blank" rel="noopener">Lotes en venta en privada Cholul, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Cholul, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$1,007,323</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">225.0 m²</div></div>
+    </div>
+      <div class="p-desc">Lote de 225 m² en Alma Residencial, un desarrollo boutique con financiamiento de 12 a 24 meses. Buena opción si se busca un desarrollo más pequeño y exclusivo en una zona consolidada.</div>
+      <div class="p-tags"><span class="p-tag">Desarrollo boutique</span><span class="p-tag">Cholul</span><span class="p-tag">Financiamiento corto plazo</span><span class="p-tag">Accesible para adultos mayores</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+507,323 MXN (+101.5%)</div>
+        <div class="rent-note">Con $507,323 de diferencia, es una opción intermedia dentro de las propuestas en Cholul.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4872907/82795672/EB-RS2907.jpeg?s=8a2d0fb7ee8f699d&amp;version=1732300972" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4872907/82795669/EB-RS2907.jpeg?s=fc2c653c3ba1bd97&amp;version=1732300972" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4872907/82795671/EB-RS2907.jpeg?s=1c6e371bab440ba6&amp;version=1732300972" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4872907/82795673/EB-RS2907.jpeg?s=66995646d9705256&amp;version=1732300972" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4872907/82795668/EB-RS2907.jpeg?s=a1184ba6bc001c46&amp;version=1732300972" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4872907/82795667/EB-RS2907.jpeg?s=077ab8e27b466e65&amp;version=1732300972" alt="Lotes en venta en privada Cholul, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Amplias áreas verdes en Cholul</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-RS2907</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/lotes-en-venta-en-privada-cholul-merida-yucatan" target="_blank" rel="noopener">Lotes en venta en privada Cholul, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Cholul, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$1,288,547</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">275.0 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno de 275 m² en un desarrollo con más de 4,000 m² de áreas verdes y amenidades completas como alberca, cancha de pádel y tenis. Apunta a un perfil residencial más que de inversión pura, aunque la zona mantiene buena plusvalía.</div>
+      <div class="p-tags"><span class="p-tag">Áreas verdes amplias</span><span class="p-tag">Cholul</span><span class="p-tag">Amenidades completas</span><span class="p-tag">Perfil residencial</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+788,547 MXN (+157.7%)</div>
+        <div class="rent-note">Su diferencia de $788,547 lo posiciona entre las opciones de precio medio-alto del grupo.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:45.0%"></div></div><span class="score-num">4.5</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div>
+      </div>
+      
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/6283009/111589900/EB-XD3009.jpg?s=41adc7e317ba2d10&amp;version=1790886620" alt="Terrenos residenciales en venta en Zona Country, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6283009/111589738/EB-XD3009.png?s=8fef2f091b3986e2&amp;version=1790886474" alt="Terrenos residenciales en venta en Zona Country, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6283009/111589734/EB-XD3009.jpg?s=72de23b136df0f3c&amp;version=1790886473" alt="Terrenos residenciales en venta en Zona Country, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6283009/111589721/EB-XD3009.jpg?s=618ead40f9af46ad&amp;version=1790886471" alt="Terrenos residenciales en venta en Zona Country, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6283009/111589722/EB-XD3009.jpg?s=df3ae3896d43cdbc&amp;version=1790886471" alt="Terrenos residenciales en venta en Zona Country, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6283009/111589723/EB-XD3009.jpg?s=dd4587ebbe8a9a92&amp;version=1790886472" alt="Terrenos residenciales en venta en Zona Country, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Zona Country, mismo desarrollo que Tamanché</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-XD3009</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/terrenos-residenciales-en-venta-en-zona-country-merida-yucatan-tamanche" target="_blank" rel="noopener">Terrenos residenciales en venta en Zona Country, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Tamanché, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$1,758,960</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2"></span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">—</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">360.0 m²</div></div>
+    </div>
+      <div class="p-desc">Terreno de 360 m² en el desarrollo Martell, en zona Country, con acuaparque, área wellness y canchas de pádel. Es una de las favoritas para plusvalía a más de 5 años en zona conurbada.</div>
+      <div class="p-tags"><span class="p-tag">Zona Country</span><span class="p-tag">Favorita a largo plazo</span><span class="p-tag">Amenidades premium</span><span class="p-tag">Martell</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+1,258,960 MXN (+251.8%)</div>
+        <div class="rent-note">Su diferencia de $1,258,960 es alta, pero corresponde a una de las zonas de mayor proyección de plusvalía a largo plazo.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:35.0%"></div></div><span class="score-num">3.5</span></div><div class="score-row"><span class="score-name">Plusvalía esperada</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div><div class="score-row"><span class="score-name">Nivel de amenidades</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div>
+      </div>
+      
+    </div></div>
+
+  <div class="section-head reveal"><h2>Comparativa de números clave</h2><p>Precio y precio por m² construido</p></div>
+  <div class="charts-row reveal">
+    <div class="chart-box">
+      <h4>Precio de venta (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$2,635,011</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:99%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$2,622,416</span>
+          </div>
+          <span class="bar-lbl">Casa Tamanché</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:81%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$2,221,895</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:81%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$2,212,532</span>
+          </div>
+          <span class="bar-lbl">Casa Dzibilchaltún</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:60%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$1,758,960</span>
+          </div>
+          <span class="bar-lbl">Casa Tamanché 2</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:40%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$1,324,800</span>
+          </div>
+          <span class="bar-lbl">Casa Komchen</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:38%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$1,288,547</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul 5</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:32%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$1,168,750</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul 2</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:31%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$1,148,965</span>
+          </div>
+          <span class="bar-lbl">Casa Xcunya</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:25%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$1,007,323</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul 4</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:21%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$923,322</span>
+          </div>
+          <span class="bar-lbl">Casa Kikteil</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:16%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$806,325</span>
+          </div>
+          <span class="bar-lbl">Casa Cholul 3</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:8%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$647,398</span>
+          </div>
+          <span class="bar-lbl">Casa Conkal</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:4%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$550,000</span>
+          </div>
+          <span class="bar-lbl">Casa Conkal 2</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">Escala desde $467,500 para que las diferencias se distingan — el valor exacto va rotulado sobre cada barra.</p>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Tabla comparativa completa</h2><p>Todos los factores decisivos sin filtros</p></div>
+  <div class="table-scroll-hint"><span>‹ desliza para ver las propiedades ›</span></div>
+  <div class="table-wrap reveal"><div class="table-scroll-container">
+    <table class="compare-table">
+      <thead><tr><th class="sticky-col">Criterio</th><th>Casa Komchen</th><th>Casa Cholul</th><th>Casa Conkal</th><th>Casa Temozón Norte</th><th>Casa Kikteil</th><th>Casa Tamanché</th><th>Casa Dzibilchaltún</th><th>Casa Conkal 2</th><th>Casa Cholul 2</th><th>Casa Cholul 3</th><th>Casa Xcunya</th><th>Casa Cholul 4</th><th>Casa Cholul 5</th><th>Casa Tamanché 2</th></tr></thead>
+      <tbody><tr><td class="sticky-col">Zona</td><td>Komchen, Mérida, Yucatán</td><td>Cholul, Mérida, Yucatán</td><td>Conkal, Conkal, Yucatán</td><td>Temozón Norte, Mérida, Yucatán</td><td>Kikteil, Mérida, Yucatán</td><td>Tamanché, Mérida, Yucatán</td><td>Dzibilchaltún, Mérida, Yucatán</td><td>Conkal, Conkal, Yucatán</td><td>Cholul, Mérida, Yucatán</td><td>Cholul, Mérida, Yucatán</td><td>Xcunya, Mérida, Yucatán</td><td>Cholul, Mérida, Yucatán</td><td>Cholul, Mérida, Yucatán</td><td>Tamanché, Mérida, Yucatán</td></tr><tr><td class="sticky-col">Precio</td><td>$1,324,800 MXN</td><td>$2,635,011 MXN</td><td>$647,398 MXN</td><td>$2,221,895 MXN</td><td>$923,322 MXN</td><td>$2,622,416 MXN</td><td>$2,212,532 MXN</td><td>$550,000 MXN</td><td>$1,168,750 MXN</td><td>$806,325 MXN</td><td>$1,148,965 MXN</td><td>$1,007,323 MXN</td><td>$1,288,547 MXN</td><td>$1,758,960 MXN</td></tr><tr><td class="sticky-col">Precio/m² construido</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr><tr><td class="sticky-col">Construcción</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td><td>0 m²</td></tr><tr><td class="sticky-col">Terreno</td><td>360.0 m²</td><td>335.03 m²</td><td>212.96 m²</td><td>341.83 m²</td><td>412.75 m²</td><td>417.25 m²</td><td>356.0 m²</td><td>239.2 m²</td><td>275.0 m²</td><td>206.75 m²</td><td>200.0 m²</td><td>225.0 m²</td><td>275.0 m²</td><td>360.0 m²</td></tr><tr><td class="sticky-col">Recámaras / Baños</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td><td>None / None</td></tr><tr><td class="sticky-col">Diferencia vs presupuesto</td><td>+824,800 (+165.0%)</td><td>+2,135,011 (+427.0%)</td><td>+147,398 (+29.5%)</td><td>+1,721,895 (+344.4%)</td><td>+423,322 (+84.7%)</td><td>+2,122,416 (+424.5%)</td><td>+1,712,532 (+342.5%)</td><td>+50,000 (+10.0%)</td><td>+668,750 (+133.8%)</td><td>+306,325 (+61.3%)</td><td>+648,965 (+129.8%)</td><td>+507,323 (+101.5%)</td><td>+788,547 (+157.7%)</td><td>+1,258,960 (+251.8%)</td></tr></tbody>
+    </table>
+  </div></div>
+
+  <div class="section-head reveal"><h2>Análisis por prioridad</h2><p>Lo que cambia según qué esté priorizando el cliente</p></div>
+  <div class="reveal">
+    <div class="tabs-nav"><button class="tab-btn active" onclick="switchTab('t0',this)">Ajuste al presupuesto</button><button class="tab-btn" onclick="switchTab('t1',this)">Ubicación y proyección de plusvalía</button><button class="tab-btn" onclick="switchTab('t2',this)">Riesgo y pendientes</button></div>
+    
+    <div class="tab-pane active" id="tab-t0">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Opciones más cercanas a los $500,000</h4><ul><li>Casa Conkal 2 está prácticamente en el presupuesto, con solo $50,000 de diferencia</li><li>Casa Conkal ofrece financiamiento a 60 meses sin intereses, facilitando el acceso sin usar todo el capital</li><li>Casa Cholul 3 tiene una de las diferencias más bajas del grupo premium ($306,325)</li></ul></div>
+        <div class="a-box"><h4>Lo que hay que considerar</h4><ul><li>Las propiedades favoritas para plusvalía a largo plazo (Casa Dzibilchaltún, Casa Tamanché y Casa Tamanché 2) superan por mucho el presupuesto de contado</li><li>Acceder a ellas implicaría usar esquemas de financiamiento a plazos en lugar de pago de contado</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t1">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Zonas con mayor potencial señalado</h4><ul><li>Casa Dzibilchaltún está en Zona Country, una de las más deseadas por inversionistas al norte de Mérida</li><li>Casa Tamanché cuenta con el terreno más grande del grupo y amenidades de campo de golf</li><li>Casa Tamanché 2 pertenece al mismo corredor de Zona Country, con amenidades tipo acuaparque</li></ul></div>
+        <div class="a-box"><h4>Puntos a evaluar</h4><ul><li>Estas tres opciones concentran las diferencias de presupuesto más altas del listado</li><li>Requieren una estrategia de financiamiento clara para no comprometer el capital disponible</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t2">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Desarrollos con información sólida</h4><ul><li>La mayoría de las propiedades cuentan con descripciones detalladas de amenidades y esquemas de financiamiento</li><li>Varios desarrollos indican etapas de preventa o construcción con fechas de entrega estimadas</li></ul></div>
+        <div class="a-box"><h4>Fichas con información incompleta</h4><ul><li>Casa Conkal 2 tiene una ficha muy general, sin detalle de amenidades ni plan maestro</li><li>Casa Cholul 3 y Casa Cholul 5 no especifican comisión ni todos los detalles de financiamiento</li><li>Ninguna propiedad incluye datos de construcción, ya que son todos terrenos sin edificar</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head reveal"><h2>Veredictos finales</h2><p>Sin ambigüedad — y sin esconder lo que sigue sin resolverse</p></div>
+  <div class="verdicts-grid">
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="v-prop">Casa Komchen</div>
+      <div class="v-title">Casa Komchen: cercanía a la playa con financiamiento a plazos</div>
+      <p class="v-text">Casa Komchen ofrece una alternativa interesante si Marco quiere diversificar hacia la zona costera, con amenidades completas y financiamiento a 36 meses. Su diferencia frente al presupuesto es considerable, pero el esquema a plazos la hace viable sin comprometer todo el capital.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="v-prop">Casa Cholul</div>
+      <div class="v-title">Casa Cholul: la inversión más alta del grupo</div>
+      <p class="v-text">Casa Cholul es la propiedad de mayor precio entre todas las analizadas, ubicada en una zona de alta demanda. Es una opción a considerar solo si se evalúa un financiamiento robusto, ya que su diferencia frente al presupuesto es la más grande del listado.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg></div>
+      <div class="v-prop">Casa Conkal</div>
+      <div class="v-title">Casa Conkal: equilibrio entre precio y amenidades</div>
+      <p class="v-text">Casa Conkal destaca por su financiamiento a 60 meses sin intereses, lo que permite acceder a un desarrollo con amenidades completas sin descapitalizarse de inmediato. Es una de las opciones más balanceadas para el perfil de inversión de Marco.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div>
+      <div class="v-prop">Casa Temozón Norte</div>
+      <div class="v-title">Casa Temozón Norte: exclusividad en la zona más codiciada</div>
+      <p class="v-text">Casa Temozón Norte se ubica en lo que se describe como la zona más exclusiva de Mérida, con solo 49 lotes disponibles. Su diferencia frente al presupuesto es alta, pero corresponde al nivel de exclusividad que ofrece.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
+      <div class="v-prop">Casa Kikteil</div>
+      <div class="v-title">Casa Kikteil: buen tamaño de lote en zona de crecimiento</div>
+      <p class="v-text">Casa Kikteil ofrece una superficie generosa de 412.75 m² en una zona que se describe en pleno auge turístico y comercial. Es una opción a considerar si Marco prioriza metraje sobre cercanía inmediata al periférico.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
+      <div class="v-prop">Casa Tamanché</div>
+      <div class="v-title">Casa Tamanché: el terreno más grande del grupo</div>
+      <p class="v-text">Casa Tamanché tiene la mayor superficie entre todas las propiedades analizadas, dentro de un desarrollo con campo de golf y amenidades premium. Es una de las favoritas señaladas para plusvalía a largo plazo, aunque su diferencia de presupuesto es de las más altas.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2"/><path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2"/><path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3"/></svg></div>
+      <div class="v-prop">Casa Dzibilchaltún</div>
+      <div class="v-title">Casa Dzibilchaltún: la favorita para plusvalía en Zona Country</div>
+      <p class="v-text">Casa Dzibilchaltún se encuentra en la Zona Country, descrita como una de las áreas más deseadas por residentes e inversionistas al norte de Mérida. Es una de las opciones con mayor proyección de crecimiento a más de 5 años, aunque implica una inversión considerablemente mayor al presupuesto inicial.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="v-prop">Casa Conkal 2</div>
+      <div class="v-title">Casa Conkal 2: la opción más cercana al presupuesto</div>
+      <p class="v-text">Casa Conkal 2 es la propiedad que mejor se ajusta a los $500,000 disponibles, con apenas $50,000 de diferencia. Su principal limitante es que la ficha no detalla amenidades ni plan de desarrollo, por lo que valdría la pena pedir más información antes de decidir.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="v-prop">Casa Cholul 2</div>
+      <div class="v-title">Casa Cholul 2: ubicación estratégica en zona diamante</div>
+      <p class="v-text">Casa Cholul 2 se encuentra en lo que se conoce como zona diamante, cerca de hospitales, universidades y plazas comerciales. Es un buen punto medio entre precio y proyección de plusvalía dentro del corredor norte.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div>
+      <div class="v-prop">Casa Cholul 3</div>
+      <div class="v-title">Casa Cholul 3: lotes premium a buen precio</div>
+      <p class="v-text">Casa Cholul 3 ofrece lotes con orientación norte-sur y amenidades de alta gama a uno de los precios más accesibles dentro de la categoría premium. Es una alternativa sólida si se busca estatus sin llegar a los precios más altos del grupo.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="v-prop">Casa Xcunya</div>
+      <div class="v-title">Casa Xcunya: conectividad en zona Country</div>
+      <p class="v-text">Casa Xcunya tiene el lote más compacto del grupo, pero compensa con una ubicación estratégica dentro de la zona Country y múltiples vías de acceso. Es una opción a evaluar si la prioridad es la conectividad más que la superficie.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+      <div class="v-prop">Casa Cholul 4</div>
+      <div class="v-title">Casa Cholul 4: desarrollo boutique con financiamiento corto</div>
+      <p class="v-text">Casa Cholul 4 pertenece a un desarrollo boutique de solo 86 terrenos, con financiamiento de 12 a 24 meses. Es una opción más exclusiva pero con plazos de pago más cortos que otras alternativas en la misma zona.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></div>
+      <div class="v-prop">Casa Cholul 5</div>
+      <div class="v-title">Casa Cholul 5: amplias áreas verdes y amenidades</div>
+      <p class="v-text">Casa Cholul 5 se distingue por sus más de 4,000 m² de áreas verdes y amenidades completas como alberca y canchas deportivas. Su perfil es más residencial, aunque mantiene buena proyección de plusvalía por su ubicación en Cholul.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2"/><path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2"/><path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3"/></svg></div>
+      <div class="v-prop">Casa Tamanché 2</div>
+      <div class="v-title">Casa Tamanché 2: favorita para plusvalía a largo plazo</div>
+      <p class="v-text">Casa Tamanché 2, dentro del desarrollo Martell en Zona Country, es otra de las opciones favoritas señaladas para crecimiento a más de 5 años. Ofrece amenidades tipo acuaparque y área wellness, aunque su diferencia frente al presupuesto es considerable.</p>
+    </div>
+    <div class="v-card v-dark reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="v-prop">Para Marco Torres</div>
+      <div class="v-title">Capital disponible hoy vs. visión de inversión a futuro</div>
+      <p class="v-text">Marco, con $500,000 de recurso propio, Casa Conkal 2 es prácticamente la única opción que se ajusta de contado, aunque su ficha es limitada en información. Si tu objetivo es realmente la plusvalía a más de 5 años en zona conurbada, vale la pena revisar con calma Casa Dzibilchaltún, Casa Tamanché y Casa Tamanché 2, ya que varias de ellas y otras opciones en la zona ofrecen planes de financiamiento a plazos sin intereses que te permitirían entrar sin usar todo tu capital de una sola vez. ¿Te gustaría que agendemos una visita a estas tres zonas para que compares en persona el entorno y las condiciones de financiamiento disponibles?</p>
+    </div></div>
+  
+  <div class="section-head reveal"><h2>Glosario</h2><p>Términos usados en este reporte, explicados sin tecnicismos</p></div>
+  <div class="glossary-box reveal"><div class="glossary-grid"><div><div class="glossary-term">Financiamiento sin intereses</div><div class="glossary-def">Es un esquema donde puedes pagar el terreno en varias mensualidades sin que el monto total aumente por intereses.</div></div><div><div class="glossary-term">Plusvalía</div><div class="glossary-def">Es el aumento de valor que gana una propiedad con el tiempo, generalmente por el crecimiento y desarrollo de la zona.</div></div><div><div class="glossary-term">Zona conurbada</div><div class="glossary-def">Es un área que, aunque antes era independiente, ya se conectó físicamente con el crecimiento de la ciudad.</div></div><div><div class="glossary-term">Pie de calle</div><div class="glossary-def">Significa que el terreno tiene acceso directo desde la calle, sin estar dentro de un desarrollo privado cerrado.</div></div><div><div class="glossary-term">Preventa</div><div class="glossary-def">Es la etapa en la que un desarrollo se vende antes o durante su construcción, generalmente a mejor precio.</div></div></div></div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../logoblancotres.png" alt="TRES65 Inmobiliaria">
+      <p>Especialistas en propiedades de<br>Mérida, Yucatán.<br>www.tres65inmobiliaria.com</p>
+    </div>
+    <div class="footer-agent">
+      <div class="agent-name">Moises Traconis Corres</div>
+      <div class="agent-role">Asesor Certificado<br>TRES65 Inmobiliaria</div>
+      <div class="agent-contact">+52 999 239 9890<br><a href="mailto:moises@tres65inmobiliaria.com">moises@tres65inmobiliaria.com</a></div>
+      <img src="../logos-ampi-realtor.png" alt="AMPI Mérida y REALTOR" style="height:96px; width:auto; margin-top:10px;">
+    </div>
+  </div>
+  <hr class="footer-hr">
+  <div class="footer-bottom">
+    <span>© 2026 TRES65 Inmobiliaria® · Marca registrada · Todos los derechos reservados</span>
+    <span>Análisis confidencial · Datos verificados en EasyBroker</span>
+  </div>
+</footer>
+
+<script>window.REPORT_CLIENT_TOKEN = null;</script>
+<script>
+  function closeMobileOverlay() { document.getElementById('mobile-overlay').style.display = 'none'; sessionStorage.setItem('mo_dismissed', '1'); }
+  function checkMobile() { if (sessionStorage.getItem('mo_dismissed')) return; document.getElementById('mobile-overlay').style.display = 'flex'; }
+  window.addEventListener('DOMContentLoaded', checkMobile);
+  function carouselNav(btn, dir) {
+    const container = btn.closest('.p-card-carousel');
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    let idx = imgs.findIndex(img => img.classList.contains('active'));
+    imgs[idx].classList.remove('active'); dots[idx].classList.remove('active');
+    idx = (idx + dir + imgs.length) % imgs.length;
+    imgs[idx].classList.add('active'); dots[idx].classList.add('active');
+  }
+  function carouselDot(dot) {
+    const container = dot.closest('.p-card-carousel');
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const targetIdx = dots.indexOf(dot);
+    imgs.forEach(img => img.classList.remove('active')); dots.forEach(d => d.classList.remove('active'));
+    imgs[targetIdx].classList.add('active'); dots[targetIdx].classList.add('active');
+  }
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+  function setTourInterest(publicId, interes, btn) {
+    if (!window.REPORT_CLIENT_TOKEN) return;
+    const card = btn.closest('.p-card');
+    card.querySelectorAll('.tour-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    try { localStorage.setItem('tour_interest_' + publicId, interes); } catch (e) {}
+    fetch('https://agente-tres65-production.up.railway.app/portal/analisis-interes', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({client_token: window.REPORT_CLIENT_TOKEN, public_id: publicId, interes: interes})
+    }).catch(e => console.error('Error guardando interés:', e));
+  }
+  function restoreTourInterest() {
+    document.querySelectorAll('.tour-interest').forEach(el => {
+      const publicId = el.dataset.publicId;
+      let saved = null;
+      try { saved = localStorage.getItem('tour_interest_' + publicId); } catch (e) {}
+      if (!saved) return;
+      const btn = el.querySelector('.tour-btn[data-interes="' + saved + '"]');
+      if (btn) btn.classList.add('active');
+    });
+  }
+  window.addEventListener('DOMContentLoaded', restoreTourInterest);
+</script>
+</body>
+</html>
