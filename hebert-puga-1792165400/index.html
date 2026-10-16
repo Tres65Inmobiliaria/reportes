@@ -38,9 +38,6 @@
   .section-head { padding: 44px 0 20px; }
   .section-head h2 { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.2px; }
   .section-head p { font-size: 0.82rem; color: var(--gray); margin-top: 5px; font-weight: 400; }
-  .warn-box { background: #fdf3e7; border-left: 3px solid #d98c2b; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
-  .warn-box .warn-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #a5651a; margin-bottom: 6px; }
-  .warn-box p { font-size: 0.78rem; color: var(--dark); line-height: 1.6; }
   .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; padding-bottom: 8px; }
   @media(max-width:780px){ .cards-grid{ grid-template-columns:1fr; } }
   .p-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1.5px solid transparent; overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; }
@@ -85,9 +82,6 @@
   .tour-btn { display: inline-flex; align-items: center; gap: 5px; font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; border: 1px solid var(--gray-light); background: #fff; color: var(--dark); cursor: pointer; }
   .tour-btn.tour-yes.active { background: var(--teal-mid); border-color: var(--teal-mid); color: #fff; }
   .tour-btn.tour-no.active { background: #c0453a; border-color: #c0453a; color: #fff; }
-  .rent-box { margin: 0 22px 18px; padding: 12px 14px; background: var(--gold-light); border-left: 3px solid var(--gold); border-radius: 6px; }
-  .rent-box .rent-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
-  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); }
   .charts-row { display: grid; grid-template-columns: 1fr; gap: 20px; padding-bottom: 8px; }
   .chart-box { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
   .chart-box h4 { font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--teal-deep); margin-bottom: 20px; }
@@ -214,13 +208,12 @@
 <div class="wrap">
   <div class="section-head reveal">
     <h2>Perfil del cliente</h2>
-    <p>Cliente interesado en zona Norte · Busca una propiedad de una recámara en planta baja, al norte de Mérida dentro de periférico, con cochera y alberca propia para disfrutar en casa sin complicaciones.</p>
+    <p><strong>Hebert Puga</strong></p>
+    <p>Busca casa de 2 o 3 recámaras con <strong>cochera techada</strong>. <strong>No le interesan los townhouses.</strong></p>
+    <p><strong>Zonas:</strong> Emiliano Zapata Norte, Chuburná de Hidalgo cerca de la calle 60, Las Águilas Chuburná, Buenavista, colonia Yucatán y Colonial Buenavista.</p>
+    <p><strong>Presupuesto de compra:</strong> hasta $4,500,000 MXN. <strong>Presupuesto de renta:</strong> hasta $20,000 MXN mensuales.</p>
   </div>
 
-  <div class="warn-box reveal">
-    <div class="warn-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Sobre el presupuesto declarado</div>
-    <p>El presupuesto declarado de $2,000,000 MXN queda por debajo del rango real que ofrece la zona de Chuburná de Hidalgo, donde la mayoría de las opciones con las características buscadas rondan precios más altos o no detallan precio público, por lo que conviene revisar bien el ajuste real antes de enamorarse de una opción.</p>
-  </div>
 
   <div class="cards-grid">
     <div class="p-card reveal">
@@ -247,13 +240,8 @@
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">285.0 m²</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">523.0 m²</div></div>
     </div>
-      <div class="p-desc">Casa Chuburna de Hidalgo ofrece un terreno amplio de 523 m² y construcción de 285 m², con capacidad para 4 autos, algo muy por encima del promedio de la zona. Sin embargo, tiene 2 recámaras y no se detalla si cuenta con alberca ni si la recámara principal está en planta baja, por lo que habría que confirmarlo directamente.</div>
+      <div class="p-desc">Casa Chuburna de Hidalgo ofrece un terreno amplio de 523 m² y construcción de 285 m², con capacidad para 4 autos, algo muy por encima del promedio de la zona. Tiene 2 recámaras, dentro del rango solicitado; falta confirmar que la cochera sea techada y que no sea townhouse.</div>
       <div class="p-tags"><span class="p-tag">Terreno amplio</span><span class="p-tag">Cochera grande</span><span class="p-tag">Zona consolidada</span><span class="p-tag">Ficha con precio publicado</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">Con $3,950,000 MXN publicados, su precio es de los más altos del grupo y se aleja bastante del presupuesto declarado de $2,000,000 MXN.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:40.0%"></div></div><span class="score-num">4.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:60.0%"></div></div><span class="score-num">6.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div>
@@ -291,13 +279,8 @@
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">149.71 m²</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">198.0 m²</div></div>
     </div>
-      <div class="p-desc">Casa Chuburna de Hidalgo 2 es de una sola planta, lo que resuelve de inmediato el requisito de recámara en planta baja, y cuenta con alberca propia, un plus importante para el cliente. Eso sí, tiene 3 recámaras en vez de 1 y su ficha no especifica precio, lo cual es un pendiente a aclarar.</div>
+      <div class="p-desc">Casa Chuburna de Hidalgo 2 es de una sola planta, tiene 3 recámaras y alberca propia. Su ficha no especifica precio; falta confirmar la cochera techada y que no sea townhouse.</div>
       <div class="p-tags"><span class="p-tag">Una planta</span><span class="p-tag">Alberca propia</span><span class="p-tag">2 autos</span><span class="p-tag">Precio no publicado</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">Al no contar con precio visible en la ficha, no es posible compararla con precisión contra el presupuesto de $2,000,000 MXN; se recomienda solicitar el dato antes de avanzar.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div>
@@ -337,11 +320,6 @@
     </div>
       <div class="p-desc">Casa Chuburna de Hidalgo 3 se ubica dentro de la privada Villas Palma Real, con vigilancia 24/7, casa club y áreas verdes, ideal si al cliente le interesa vivir en un entorno seguro y con vida social cercana. Tiene 3 recámaras y medio baño adicional, aunque tampoco se especifica si hay recámara en planta baja.</div>
       <div class="p-tags"><span class="p-tag">Privada con seguridad</span><span class="p-tag">Amenidades</span><span class="p-tag">Buena conectividad</span><span class="p-tag">Precio no publicado</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">Sin precio público en la ficha, no se puede confirmar qué tan cerca o lejos queda de los $2,000,000 MXN de presupuesto; es un dato pendiente por verificar.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div>
@@ -379,13 +357,8 @@
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">142.0 m²</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">— m²</div></div>
     </div>
-      <div class="p-desc">Casa Chuburna de Hidalgo 4 está dentro de una privada con amenidades y tiene alberca privada visible desde la sala, con una distribución de planta baja orientada a convivencia y planta alta para las recámaras. Esto último es justo el punto a aclarar con el cliente, ya que busca su recámara en planta baja y aquí las 3 recámaras están arriba.</div>
+      <div class="p-desc">Casa Chuburna de Hidalgo 4 está dentro de una privada con amenidades y tiene alberca privada visible desde la sala, con una distribución de planta baja orientada a convivencia y planta alta para las recámaras. Tiene 3 recámaras en planta alta, dentro del número de recámaras solicitado; falta confirmar que la cochera sea techada y que la propiedad no sea townhouse.</div>
       <div class="p-tags"><span class="p-tag">Alberca privada</span><span class="p-tag">Privada con amenidades</span><span class="p-tag">Cerca de universidades</span><span class="p-tag">Recámaras en planta alta</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">Tampoco tiene precio publicado en la ficha, por lo que su comparación contra el presupuesto de $2,000,000 MXN queda pendiente de confirmar.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:40.0%"></div></div><span class="score-num">4.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div>
@@ -423,13 +396,8 @@
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">182.78 m²</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">183.67 m²</div></div>
     </div>
-      <div class="p-desc">Casa Chuburna de Hidalgo 5 es una casa nueva dentro de privada de solo 4 unidades, con una recámara en planta baja que puede usarse como estudio u home office, cumpliendo justo con lo que busca el cliente. Tiene 4 recámaras en total y cochera para 2 autos, aunque no se menciona si tiene alberca.</div>
+      <div class="p-desc">Casa Chuburna de Hidalgo 5 es una casa nueva dentro de privada de solo 4 unidades, con una recámara en planta baja que puede usarse como estudio u home office. Tiene 4 recámaras en total y cochera para 2 autos, aunque no se menciona si tiene alberca.</div>
       <div class="p-tags"><span class="p-tag">Recámara en planta baja</span><span class="p-tag">Privada pequeña</span><span class="p-tag">Casa nueva</span><span class="p-tag">Sin mención de alberca</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">No se detalla precio en la ficha, así que conviene solicitarlo antes de comparar formalmente contra el presupuesto de $2,000,000 MXN.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:60.0%"></div></div><span class="score-num">6.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div>
@@ -467,13 +435,8 @@
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">288.44 m²</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">558.98 m²</div></div>
     </div>
-      <div class="p-desc">Casa Chuburna de Hidalgo 6 destaca por ser la de mayor terreno y construcción entre todas las opciones, ubicada en una privada exclusiva de solo 23 residencias con vigilancia permanente. Es de una sola planta, lo cual favorece el requisito de recámara en planta baja, pero cuenta con 3 recámaras y solo 1 cajón de estacionamiento, por debajo de lo ideal si se busca cochera amplia.</div>
+      <div class="p-desc">Casa Chuburna de Hidalgo 6 destaca por ser la de mayor terreno y construcción entre todas las opciones, ubicada en una privada exclusiva de solo 23 residencias con vigilancia permanente. Es de una sola planta y cuenta con 3 recámaras, dentro del rango solicitado, y 1 cajón de estacionamiento; falta confirmar que sea techado.</div>
       <div class="p-tags"><span class="p-tag">Mayor terreno</span><span class="p-tag">Mayor construcción</span><span class="p-tag">Una planta</span><span class="p-tag">Privada exclusiva</span><span class="p-tag">Solo 1 cajón de estacionamiento</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">Sin precio publicado en la ficha; dado su tamaño, es probable que se ubique en la parte alta del rango de precios de la zona, por lo que conviene cotizarla antes de descartarla.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:45.0%"></div></div><span class="score-num">4.5</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div>
@@ -513,11 +476,6 @@
     </div>
       <div class="p-desc">Casa Chuburna de Hidalgo 7 es una propiedad en preventa, equipada y con paneles solares, con alberca y estacionamiento techado para 2 autos en planta baja. El detalle importante es que las 3 recámaras están en planta alta y la entrega es a 10 meses, por lo que no es una opción de entrega inmediata.</div>
       <div class="p-tags"><span class="p-tag">Preventa</span><span class="p-tag">Paneles solares</span><span class="p-tag">Alberca</span><span class="p-tag">Entrega a 10 meses</span><span class="p-tag">Recámaras en planta alta</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">Al tratarse de preventa sin precio detallado en la ficha, es clave confirmar el costo y el esquema de pagos antes de comparar con el presupuesto de $2,000,000 MXN.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:40.0%"></div></div><span class="score-num">4.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div>
@@ -557,11 +515,6 @@
     </div>
       <div class="p-desc">Casa Chuburna de Hidalgo 8 está en esquina, cerca de la Glorieta de los Cantaritos y con acceso directo a Periférico y Avenida Tecnológico, lo cual es un punto fuerte si la conectividad es prioridad. Tiene 3 recámaras y la ficha no detalla si cuenta con alberca ni si hay recámara en planta baja.</div>
       <div class="p-tags"><span class="p-tag">Ubicación en esquina</span><span class="p-tag">Buena conectividad</span><span class="p-tag">2 autos</span><span class="p-tag">Faltan detalles de distribución</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">No se publica precio en la ficha, por lo que no es posible confirmar si se ajusta a los $2,000,000 MXN de presupuesto del cliente.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div>
@@ -599,13 +552,8 @@
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">None m²</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">— m²</div></div>
     </div>
-      <div class="p-desc">Casa Colonial Buenavista llama la atención por venir completamente amueblada e incluir internet, agua y recolección de basura, lo cual puede facilitar una mudanza rápida. Está fuera de la zona de Chuburná de Hidalgo y tiene 3 recámaras en una sola planta, aunque no se especifica si tiene alberca ni cochera con las características que busca el cliente.</div>
-      <div class="p-tags"><span class="p-tag">Amueblada</span><span class="p-tag">Servicios incluidos</span><span class="p-tag">Una planta</span><span class="p-tag">Zona distinta a la de interés</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">La ficha no indica precio ni confirma si está dentro de la zona Norte deseada, por lo que es un comparable más referencial que directo.</div>
-      </div>
+      <div class="p-desc">Casa Colonial Buenavista llama la atención por venir completamente amueblada e incluir internet, agua y recolección de basura, lo cual puede facilitar una mudanza rápida. Se ubica en Colonial Buenavista, una de las zonas solicitadas, y tiene 3 recámaras en una sola planta; falta confirmar que la cochera sea techada.</div>
+      <div class="p-tags"><span class="p-tag">Amueblada</span><span class="p-tag">Servicios incluidos</span><span class="p-tag">Una planta</span><span class="p-tag">Zona de interés</span></div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:40.0%"></div></div><span class="score-num">4.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div>
@@ -643,13 +591,8 @@
         <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">150.0 m²</div></div>
         <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">— m²</div></div>
     </div>
-      <div class="p-desc">Casa Chuburna de Hidalgo 9 es una propiedad equipada, pensada para mudarse y empezar a vivir de inmediato, con 2 recámaras y 2 autos de cochera. No se menciona si tiene alberca ni si alguna recámara está en planta baja, así que conviene confirmarlo si es un punto decisivo para el cliente.</div>
+      <div class="p-desc">Casa Chuburna de Hidalgo 9 es una propiedad equipada, pensada para mudarse y empezar a vivir de inmediato, con 2 recámaras y 2 autos de cochera. Falta confirmar que la cochera sea techada y que la propiedad no sea townhouse.</div>
       <div class="p-tags"><span class="p-tag">Casa equipada</span><span class="p-tag">Lista para habitar</span><span class="p-tag">2 autos</span><span class="p-tag">Sin mención de alberca</span></div>
-      <div class="rent-box">
-        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
-        <div class="rent-val">—</div>
-        <div class="rent-note">Sin precio publicado en la ficha, se recomienda solicitarlo para saber si encaja dentro del presupuesto de $2,000,000 MXN.</div>
-      </div>
       <div class="p-scores">
         <div class="scores-lbl">Ajuste al perfil del cliente</div>
         <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:60.0%"></div></div><span class="score-num">6.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div>
@@ -683,19 +626,19 @@
     <div class="tab-pane active" id="tab-t0">
       <div class="analysis-grid">
         <div class="a-box"><h4>A favor</h4><ul><li>La zona de Chuburná de Hidalgo ofrece gran variedad de estilos (privadas, casas nuevas, preventas) que pueden adaptarse a distintos presupuestos.</li><li>Varias fichas no tienen precio publicado, lo que abre la puerta a negociar directamente con el vendedor.</li></ul></div>
-        <div class="a-box"><h4>A considerar</h4><ul><li>La única propiedad con precio visible (Casa Chuburna de Hidalgo) está en $3,950,000 MXN, casi el doble del presupuesto declarado de $2,000,000 MXN.</li><li>La mayoría de las fichas no detallan precio, por lo que es necesario solicitar cotización formal antes de decidir.</li></ul></div>
+        <div class="a-box"><h4>A considerar</h4><ul><li>Casa Chuburna de Hidalgo menciona un precio de venta de $3,950,000 MXN, dentro del presupuesto de compra de hasta $4,500,000 MXN; es necesario confirmar precio y disponibilidad vigentes.</li><li>La mayoría de las fichas no detallan precio, por lo que es necesario solicitar cotización formal antes de decidir.</li></ul></div>
       </div>
     </div>
     <div class="tab-pane" id="tab-t1">
       <div class="analysis-grid">
-        <div class="a-box"><h4>A favor</h4><ul><li>Casa Chuburna de Hidalgo 2 y Casa Chuburna de Hidalgo 6 son de una sola planta, lo que facilita tener la recámara en planta baja.</li><li>Casa Chuburna de Hidalgo 5 incluye explícitamente una recámara en planta baja usable como estudio u home office.</li></ul></div>
-        <div class="a-box"><h4>A considerar</h4><ul><li>Casa Chuburna de Hidalgo 4 y Casa Chuburna de Hidalgo 7 tienen todas sus recámaras en planta alta, lo que no cumple con el requisito de recámara en planta baja.</li><li>Ninguna propiedad fue diseñada específicamente para 1 recámara; todas tienen 2 o más, lo que puede implicar espacio no utilizado.</li></ul></div>
+        <div class="a-box"><h4>A favor</h4><ul><li>Casa Chuburna de Hidalgo 2 y Casa Chuburna de Hidalgo 6 tienen 3 recámaras, dentro del rango de 2 o 3 solicitado.</li><li>Casa Colonial Buenavista tiene 3 recámaras y se ubica en una de las zonas solicitadas.</li></ul></div>
+        <div class="a-box"><h4>A considerar</h4><ul><li>Es necesario confirmar que las opciones sean casas y no townhouses, y que cuenten con cochera techada.</li><li>Casa Chuburna de Hidalgo 5 tiene 4 recámaras, por encima del rango solicitado de 2 o 3.</li></ul></div>
       </div>
     </div>
     <div class="tab-pane" id="tab-t2">
       <div class="analysis-grid">
         <div class="a-box"><h4>Puntos claros</h4><ul><li>Casa Chuburna de Hidalgo cuenta con precio publicado y ficha más completa en cuanto a cochera y terreno.</li><li>Casa Chuburna de Hidalgo 7 es transparente sobre su condición de preventa y tiempo de entrega.</li></ul></div>
-        <div class="a-box"><h4>Pendientes por resolver</h4><ul><li>La mayoría de las fichas no especifican precio, lo cual es una objeción real que debe resolverse antes de avanzar.</li><li>Varias propiedades no confirman si tienen alberca propia, un requisito clave para el cliente.</li></ul></div>
+        <div class="a-box"><h4>Pendientes por resolver</h4><ul><li>La mayoría de las fichas no especifican precio, lo cual es una objeción real que debe resolverse antes de avanzar.</li><li>Falta confirmar la cochera techada, la ubicación exacta de las casas en Chuburná de Hidalgo respecto de la calle 60 y el tipo de propiedad.</li></ul></div>
       </div>
     </div>
   </div>
@@ -705,14 +648,14 @@
     <div class="v-card reveal">
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
       <div class="v-prop">Casa Chuburna de Hidalgo</div>
-      <div class="v-title">Casa Chuburna de Hidalgo: espacio y cochera, pero precio elevado</div>
-      <p class="v-text">Es la única con precio claro en la ficha, pero a $3,950,000 MXN está muy por encima del presupuesto declarado. Su gran cochera para 4 autos es un plus, aunque tiene 2 recámaras y no confirma alberca ni recámara en planta baja.</p>
+      <div class="v-title">Casa Chuburna de Hidalgo: 2 recámaras y precio dentro del presupuesto de compra</div>
+      <p class="v-text">El precio de venta mencionado de $3,950,000 MXN está dentro del presupuesto de compra de hasta $4,500,000 MXN. Tiene 2 recámaras y cochera para 4 autos; falta confirmar que la cochera sea techada y verificar precio y disponibilidad vigentes.</p>
     </div>
     <div class="v-card reveal">
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
       <div class="v-prop">Casa Chuburna de Hidalgo 2</div>
       <div class="v-title">Casa Chuburna de Hidalgo 2: una planta y alberca, falta precio</div>
-      <p class="v-text">Cumple con el requisito de planta baja al ser de un solo nivel, y tiene alberca propia. El pendiente es conocer su precio, ya que la ficha no lo especifica.</p>
+      <p class="v-text">Es de un solo nivel, tiene 3 recámaras y alberca propia. Falta conocer su precio y confirmar la cochera techada y que no sea townhouse.</p>
     </div>
     <div class="v-card reveal">
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -724,13 +667,13 @@
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></div>
       <div class="v-prop">Casa Chuburna de Hidalgo 4</div>
       <div class="v-title">Casa Chuburna de Hidalgo 4: alberca atractiva, distribución a revisar</div>
-      <p class="v-text">Tiene alberca privada y buena ubicación cerca de universidades, pero sus recámaras están en planta alta, lo que no coincide con lo que busca el cliente. También falta conocer el precio.</p>
+      <p class="v-text">Tiene 3 recámaras en planta alta y alberca privada. Falta conocer el precio y confirmar la cochera techada y que no sea townhouse.</p>
     </div>
     <div class="v-card reveal">
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div>
       <div class="v-prop">Casa Chuburna de Hidalgo 5</div>
-      <div class="v-title">Casa Chuburna de Hidalgo 5: la más cercana al requisito de planta baja</div>
-      <p class="v-text">Su recámara en planta baja, pensada como estudio u home office, encaja bien con lo que pide el cliente. Es nueva y está en una privada pequeña, aunque no menciona alberca y falta su precio.</p>
+      <div class="v-title">Casa Chuburna de Hidalgo 5: 4 recámaras, por encima del rango solicitado</div>
+      <p class="v-text">Es nueva y está en una privada pequeña. Tiene 4 recámaras, por encima de las 2 o 3 solicitadas; falta conocer su precio y confirmar la cochera techada y que no sea townhouse.</p>
     </div>
     <div class="v-card reveal">
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div>
@@ -753,20 +696,20 @@
     <div class="v-card reveal">
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
       <div class="v-prop">Casa Colonial Buenavista</div>
-      <div class="v-title">Casa Colonial Buenavista: lista para mudarse, pero fuera de zona</div>
-      <p class="v-text">Viene amueblada y con servicios incluidos, lo cual simplifica la mudanza, pero está fuera de la zona Norte de interés del cliente. No se confirma alberca ni precio.</p>
+      <div class="v-title">Casa Colonial Buenavista: lista para mudarse en una zona solicitada</div>
+      <p class="v-text">Viene amueblada y con servicios incluidos, tiene 3 recámaras y está en Colonial Buenavista, una de las zonas solicitadas. Falta confirmar precio, modalidad de venta o renta y cochera techada.</p>
     </div>
     <div class="v-card reveal">
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
       <div class="v-prop">Casa Chuburna de Hidalgo 9</div>
       <div class="v-title">Casa Chuburna de Hidalgo 9: equipada y práctica</div>
-      <p class="v-text">Es una opción equipada y lista para habitar, con buena ubicación dentro de la ciudad. Faltan datos sobre alberca y precio para saber si encaja en el presupuesto.</p>
+      <p class="v-text">Es una opción equipada y lista para habitar, con 2 recámaras. Falta confirmar precio, cochera techada y que no sea townhouse.</p>
     </div>
     <div class="v-card v-dark reveal">
       <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-      <div class="v-prop">Para Cliente interesado en zona Norte</div>
+      <div class="v-prop">Para Hebert Puga</div>
       <div class="v-title">Un panorama con potencial, pero con tarea pendiente</div>
-      <p class="v-text">La zona de Chuburná de Hidalgo ofrece buenas opciones dentro de periférico, y varias propiedades como Casa Chuburna de Hidalgo 2, Casa Chuburna de Hidalgo 5 y Casa Chuburna de Hidalgo 6 se acercan bastante a lo que buscas en distribución, aunque la mayoría no tiene precio publicado todavía. El único precio confirmado, el de Casa Chuburna de Hidalgo, está notablemente por encima de tu presupuesto de $2,000,000 MXN, lo que sugiere que vale la pena solicitar cotizaciones formales antes de descartar o priorizar alguna. ¿Te gustaría que te ayude a pedir precio y disponibilidad de las que más te laten para tener una comparación completa?</p>
+      <p class="v-text">La búsqueda de Hebert Puga se centra en casas de 2 o 3 recámaras con cochera techada, sin townhouses, en las zonas indicadas en su perfil. El presupuesto es de hasta $4,500,000 MXN para compra o $20,000 MXN mensuales para renta. Antes de priorizar visitas, falta confirmar precio y modalidad de cada opción, cochera techada, tipo de propiedad y ubicación exacta; en Chuburná de Hidalgo se busca cercanía con la calle 60.</p>
     </div></div>
   
   <div class="section-head reveal"><h2>Glosario</h2><p>Términos usados en este reporte, explicados sin tecnicismos</p></div>
