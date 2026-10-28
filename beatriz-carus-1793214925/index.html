@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis Comparativo · Beatriz Carus</title>
+<meta property="og:title" content="Análisis Comparativo · Beatriz Carus">
+<meta property="og:description" content="Tu inversión, analizada con el cuidado que merece">
+<meta property="og:image" content="https://tres65inmobiliaria.github.io/reportes/THUMBNAIL.png">
+<meta property="og:url" content="https://tres65inmobiliaria.github.io/reportes/beatriz-carus-1793214925/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #1a5c5a; --teal-mid: #1e7a6e; --teal-bright: #2aaa99;
+    --teal-light: #e0f4f1; --gold: #c9a84c; --gold-light: #f7f0dc;
+    --white: #ffffff; --off-white: #f7f9f8; --dark: #1a2e2d; --gray: #637270;
+    --gray-light: #eaf0ef; --shadow: 0 2px 20px rgba(26,92,90,0.08);
+    --shadow-hover: 0 10px 36px rgba(26,92,90,0.16); --radius: 12px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; background: var(--off-white); color: var(--dark); line-height: 1.6; font-size: 15px; }
+  .header { background: #fff; border-bottom: 1px solid var(--gray-light); padding: 20px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .header-logo img { height: 70px; width: auto; display: block; }
+  .header-meta { text-align: right; }
+  .header-meta h1 { font-family: 'Raleway', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.3px; line-height: 1.3; }
+  .header-meta .tagline { font-size: 0.75rem; color: var(--gray); font-weight: 400; letter-spacing: 0.5px; margin-top: 3px; }
+  .header-accent { display: block; width: 40px; height: 2px; background: var(--teal-bright); margin: 6px 0 0 auto; border-radius: 2px; }
+  .market-banner { background: linear-gradient(135deg, var(--teal-deep) 0%, var(--teal-mid) 100%); padding: 28px 48px; }
+  .market-banner-inner { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center; }
+  .market-stat { text-align: center; }
+  .market-stat .val { font-family: 'Raleway', sans-serif; font-size: 1.35rem; font-weight: 800; color: #fff; line-height: 1.1; }
+  .market-stat .lbl { font-size: 0.65rem; color: rgba(255,255,255,0.65); letter-spacing: 0.6px; text-transform: uppercase; margin-top: 4px; font-weight: 500; }
+  .market-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); margin: 0 auto; }
+  @media(max-width:700px){ .market-banner-inner{ grid-template-columns:1fr 1fr; } .market-divider{display:none;} }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .section-head { padding: 44px 0 20px; }
+  .section-head h2 { font-family: 'Raleway', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--teal-deep); letter-spacing: -0.2px; }
+  .section-head p { font-size: 0.82rem; color: var(--gray); margin-top: 5px; font-weight: 400; }
+  .warn-box { background: #fdf3e7; border-left: 3px solid #d98c2b; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+  .warn-box .warn-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #a5651a; margin-bottom: 6px; }
+  .warn-box p { font-size: 0.78rem; color: var(--dark); line-height: 1.6; }
+  .cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; padding-bottom: 8px; }
+  @media(max-width:780px){ .cards-grid{ grid-template-columns:1fr; } }
+  .p-card { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); border: 1.5px solid transparent; overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; position: relative; }
+  .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--teal-bright); }
+  .p-card-carousel { position: relative; width: 100%; height: 210px; overflow: hidden; background: var(--gray-light); }
+  .p-card-cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none; }
+  .p-card-cover.active { display: block; }
+  .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; border-radius: 50%; background: rgba(255,255,255,0.88); border: none; color: var(--teal-deep); font-size: 1rem; font-weight: 700; cursor: pointer; z-index: 3; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: background .2s; line-height: 1; padding: 0; }
+  .carousel-btn:hover { background: #fff; }
+  .carousel-btn.prev { left: 10px; } .carousel-btn.next { right: 10px; }
+  .carousel-dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 3; }
+  .carousel-dots .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.55); cursor: pointer; transition: background .2s, transform .2s; border: none; padding: 0; }
+  .carousel-dots .dot.active { background: #fff; transform: scale(1.35); }
+  .p-badge { position: absolute; top: 12px; right: 12px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; z-index: 2; max-width: 150px; text-align: center; white-space: normal; line-height: 1.3; box-shadow: 0 2px 10px rgba(0,0,0,0.18); background: var(--gold); color: #fff; }
+  .p-card-head { padding: 22px 22px 14px; border-bottom: 1px solid var(--gray-light); }
+  .p-card-id { font-size: 0.62rem; font-weight: 700; letter-spacing: 2px; color: var(--teal-bright); text-transform: uppercase; margin-bottom: 6px; }
+  .p-card-name { font-family: 'Raleway', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--dark); line-height: 1.3; }
+  .p-card-name a { color: inherit; text-decoration: none; transition: color .2s; }
+  .p-card-name a:hover { color: var(--teal-bright); text-decoration: underline; text-underline-offset: 3px; }
+  .p-card-zone { font-size: 0.75rem; color: var(--gray); margin-top: 3px; }
+  .p-price-row { padding: 14px 22px; background: linear-gradient(to right, var(--teal-light), #fff); display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .p-price-real { font-family: 'Raleway', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--teal-deep); line-height: 1; }
+  .p-price-cur { font-size: 0.7rem; font-weight: 600; color: var(--teal-mid); }
+  .p-price-m2 { font-size: 0.68rem; color: var(--gray); margin-left: auto; font-weight: 500; white-space: nowrap; }
+  .p-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-light); }
+  .p-stat { background: #fff; padding: 10px 14px; }
+  .p-stat-lbl { font-size: 0.6rem; font-weight: 700; color: var(--gray); letter-spacing: 0.8px; text-transform: uppercase; }
+  .p-stat-val { font-size: 0.88rem; font-weight: 600; color: var(--dark); margin-top: 1px; }
+  .p-desc { padding: 16px 22px 10px; font-size: 0.78rem; color: var(--gray); line-height: 1.65; }
+  .p-tags { padding: 0 22px 16px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .p-tag { font-size: 0.65rem; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--teal-light); color: var(--teal-deep); }
+  .p-scores { padding: 14px 22px 18px; border-top: 1px solid var(--gray-light); }
+  .scores-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+  .score-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .score-name { font-size: 0.68rem; color: var(--dark); width: 150px; flex-shrink: 0; }
+  .score-bg { flex: 1; height: 5px; background: var(--gray-light); border-radius: 3px; overflow: hidden; }
+  .score-fill { height: 100%; border-radius: 3px; background: linear-gradient(to right, var(--teal-mid), var(--teal-bright)); transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+  .score-num { font-size: 0.68rem; font-weight: 700; color: var(--teal-deep); width: 24px; text-align: right; }
+  .tour-interest { margin: 0 22px 18px; padding: 12px 14px; background: var(--off-white); border-radius: 6px; text-align: center; }
+  .tour-interest-lbl { font-size: 0.68rem; font-weight: 700; color: var(--gray); margin-bottom: 8px; }
+  .tour-interest-btns { display: flex; gap: 10px; justify-content: center; }
+  .tour-btn { display: inline-flex; align-items: center; gap: 5px; font-family: 'Montserrat', sans-serif; font-size: 0.78rem; font-weight: 600; padding: 8px 18px; border-radius: 20px; border: 1px solid var(--gray-light); background: #fff; color: var(--dark); cursor: pointer; }
+  .tour-btn.tour-yes.active { background: var(--teal-mid); border-color: var(--teal-mid); color: #fff; }
+  .tour-btn.tour-no.active { background: #c0453a; border-color: #c0453a; color: #fff; }
+  .rent-box { margin: 0 22px 18px; padding: 12px 14px; background: var(--gold-light); border-left: 3px solid var(--gold); border-radius: 6px; }
+  .rent-box .rent-lbl { font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #8a6b1a; margin-bottom: 4px; }
+  .rent-box .rent-val { font-family: 'Raleway', sans-serif; font-size: 1rem; font-weight: 700; color: var(--dark); }
+  .charts-row { display: grid; grid-template-columns: 1fr; gap: 20px; padding-bottom: 8px; }
+  .chart-box { background: #fff; border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+  .chart-box h4 { font-family: 'Raleway', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--teal-deep); margin-bottom: 20px; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 12px; height: 170px; padding-bottom: 2px; border-bottom: 1px solid var(--gray-light); }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+  .bar { width: 100%; max-width: 44px; margin: 0 auto; border-radius: 4px 4px 0 0; position: relative; }
+  .bar-v { position: absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:0.58rem; font-weight:700; color:var(--teal-deep); white-space:nowrap; }
+  .bar-lbl { font-size:0.62rem; color:var(--gray); text-align:center; font-weight:500; line-height:1.3; }
+  .table-scroll-hint { display: none; align-items: center; justify-content: center; margin-bottom: 10px; padding: 9px 16px; background: var(--teal-light); border-radius: 8px; border-left: 3px solid var(--teal-bright); }
+  .table-scroll-hint span { font-size: 0.72rem; font-weight: 600; color: var(--teal-deep); letter-spacing: 0.5px; }
+  @media (max-width: 768px) { .table-scroll-hint { display: flex; } }
+  .table-scroll-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .sticky-col { position: sticky; left: 0; z-index: 2; background: #fff; white-space: nowrap; }
+  .compare-table thead th.sticky-col { background: var(--teal-deep); z-index: 3; }
+  @media (max-width: 768px) { .compare-table th, .compare-table td { min-width: 160px; } .sticky-col { min-width: 190px !important; } }
+  .table-wrap { background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 8px; }
+  .compare-table { width:100%; border-collapse:collapse; }
+  .compare-table thead tr { background: var(--teal-deep); }
+  .compare-table thead th { padding: 14px 18px; text-align: left; color: #fff; font-family: 'Raleway', sans-serif; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.3px; }
+  .compare-table thead th:first-child { color:rgba(255,255,255,0.55); font-size:0.62rem; letter-spacing:1px; text-transform:uppercase; font-family:'Montserrat',sans-serif; font-weight:600; }
+  .compare-table tbody tr { border-bottom:1px solid var(--gray-light); transition:background .15s; }
+  .compare-table tbody tr:hover { background:var(--off-white); }
+  .compare-table tbody tr:last-child { border-bottom:none; }
+  .compare-table tbody td { padding:11px 18px; font-size:0.78rem; color:var(--dark); }
+  .compare-table tbody td:first-child { font-weight:600; color:var(--gray); font-size:0.7rem; letter-spacing:0.3px; }
+  .hl { background:var(--gold-light)!important; font-weight:700!important; color:var(--teal-deep)!important; border-radius:4px; padding:3px 7px; }
+  .tabs-nav { display: flex; gap: 4px; background: var(--gray-light); padding: 4px; border-radius: 8px; width: fit-content; margin-bottom: 20px; flex-wrap: wrap; }
+  .tab-btn { padding: 7px 16px; border: none; background: transparent; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 0.73rem; font-weight: 600; color: var(--gray); cursor: pointer; transition: all .2s; letter-spacing: 0.2px; }
+  .tab-btn.active { background:#fff; color:var(--teal-deep); box-shadow:0 1px 6px rgba(0,0,0,.08); }
+  .tab-pane { display:none; } .tab-pane.active { display:block; }
+  .analysis-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:680px){ .analysis-grid{grid-template-columns:1fr;} }
+  .a-box { background:#fff; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); }
+  .a-box h4 { font-family:'Raleway',sans-serif; font-size:0.86rem; font-weight:700; color:var(--teal-deep); margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid var(--teal-light); }
+  .a-box ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .a-box ul li { font-size:0.75rem; color:var(--gray); padding-left:16px; position:relative; line-height:1.5; }
+  .a-box ul li::before { content:'→'; position:absolute; left:0; color:var(--teal-bright); font-weight:700; }
+  .verdicts-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media(max-width:780px){ .verdicts-grid{grid-template-columns:1fr;} }
+  .v-card { background:#fff; border-radius:var(--radius); padding:24px; box-shadow:var(--shadow); border-top:3px solid var(--teal-bright); }
+  .v-card.v-dark { border-top-color:var(--teal-deep); grid-column: 1 / -1; }
+  .v-icon { font-size:1.6rem; margin-bottom:10px; }
+  .v-prop { font-size:0.6rem; font-weight:700; letter-spacing:1.1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:5px; }
+  .v-title { font-family:'Raleway',sans-serif; font-size:0.92rem; font-weight:700; color:var(--dark); margin-bottom:8px; }
+  .v-text { font-size:0.75rem; color:var(--gray); line-height:1.6; }
+  .glossary-box { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:26px 28px; }
+  .glossary-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
+  @media(max-width:680px){ .glossary-grid{grid-template-columns:1fr;} }
+  .glossary-term { font-family:'Raleway',sans-serif; font-size:0.82rem; font-weight:700; color:var(--teal-deep); margin-bottom:2px; }
+  .glossary-def { font-size:0.76rem; color:var(--gray); line-height:1.5; }
+  .footer { background: var(--dark); margin-top: 44px; padding: 36px 48px 24px; }
+  .footer-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .footer-brand img { height: 60px; width: auto; display: block; margin-bottom: 12px; opacity: 0.95; }
+  .footer-brand p { font-size: 0.74rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+  .footer-agent { text-align:right; }
+  @media (max-width: 680px) { .footer-inner { flex-direction: column; align-items: flex-start; } .footer-agent { text-align: left; } }
+  .agent-name { font-family:'Raleway',sans-serif; font-size:1rem; font-weight:700; color:#fff; letter-spacing:-0.2px; }
+  .agent-role { font-size:0.68rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--teal-bright); margin-bottom:10px; }
+  .agent-contact { font-size:0.74rem; color:rgba(255,255,255,.5); line-height:1.9; }
+  .agent-contact a { color:rgba(255,255,255,.5); text-decoration:none; }
+  .footer-hr { border:none; border-top:1px solid rgba(255,255,255,.08); margin:22px 0 14px; }
+  .footer-bottom { max-width:1080px; margin:0 auto; font-size:0.66rem; color:rgba(255,255,255,.25); display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
+  #mobile-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: linear-gradient(160deg, #0d2420 0%, var(--teal-deep) 100%); flex-direction: column; align-items: center; justify-content: center; justify-content: safe center; padding: 36px 28px; text-align: center; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  #mobile-overlay .mo-logo { margin: 6px auto 20px; } #mobile-overlay .mo-logo img { height: 68px; width: auto; opacity: 0.98; }
+  #mobile-overlay .mo-icon { font-size: 2.4rem; margin-bottom: 14px; }
+  #mobile-overlay .mo-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal-bright); margin-bottom: 14px; border: 1px solid rgba(42,170,153,0.4); padding: 5px 14px; border-radius: 20px; display: inline-block; }
+  #mobile-overlay h2 { font-family: 'Raleway', sans-serif; font-size: 1.2rem; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 16px; }
+  #mobile-overlay .mo-divider { width: 40px; height: 2px; background: var(--teal-bright); border-radius: 2px; margin: 0 auto 20px; }
+  #mobile-overlay .mo-rules { list-style: none; max-width: 340px; margin: 0 auto 28px; display: flex; flex-direction: column; gap: 9px; }
+  #mobile-overlay .mo-rules li { font-size: 0.76rem; color: rgba(255,255,255,0.65); display: flex; align-items: flex-start; gap: 8px; text-align: left; line-height: 1.5; }
+  #mobile-overlay .mo-rules li::before { content: '—'; color: var(--teal-bright); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  #mobile-overlay .mo-confirm { font-size: 0.72rem; color: rgba(255,255,255,0.4); max-width: 300px; margin: 0 auto 28px; font-style: italic; line-height: 1.6; }
+  #mobile-overlay .mo-privacy-link { color: var(--teal-bright); text-decoration: underline; }
+  #mobile-overlay .mo-privacy-check { display: flex; align-items: flex-start; gap: 10px; max-width: 320px; margin: 0 auto 20px; text-align: left; }
+  #mobile-overlay .mo-privacy-check input { width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px; accent-color: var(--teal-bright); cursor: pointer; }
+  #mobile-overlay .mo-privacy-check label { font-size: 0.74rem; color: rgba(255,255,255,0.75); line-height: 1.5; cursor: pointer; }
+  .mo-btn { background: var(--teal-bright); color: #fff; border: none; padding: 14px 36px; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; cursor: pointer; transition: background .2s, transform .15s; display: inline-block; }
+  .mo-btn:hover { background: #23988a; transform: translateY(-2px); }
+  .mo-btn:disabled { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.4); cursor: not-allowed; transform: none; }
+</style>
+</head>
+<body>
+
+<div id="mobile-overlay">
+  <div class="mo-icon"><img src="../ronda-silencio.png" alt="" style="height:180px; width:auto;"></div>
+  <div class="mo-tag">Documento Confidencial</div>
+  <h2>Reporte de Uso Interno</h2>
+  <div class="mo-logo"><img src="../logoblancotres.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="mo-divider"></div>
+  <ul class="mo-rules">
+    <li>Este reporte contiene información comercial estratégica preparada exclusivamente para el asesor y su cliente.</li>
+    <li>Queda estrictamente prohibido compartir, reenviar o publicar este documento sin autorización escrita.</li>
+    <li>TRES65 Inmobiliaria se reserva todos los derechos sobre el contenido y análisis aquí presentados.</li>
+  </ul>
+  <p class="mo-confirm">Al continuar confirmas que eres el destinatario autorizado de este análisis.</p>
+  <div class="mo-privacy-check">
+    <input type="checkbox" id="mo-privacy-checkbox" onchange="document.getElementById('mo-accept-btn').disabled = !this.checked">
+    <label for="mo-privacy-checkbox">He leído y acepto el <a class="mo-privacy-link" href="https://www.tres65inmobiliaria.com/Aviso_privacidad" target="_blank" rel="noopener">Aviso de Privacidad</a> de TRES65 Inmobiliaria.</label>
+  </div>
+  <button class="mo-btn" id="mo-accept-btn" onclick="closeMobileOverlay()" disabled>Acepto y accedo al reporte →</button>
+</div>
+
+<header class="header">
+  <div class="header-logo"><img src="../LOGO_INMOBILIARIA_3.png" alt="TRES65 Inmobiliaria"></div>
+  <div class="header-meta">
+    <h1>Análisis Comparativo · Beatriz Carus</h1>
+    <span class="header-accent"></span>
+    <p class="tagline">TRES65 Inmobiliaria · October 2026</p>
+  </div>
+</header>
+
+<div style="text-align:center; padding:10px 16px; background:var(--teal-light); color:var(--teal-deep); font-family:'Raleway',sans-serif; font-size:0.85rem; font-weight:600;">Tu patrimonio. Nuestro compromiso. Los 365 días del año.</div>
+
+<div class="market-banner"><div class="market-banner-inner">
+    <div class="market-stat"><div class="val">$4,300,000–$7,500,000</div><div class="lbl">Rango de precios encontrado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">-28.3% a +25.0%</div><div class="lbl">Vs presupuesto declarado</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">3–4</div><div class="lbl">Recámaras</div></div>
+    <div class="market-divider"></div>
+    <div class="market-stat"><div class="val">6</div><div class="lbl">Propiedades comparadas</div></div>
+    </div></div>
+
+<div class="wrap">
+  <div class="section-head reveal">
+    <h2>Perfil del cliente</h2>
+    <p>Cliente interesado en Zona Norte · Busca una casa al norte de Mérida dentro del periférico, con jardín, alberca propia, cochera y una recámara en planta baja para mayor comodidad familiar.</p>
+  </div>
+
+  <div class="warn-box reveal">
+    <div class="warn-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg> Sobre el presupuesto declarado</div>
+    <p>Con un presupuesto declarado de $6,000,000, el cliente se ubica justo en medio del rango encontrado, que va de $4,300,000 a $7,500,000; esto le da margen para elegir entre opciones más accesibles o estirar un poco el presupuesto si una propiedad lo justifica.</p>
+  </div>
+
+  <div class="cards-grid">
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/5891712/112629021/EB-VQ1712.jpeg?s=865c88a7981a9acf&amp;version=1793041041" alt="Residencia con Recámara en Planta Baja, Alberca y Amplio Terreno – Funcional y E 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5891712/103640783/EB-VQ1712.jpeg?s=f077053bcd27d095&amp;version=1774482621" alt="Residencia con Recámara en Planta Baja, Alberca y Amplio Terreno – Funcional y E 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5891712/103640771/EB-VQ1712.jpeg?s=207b575d54e2441a&amp;version=1774482621" alt="Residencia con Recámara en Planta Baja, Alberca y Amplio Terreno – Funcional y E 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5891712/103640768/EB-VQ1712.jpeg?s=14ed80c11ce0ccbc&amp;version=1774482621" alt="Residencia con Recámara en Planta Baja, Alberca y Amplio Terreno – Funcional y E 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5891712/103640770/EB-VQ1712.jpeg?s=7b1cf598009afa25&amp;version=1774482621" alt="Residencia con Recámara en Planta Baja, Alberca y Amplio Terreno – Funcional y E 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/5891712/103640776/EB-VQ1712.jpeg?s=dd63016ecd6369c2&amp;version=1774482621" alt="Residencia con Recámara en Planta Baja, Alberca y Amplio Terreno – Funcional y E 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Recámara en planta baja + alberca</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-VQ1712</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/residencia-con-recamara-en-planta-baja-alberca-y-amplio-terreno-funcional-y-e" target="_blank" rel="noopener">Residencia con Recámara en Planta Baja, Alberca y Amplio Terreno – Funcional y E</a></div>
+        <div class="p-card-zone">Montebello, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$6,990,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$25,054/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">2 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">279.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">399.44 m²</div></div>
+    </div>
+      <div class="p-desc">Casa Montebello cumple de forma directa con lo que el cliente pidió: tiene una recámara completa en planta baja, alberca propia y un terreno generoso de casi 400 m². Es una opción muy alineada al perfil buscado, aunque su precio queda por encima del presupuesto declarado.</div>
+      <div class="p-tags"><span class="p-tag">Recámara en PB</span><span class="p-tag">Alberca</span><span class="p-tag">Terreno amplio</span><span class="p-tag">2 autos</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+990,000 MXN (+16.5%)</div>
+        <div class="rent-note">Su precio está 16.5% por encima del presupuesto, la segunda diferencia más baja del grupo después de Casa Dzityá.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:85.0%"></div></div><span class="score-num">8.5</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div>
+      </div>
+      
+      <div class="tour-interest" data-public-id="EB-VQ1712">
+        <div class="tour-interest-lbl">¿Te gustaría visitarla?</div>
+        <div class="tour-interest-btns">
+          <button type="button" class="tour-btn tour-yes" data-interes="si" onclick="setTourInterest('EB-VQ1712','si',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 6 9 17l-5-5"/></svg> Sí</button>
+          <button type="button" class="tour-btn tour-no" data-interes="no" onclick="setTourInterest('EB-VQ1712','no',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> No</button>
+        </div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/6067658/107335779/EB-WH7658.heic?s=0be8bad639974a06&amp;version=1781987609" alt="Renta de Amplia Casa en Montes de Ame 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6067658/107335756/EB-WH7658.HEIC?s=a8dd5ae4651918dc&amp;version=1781987588" alt="Renta de Amplia Casa en Montes de Ame 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6067658/107335755/EB-WH7658.heic?s=83f473108c640306&amp;version=1781987588" alt="Renta de Amplia Casa en Montes de Ame 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6067658/107335758/EB-WH7658.heic?s=3f74612b41376416&amp;version=1781987591" alt="Renta de Amplia Casa en Montes de Ame 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6067658/107335754/EB-WH7658.heic?s=a962c8f28054d6b6&amp;version=1781987588" alt="Renta de Amplia Casa en Montes de Ame 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6067658/107335759/EB-WH7658.heic?s=4ab0bbbd337b8cb3&amp;version=1781987591" alt="Renta de Amplia Casa en Montes de Ame 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Mayor terreno y construcción (741 m² / 324 m²)</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-WH7658</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/renta-de-amplia-casa-en-montes-de-ame" target="_blank" rel="noopener">Renta de Amplia Casa en Montes de Ame</a></div>
+        <div class="p-card-zone">Montes de Ame, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$7,500,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$23,148/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">3 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">324.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">741.0 m²</div></div>
+    </div>
+      <div class="p-desc">Casa Montes de Ame es la propiedad más grande del grupo, con el terreno y la construcción más amplios, jardín al frente y garage techado para 3 autos. Es ideal para quien valora espacio y una sola planta, aunque es la que más se aleja del presupuesto.</div>
+      <div class="p-tags"><span class="p-tag">Mayor terreno</span><span class="p-tag">Una planta</span><span class="p-tag">Jardín</span><span class="p-tag">Garage 3 autos</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">+1,500,000 MXN (+25.0%)</div>
+        <div class="rent-note">Es la propiedad con la diferencia más alta sobre presupuesto, 25% por encima de los $6,000,000.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:50.0%"></div></div><span class="score-num">5.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div>
+      </div>
+      
+      <div class="tour-interest" data-public-id="EB-WH7658">
+        <div class="tour-interest-lbl">¿Te gustaría visitarla?</div>
+        <div class="tour-interest-btns">
+          <button type="button" class="tour-btn tour-yes" data-interes="si" onclick="setTourInterest('EB-WH7658','si',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 6 9 17l-5-5"/></svg> Sí</button>
+          <button type="button" class="tour-btn tour-no" data-interes="no" onclick="setTourInterest('EB-WH7658','no',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> No</button>
+        </div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4927169/83990570/EB-RX7169.jpeg?s=38570cad6e2fbe71&amp;version=1735072728" alt="Casa en venta de 3 recámaras en Temozón Norte, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4927169/83990540/EB-RX7169.jpeg?s=94ca5da3bda57692&amp;version=1735072728" alt="Casa en venta de 3 recámaras en Temozón Norte, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4927169/83990539/EB-RX7169.jpeg?s=23b017fb1f00484d&amp;version=1735072728" alt="Casa en venta de 3 recámaras en Temozón Norte, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4927169/83990541/EB-RX7169.jpeg?s=c29900167c0bad02&amp;version=1735072728" alt="Casa en venta de 3 recámaras en Temozón Norte, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4927169/83990543/EB-RX7169.jpeg?s=a7853a0b8e234e82&amp;version=1735072728" alt="Casa en venta de 3 recámaras en Temozón Norte, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4927169/83990538/EB-RX7169.jpeg?s=50b1b8db7156ea3d&amp;version=1735072728" alt="Casa en venta de 3 recámaras en Temozón Norte, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Precio accesible, terreno reducido</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-RX7169</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/casa-en-venta-de-3-recamaras-en-temozon-norte-merida-yucatan" target="_blank" rel="noopener">Casa en venta de 3 recámaras en Temozón Norte, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Temozón Norte, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$4,430,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$19,623/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">3 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">225.75 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">157.0 m²</div></div>
+    </div>
+      <div class="p-desc">Casa Temozón Norte ofrece buen estacionamiento y distribución en dos niveles, pero su terreno de 157 m² es notablemente menor al resto de las opciones, lo que limita el espacio de jardín y alberca que el cliente busca.</div>
+      <div class="p-tags"><span class="p-tag">Económica</span><span class="p-tag">2 autos</span><span class="p-tag">Terreno chico</span><span class="p-tag">Dos niveles</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">-1,570,000 MXN (-26.2%)</div>
+        <div class="rent-note">Es de las más económicas, 26.2% por debajo del presupuesto, dejando margen amplio para negociar o mejorar acabados.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:90.0%"></div></div><span class="score-num">9.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:55.0%"></div></div><span class="score-num">5.5</span></div>
+      </div>
+      
+      <div class="tour-interest" data-public-id="EB-RX7169">
+        <div class="tour-interest-lbl">¿Te gustaría visitarla?</div>
+        <div class="tour-interest-btns">
+          <button type="button" class="tour-btn tour-yes" data-interes="si" onclick="setTourInterest('EB-RX7169','si',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 6 9 17l-5-5"/></svg> Sí</button>
+          <button type="button" class="tour-btn tour-no" data-interes="no" onclick="setTourInterest('EB-RX7169','no',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> No</button>
+        </div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/6304224/111996276/EB-XF4224.jpeg?s=7274d439bdc1afd6&amp;version=1791576446" alt="Casa en venta de 4 recámaras en Dzityá, Mérida, Yucatán. 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6304224/111996282/EB-XF4224.jpeg?s=2b0e45ff13fea5c6&amp;version=1791576447" alt="Casa en venta de 4 recámaras en Dzityá, Mérida, Yucatán. 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6304224/111996281/EB-XF4224.jpeg?s=8c36f9a1dd9c8d2e&amp;version=1791576447" alt="Casa en venta de 4 recámaras en Dzityá, Mérida, Yucatán. 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6304224/111996280/EB-XF4224.jpeg?s=41ee41da66055103&amp;version=1791576447" alt="Casa en venta de 4 recámaras en Dzityá, Mérida, Yucatán. 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6304224/111996284/EB-XF4224.jpeg?s=5502ba4ac73d2181&amp;version=1791576447" alt="Casa en venta de 4 recámaras en Dzityá, Mérida, Yucatán. 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6304224/111996274/EB-XF4224.jpeg?s=f1c1d9d409c50d8e&amp;version=1791576446" alt="Casa en venta de 4 recámaras en Dzityá, Mérida, Yucatán. 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Diseño contemporáneo en zona de plusvalía</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-XF4224</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/casa-en-venta-de-4-recamaras-en-dzitya-merida-yucatan-dzitya" target="_blank" rel="noopener">Casa en venta de 4 recámaras en Dzityá, Mérida, Yucatán.</a></div>
+        <div class="p-card-zone">Dzityá, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$5,300,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$20,000/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">265.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">336.0 m²</div></div>
+    </div>
+      <div class="p-desc">Casa Dzityá destaca por su fachada moderna, 4 recámaras y buen terreno de 336 m², en una zona con fuerte crecimiento al norte de Mérida. No se menciona recámara en planta baja, lo cual es un punto a verificar contra las prioridades del cliente.</div>
+      <div class="p-tags"><span class="p-tag">4 recámaras</span><span class="p-tag">4 autos</span><span class="p-tag">Dos niveles</span><span class="p-tag">Zona en crecimiento</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">-700,000 MXN (-11.7%)</div>
+        <div class="rent-note">Queda 11.7% por debajo del presupuesto, una de las opciones con menor diferencia hacia abajo.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div>
+      </div>
+      
+      <div class="tour-interest" data-public-id="EB-XF4224">
+        <div class="tour-interest-lbl">¿Te gustaría visitarla?</div>
+        <div class="tour-interest-btns">
+          <button type="button" class="tour-btn tour-yes" data-interes="si" onclick="setTourInterest('EB-XF4224','si',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 6 9 17l-5-5"/></svg> Sí</button>
+          <button type="button" class="tour-btn tour-no" data-interes="no" onclick="setTourInterest('EB-XF4224','no',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> No</button>
+        </div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/4999135/92030688/EB-SE9135.jpeg?s=431a05c6707e946d&amp;version=1750724477" alt="Casa en venta en privada en Temozón Norte, Mérida, Yucatán | Modelo 210 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4999135/92030687/EB-SE9135.jpeg?s=75352e22159d6fc5&amp;version=1750724477" alt="Casa en venta en privada en Temozón Norte, Mérida, Yucatán | Modelo 210 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4999135/92030685/EB-SE9135.jpeg?s=1a8f17d3cbf3e696&amp;version=1750724477" alt="Casa en venta en privada en Temozón Norte, Mérida, Yucatán | Modelo 210 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4999135/92030686/EB-SE9135.jpeg?s=979b3b3844a265b4&amp;version=1750724477" alt="Casa en venta en privada en Temozón Norte, Mérida, Yucatán | Modelo 210 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4999135/92030684/EB-SE9135.jpeg?s=f29258eb1dbfa4fe&amp;version=1750724477" alt="Casa en venta en privada en Temozón Norte, Mérida, Yucatán | Modelo 210 5"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/4999135/92030683/EB-SE9135.jpeg?s=c0ecfe3c5eff6302&amp;version=1750724477" alt="Casa en venta en privada en Temozón Norte, Mérida, Yucatán | Modelo 210 6">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 6"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Privada con amenidades compartidas</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-SE9135</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/casa-en-venta-en-privada-en-temozon-norte-merida-yucatan-modelo-210" target="_blank" rel="noopener">Casa en venta en privada en Temozón Norte, Mérida, Yucatán | Modelo 210</a></div>
+        <div class="p-card-zone">Temozón Norte, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$5,045,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$24,024/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">4</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4 + 1 medio</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">210.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">249.0 m²</div></div>
+    </div>
+      <div class="p-desc">Casa Temozón Norte 2 forma parte de una privada residencial con alberca, paneles solares y áreas comunes como terraza social y asadores, aunque su terreno individual de 249 m² es más compacto y no se especifica si cuenta con recámara en planta baja.</div>
+      <div class="p-tags"><span class="p-tag">Privada</span><span class="p-tag">Alberca</span><span class="p-tag">Paneles solares</span><span class="p-tag">4 recámaras</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">-955,000 MXN (-15.9%)</div>
+        <div class="rent-note">Su precio está 15.9% por debajo del presupuesto, ofreciendo un colchón razonable.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:80.0%"></div></div><span class="score-num">8.0</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:75.0%"></div></div><span class="score-num">7.5</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div>
+      </div>
+      
+      <div class="tour-interest" data-public-id="EB-SE9135">
+        <div class="tour-interest-lbl">¿Te gustaría visitarla?</div>
+        <div class="tour-interest-btns">
+          <button type="button" class="tour-btn tour-yes" data-interes="si" onclick="setTourInterest('EB-SE9135','si',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 6 9 17l-5-5"/></svg> Sí</button>
+          <button type="button" class="tour-btn tour-no" data-interes="no" onclick="setTourInterest('EB-SE9135','no',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> No</button>
+        </div>
+      </div>
+    </div>
+    <div class="p-card reveal">
+      <div class="p-card-carousel">
+        <img class="p-card-cover active" src="https://assets.easybroker.com/property_images/6103306/108110345/EB-WL3306.jpg?s=a2909849cbf9b115&amp;version=1783710567" alt="Casa en venta de 3 recámaras con paneles solares y alberca en Dzityá, Mérida 1"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6103306/108110344/EB-WL3306.jpg?s=0eeec423bd124763&amp;version=1783710567" alt="Casa en venta de 3 recámaras con paneles solares y alberca en Dzityá, Mérida 2"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6103306/108110348/EB-WL3306.jpg?s=758fef8bffa0a770&amp;version=1783710568" alt="Casa en venta de 3 recámaras con paneles solares y alberca en Dzityá, Mérida 3"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6103306/108110347/EB-WL3306.jpg?s=5f7cff0f67969c79&amp;version=1783710568" alt="Casa en venta de 3 recámaras con paneles solares y alberca en Dzityá, Mérida 4"><img class="p-card-cover" src="https://assets.easybroker.com/property_images/6103306/108110346/EB-WL3306.jpg?s=b2ada6254e3af1c4&amp;version=1783710567" alt="Casa en venta de 3 recámaras con paneles solares y alberca en Dzityá, Mérida 5">
+        <button class="carousel-btn prev" onclick="carouselNav(this,-1)" aria-label="Foto anterior">‹</button>
+        <button class="carousel-btn next" onclick="carouselNav(this,1)" aria-label="Foto siguiente">›</button>
+        <div class="carousel-dots"><button class="dot active" onclick="carouselDot(this)" aria-label="Foto 1"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 2"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 3"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 4"></button><button class="dot" onclick="carouselDot(this)" aria-label="Foto 5"></button></div>
+      </div>
+      <div class="p-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg> Precio más bajo y mejor precio por m² construido</div>
+      <div class="p-card-head">
+        <div class="p-card-id">EB-WL3306</div>
+        <div class="p-card-name"><a href="https://www.easybroker.com/listings/casa-en-venta-de-3-recamaras-con-paneles-solares-y-alberca-en-dzitya-merida" target="_blank" rel="noopener">Casa en venta de 3 recámaras con paneles solares y alberca en Dzityá, Mérida</a></div>
+        <div class="p-card-zone">Dzityá, Mérida, Yucatán</div>
+      </div>
+      <div class="p-price-row">
+        <span class="p-price-real">$4,300,000</span>
+        <span class="p-price-cur">MXN</span>
+        <span class="p-price-m2">$19,545/m²</span>
+      </div>
+      <div class="p-stats">
+        <div class="p-stat"><div class="p-stat-lbl">Recámaras</div><div class="p-stat-val">3</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Baños</div><div class="p-stat-val">4</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Construcción</div><div class="p-stat-val">220.0 m²</div></div>
+        <div class="p-stat"><div class="p-stat-lbl">Terreno</div><div class="p-stat-val">330.0 m²</div></div>
+    </div>
+      <div class="p-desc">Casa Dzityá 2 es la opción más económica del grupo y con el mejor precio por metro cuadrado construido, además de contar con alberca y garage para hasta 4 autos. Es un proyecto de solo 2 casas, lo cual puede ser un plus de privacidad o un punto a confirmar en términos de ficha técnica completa.</div>
+      <div class="p-tags"><span class="p-tag">Precio más bajo</span><span class="p-tag">Alberca</span><span class="p-tag">4 autos</span><span class="p-tag">Solo 2 casas</span></div>
+      <div class="rent-box">
+        <div class="rent-lbl"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M12 3v18"/><path d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg> Diferencia vs presupuesto declarado</div>
+        <div class="rent-val">-1,700,000 MXN (-28.3%)</div>
+        <div class="rent-note">Es la propiedad con mayor margen bajo presupuesto, 28.3% por debajo de los $6,000,000.</div>
+      </div>
+      <div class="p-scores">
+        <div class="scores-lbl">Ajuste al perfil del cliente</div>
+        <div class="score-row"><span class="score-name">Ajuste de presupuesto</span><div class="score-bg"><div class="score-fill" style="width:95.0%"></div></div><span class="score-num">9.5</span></div><div class="score-row"><span class="score-name">Ajuste de recámaras</span><div class="score-bg"><div class="score-fill" style="width:65.0%"></div></div><span class="score-num">6.5</span></div><div class="score-row"><span class="score-name">Espacio para recibir</span><div class="score-bg"><div class="score-fill" style="width:70.0%"></div></div><span class="score-num">7.0</span></div>
+      </div>
+      
+      <div class="tour-interest" data-public-id="EB-WL3306">
+        <div class="tour-interest-lbl">¿Te gustaría visitarla?</div>
+        <div class="tour-interest-btns">
+          <button type="button" class="tour-btn tour-yes" data-interes="si" onclick="setTourInterest('EB-WL3306','si',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 6 9 17l-5-5"/></svg> Sí</button>
+          <button type="button" class="tour-btn tour-no" data-interes="no" onclick="setTourInterest('EB-WL3306','no',this)"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg> No</button>
+        </div>
+      </div>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Comparativa de números clave</h2><p>Precio y precio por m² construido</p></div>
+  <div class="charts-row reveal">
+    <div class="chart-box">
+      <h4>Precio de venta (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$7,500,000</span>
+          </div>
+          <span class="bar-lbl">Casa Montes de Ame</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:87%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$6,990,000</span>
+          </div>
+          <span class="bar-lbl">Casa Montebello</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:43%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$5,300,000</span>
+          </div>
+          <span class="bar-lbl">Casa Dzityá</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:36%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$5,045,000</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte 2</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:20%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$4,430,000</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:17%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$4,300,000</span>
+          </div>
+          <span class="bar-lbl">Casa Dzityá 2</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">Escala desde $3,655,000 para que las diferencias se distingan — el valor exacto va rotulado sobre cada barra.</p>
+    </div>
+    <div class="chart-box">
+      <h4>Precio por m² construido (MXN)</h4>
+      <div class="bar-chart">
+        <div class="bar-group">
+          <div class="bar" style="height:100%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$25,054</span>
+          </div>
+          <span class="bar-lbl">Casa Montebello</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:88%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$24,024</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte 2</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:77%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$23,148</span>
+          </div>
+          <span class="bar-lbl">Casa Montes de Ame</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:40%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$20,000</span>
+          </div>
+          <span class="bar-lbl">Casa Dzityá</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:36%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$19,623</span>
+          </div>
+          <span class="bar-lbl">Casa Temozón Norte</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height:35%;background:linear-gradient(to top,#1a5c5a,#2aaa99);">
+            <span class="bar-v">$19,545</span>
+          </div>
+          <span class="bar-lbl">Casa Dzityá 2</span>
+        </div></div>
+      <p style="font-size:0.62rem;color:var(--gray);margin-top:10px;">Escala desde $16,613 para que las diferencias se distingan — el valor exacto va rotulado sobre cada barra.</p>
+    </div></div>
+
+  <div class="section-head reveal"><h2>Tabla comparativa completa</h2><p>Todos los factores decisivos sin filtros</p></div>
+  <div class="table-scroll-hint"><span>‹ desliza para ver las propiedades ›</span></div>
+  <div class="table-wrap reveal"><div class="table-scroll-container">
+    <table class="compare-table">
+      <thead><tr><th class="sticky-col">Criterio</th><th>Casa Montebello</th><th>Casa Montes de Ame</th><th>Casa Temozón Norte</th><th>Casa Dzityá</th><th>Casa Temozón Norte 2</th><th>Casa Dzityá 2</th></tr></thead>
+      <tbody><tr><td class="sticky-col">Zona</td><td>Montebello, Mérida, Yucatán</td><td>Montes de Ame, Mérida, Yucatán</td><td>Temozón Norte, Mérida, Yucatán</td><td>Dzityá, Mérida, Yucatán</td><td>Temozón Norte, Mérida, Yucatán</td><td>Dzityá, Mérida, Yucatán</td></tr><tr><td class="sticky-col">Precio</td><td>$6,990,000 MXN</td><td>$7,500,000 MXN</td><td>$4,430,000 MXN</td><td>$5,300,000 MXN</td><td>$5,045,000 MXN</td><td>$4,300,000 MXN</td></tr><tr><td class="sticky-col">Precio/m² construido</td><td>$25,054 MXN</td><td>$23,148 MXN</td><td>$19,623 MXN</td><td>$20,000 MXN</td><td>$24,024 MXN</td><td>$19,545 MXN</td></tr><tr><td class="sticky-col">Construcción</td><td>279.0 m²</td><td>324.0 m²</td><td>225.75 m²</td><td>265.0 m²</td><td>210.0 m²</td><td>220.0 m²</td></tr><tr><td class="sticky-col">Terreno</td><td>399.44 m²</td><td>741.0 m²</td><td>157.0 m²</td><td>336.0 m²</td><td>249.0 m²</td><td>330.0 m²</td></tr><tr><td class="sticky-col">Recámaras / Baños</td><td>3 / 2</td><td>3 / 3</td><td>3 / 3</td><td>4 / 4</td><td>4 / 4</td><td>3 / 4</td></tr><tr><td class="sticky-col">Diferencia vs presupuesto</td><td>+990,000 (+16.5%)</td><td>+1,500,000 (+25.0%)</td><td>-1,570,000 (-26.2%)</td><td>-700,000 (-11.7%)</td><td>-955,000 (-15.9%)</td><td>-1,700,000 (-28.3%)</td></tr></tbody>
+    </table>
+  </div></div>
+
+  <div class="section-head reveal"><h2>Análisis por prioridad</h2><p>Lo que cambia según qué esté priorizando el cliente</p></div>
+  <div class="reveal">
+    <div class="tabs-nav"><button class="tab-btn active" onclick="switchTab('t0',this)">Ajuste al presupuesto</button><button class="tab-btn" onclick="switchTab('t1',this)">Distribución y vida social</button><button class="tab-btn" onclick="switchTab('t2',this)">Riesgo y pendientes</button></div>
+    
+    <div class="tab-pane active" id="tab-t0">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Opciones dentro o por debajo del presupuesto</h4><ul><li>Casa Dzityá 2 es la más económica, con 28.3% de margen bajo presupuesto</li><li>Casa Temozón Norte ofrece buen margen (26.2% por debajo)</li><li>Casa Dzityá y Casa Temozón Norte 2 también quedan por debajo, con diferencias moderadas</li></ul></div>
+        <div class="a-box"><h4>Opciones que exceden el presupuesto</h4><ul><li>Casa Montebello rebasa el presupuesto en 16.5%</li><li>Casa Montes de Ame es la que más se aleja, 25% por encima</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t1">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Espacios pensados para recibir y convivir</h4><ul><li>Casa Montebello y Casa Montes de Ame cuentan con recámara en planta baja o diseño de una sola planta</li><li>Casa Montes de Ame tiene el terreno y construcción más grandes del grupo</li><li>Casa Temozón Norte 2 incluye amenidades compartidas como alberca y terraza social</li></ul></div>
+        <div class="a-box"><h4>Limitaciones de espacio</h4><ul><li>Casa Temozón Norte tiene el terreno más reducido (157 m²)</li><li>No se confirma recámara en planta baja en Casa Dzityá, Casa Temozón Norte 2 ni Casa Dzityá 2</li></ul></div>
+      </div>
+    </div>
+    <div class="tab-pane" id="tab-t2">
+      <div class="analysis-grid">
+        <div class="a-box"><h4>Fichas con buena información</h4><ul><li>Casa Montebello y Casa Montes de Ame detallan bien distribución y acabados</li><li>Casa Temozón Norte 2 pertenece a un desarrollo conocido (Adara) con amenidades documentadas</li></ul></div>
+        <div class="a-box"><h4>Puntos a verificar antes de decidir</h4><ul><li>Casa Dzityá 2 tiene ficha breve, conviene confirmar detalles de escrituración y estado del proyecto</li><li>Ninguna ficha confirma explícitamente &#x27;recámara en planta baja&#x27; salvo Casa Montebello y Casa Montes de Ame</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head reveal"><h2>Veredictos finales</h2><p>Sin ambigüedad — y sin esconder lo que sigue sin resolverse</p></div>
+  <div class="verdicts-grid">
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+      <div class="v-prop">Casa Montebello</div>
+      <div class="v-title">Casa Montebello: la que mejor cumple el perfil buscado</div>
+      <p class="v-text">Tiene recámara en planta baja, alberca propia y buen terreno, alineándose directamente con lo que el cliente pidió. El precio está por encima del presupuesto, pero es una de las diferencias más bajas del grupo.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg></div>
+      <div class="v-prop">Casa Montes de Ame</div>
+      <div class="v-title">Casa Montes de Ame: la más espaciosa de todas</div>
+      <p class="v-text">Con el terreno y la construcción más grandes del grupo, es ideal si el espacio es prioridad sobre el presupuesto. Su jardín y garage amplio son un plus, aunque es la opción con mayor diferencia sobre lo declarado.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div class="v-prop">Casa Temozón Norte</div>
+      <div class="v-title">Casa Temozón Norte: precio accesible, espacio limitado</div>
+      <p class="v-text">Ofrece un ahorro considerable frente al presupuesto, pero su terreno pequeño puede no dar lugar al jardín y alberca que el cliente busca. Vale la pena considerarla si el precio es el factor decisivo.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="v-prop">Casa Dzityá</div>
+      <div class="v-title">Casa Dzityá: diseño moderno en zona con plusvalía</div>
+      <p class="v-text">Destaca por su arquitectura contemporánea y ubicación en una zona de crecimiento al norte de Mérida. No se confirma recámara en planta baja, así que conviene verificarlo si es un punto no negociable.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div>
+      <div class="v-prop">Casa Temozón Norte 2</div>
+      <div class="v-title">Casa Temozón Norte 2: amenidades de privada</div>
+      <p class="v-text">Forma parte de un desarrollo con alberca, paneles solares y áreas sociales compartidas, ideal para quien valora comunidad y amenidades. Su terreno individual es más compacto que otras opciones del grupo.</p>
+    </div>
+    <div class="v-card reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div>
+      <div class="v-prop">Casa Dzityá 2</div>
+      <div class="v-title">Casa Dzityá 2: la mejor relación precio-espacio</div>
+      <p class="v-text">Es la opción más económica y con el mejor precio por metro cuadrado construido, ideal si el presupuesto es la prioridad principal. Conviene pedir una ficha más detallada antes de avanzar, ya que la información disponible es breve.</p>
+    </div>
+    <div class="v-card v-dark reveal">
+      <div class="v-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <div class="v-prop">Para Cliente interesado en Zona Norte</div>
+      <div class="v-title">Seis opciones, un mismo norte: encontrar el equilibrio correcto</div>
+      <p class="v-text">De las seis propiedades, Casa Montebello es la que más fielmente refleja lo que buscas: recámara en planta baja, alberca y buen terreno, aunque con un ligero sobreprecio. Si el presupuesto es tu límite más firme, Casa Dzityá 2 y Casa Temozón Norte te dan mayor margen, aunque con espacios más compactos. Y si el espacio es lo que más pesa en tu decisión, Casa Montes de Ame no tiene competencia en tamaño, aunque implica estirar el presupuesto. ¿Te gustaría que agendemos una visita a Casa Montebello para confirmar en persona si realmente cumple con lo que imaginas para tu próxima casa?</p>
+    </div></div>
+  
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="../logoblancotres.png" alt="TRES65 Inmobiliaria">
+      <p>Especialistas en propiedades de<br>Mérida, Yucatán.<br>www.tres65inmobiliaria.com</p>
+    </div>
+    <div class="footer-agent">
+      <div class="agent-name">Damara Traconis Corres</div>
+      <div class="agent-role">Asesor Certificado<br>TRES65 Inmobiliaria</div>
+      <div class="agent-contact">+52 999 278 6153<br><a href="mailto:damara@tres65inmobiliaria.com">damara@tres65inmobiliaria.com</a></div>
+      <img src="../logos-ampi-realtor.png" alt="AMPI Mérida y REALTOR" style="height:96px; width:auto; margin-top:10px;">
+    </div>
+  </div>
+  <hr class="footer-hr">
+  <div class="footer-bottom">
+    <span>© 2026 TRES65 Inmobiliaria® · Marca registrada · Todos los derechos reservados</span>
+    <span>Análisis confidencial · Datos verificados en EasyBroker</span>
+  </div>
+</footer>
+
+<script>window.REPORT_CLIENT_TOKEN = "2Wf9UoXD4is";</script>
+<script>
+  function closeMobileOverlay() { document.getElementById('mobile-overlay').style.display = 'none'; sessionStorage.setItem('mo_dismissed', '1'); }
+  function checkMobile() { if (sessionStorage.getItem('mo_dismissed')) return; document.getElementById('mobile-overlay').style.display = 'flex'; }
+  window.addEventListener('DOMContentLoaded', checkMobile);
+  function carouselNav(btn, dir) {
+    const container = btn.closest('.p-card-carousel');
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    let idx = imgs.findIndex(img => img.classList.contains('active'));
+    imgs[idx].classList.remove('active'); dots[idx].classList.remove('active');
+    idx = (idx + dir + imgs.length) % imgs.length;
+    imgs[idx].classList.add('active'); dots[idx].classList.add('active');
+  }
+  function carouselDot(dot) {
+    const container = dot.closest('.p-card-carousel');
+    const dots = Array.from(container.querySelectorAll('.dot'));
+    const imgs = Array.from(container.querySelectorAll('.p-card-cover'));
+    const targetIdx = dots.indexOf(dot);
+    imgs.forEach(img => img.classList.remove('active')); dots.forEach(d => d.classList.remove('active'));
+    imgs[targetIdx].classList.add('active'); dots[targetIdx].classList.add('active');
+  }
+  function switchTab(id, btn) {
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    btn.classList.add('active');
+  }
+  function setTourInterest(publicId, interes, btn) {
+    if (!window.REPORT_CLIENT_TOKEN) return;
+    const card = btn.closest('.p-card');
+    card.querySelectorAll('.tour-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    try { localStorage.setItem('tour_interest_' + publicId, interes); } catch (e) {}
+    fetch('https://agente-tres65-production.up.railway.app/portal/analisis-interes', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({client_token: window.REPORT_CLIENT_TOKEN, public_id: publicId, interes: interes})
+    }).catch(e => console.error('Error guardando interés:', e));
+  }
+  function restoreTourInterest() {
+    document.querySelectorAll('.tour-interest').forEach(el => {
+      const publicId = el.dataset.publicId;
+      let saved = null;
+      try { saved = localStorage.getItem('tour_interest_' + publicId); } catch (e) {}
+      if (!saved) return;
+      const btn = el.querySelector('.tour-btn[data-interes="' + saved + '"]');
+      if (btn) btn.classList.add('active');
+    });
+  }
+  window.addEventListener('DOMContentLoaded', restoreTourInterest);
+</script>
+</body>
+</html>
